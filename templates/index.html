@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static\style.css">
 
     <style>
   
@@ -26,7 +26,7 @@
           <div>
             <img
               class="hero-img"
-              src="hero.jpg"
+              src="static\images\hero.jpg"
               alt="admissions"
               style="width:100%;" 
             />
@@ -45,7 +45,7 @@
             <p>
               <img
                 class="Airport-logo"
-                src="airport-school-logo.png"
+                src="static\images\airport-school-logo.png"
                 alt="logo"
               />
             </p>
@@ -56,7 +56,7 @@
           </div>
         </section>
 
-        <form class="form-entry-container" id="myForm" method="POST">
+        <form class="form-entry-container" id="myForm" method="POST" enctype="multipart/form-data">
           <section class="student-details">
 
             <br>
@@ -81,9 +81,9 @@
                             Father's Photo
                         </label>
                         <br>
-                        <img src="dummy.jpg" width="131px" height="125px">
+                        <img src="static\images\dummy.jpg" width="131px" height="125px">
                         <br>
-                        <input type="file" name="father-image" class="father-file-input"
+                        <input type="file" name="father-image" class="father-file-input" required
                         />
                       </div>
                     </td>
@@ -94,7 +94,7 @@
                             Mother's Photo
                           </label>
                           <br>
-                          <img src="dummy.jpg" width="131px" height="125px">
+                          <img src="static\images\dummy.jpg" width="131px" height="125px">
                           <br>
                           <input type="file" name="mother-image" class="mother-file-input"
                           />
@@ -114,7 +114,7 @@
                             Student's Photo
                         </label>
                         <br>
-                        <img src="dummy.jpg" width="131px" height="125px">
+                        <img src="static\images\dummy.jpg" width="131px" height="125px">
                         <br>
                         <input type="file" name="student-image" class="student-file-input"
                         />
@@ -127,7 +127,7 @@
                             Adhaar's Photo
                           </label>
                           <br>
-                          <img src="dummy.jpg" width="131px" height="125px">
+                          <img src="static\images\dummy.jpg" width="131px" height="125px">
                           <br>
                           <input type="file" name="adhaar-image" class="adhaar-file-input"
                           />
@@ -145,7 +145,7 @@
                             Marksheet's Photo
                         </label>
                         <br>
-                        <img src="dummy.jpg" width="131px" height="125px">
+                        <img src="static\images\dummy.jpg" width="131px" height="125px">
                         <br>
                         <input type="file" name="marksheet-image" class="marksheet-file-input"
                         />
@@ -389,6 +389,7 @@
                     <option value="AB-">AB-</option>
                     </select>
                   </td>
+                  
 
                   <td>
                     <label class="gender-label" htmlFor="gender">
@@ -839,7 +840,7 @@
 
 
                         <tr>
-                          <td>
+                          <!-- <td>
                             <label class="guardian-occupation-label"
                               htmlFor="guardian-occupation">
                               Guardian's Occupation <span style="color:red;">* </span>
@@ -854,7 +855,7 @@
                                 placeholder="occupation"
                                 required
                                 />
-                          </td>
+                          </td> -->
 
                           <td>
                             <label class="guardian-contact-label"
@@ -876,7 +877,7 @@
 
 
 
-                        <tr>
+                        <!-- <tr>
                           <td>
                             <label class="guardian-email-label"
                               htmlFor="guardian-email">
@@ -910,7 +911,7 @@
                             required
                             />
                           </td>
-                        </tr>
+                        </tr> -->
                       </table>
                       </div>
               </fieldset>
@@ -930,26 +931,26 @@
                     <tr>
                       <td>
                         <label class="declaration1-label" htmlFor="">
-                          I/We hereby declare that the entire information provided by me/us is true and correct
+                          We certify that all information stated by us in this form, to the best of our knowledge, is correct and we agree that if any information is found incorrect after admission of our child, the institution at its discretion can cancel the admission and we shall not take any objection in any manner whatsoever.
                           <span style="color:red;">* </span>
                       </label>
                       </td>
 
                       <td>
-                        <input type="checkbox"  class="declration1-check" name="declration1-checkbox">
+                        <input type="checkbox"  class="declration1-check" name="declration1-checkbox" required>
                       </td>
                     </tr>
 
                     <tr>
                       <td>
                         <label class="declaration2-label" htmlFor="">
-                          I/We understand that this is an application form not a guarantee for admission
+                          We assure you that our child is physically and mentally normal. We shall here by observe the rules, regulations and discipline of the school.
                           <span style="color:red;">* </span>
                       </label>
                       </td>
 
                       <td>
-                        <input type="checkbox"  class="declaration2-check" name="declaration2-checkbox">
+                        <input type="checkbox"  class="declaration2-check" name="declaration2-checkbox" required>
                       </td>
                     </tr>
 
@@ -977,5 +978,5 @@
 </table>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
-<script src="script.js"></script>
+<script src="static\script.js"></script>
 </html>

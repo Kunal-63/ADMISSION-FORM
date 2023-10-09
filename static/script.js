@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
             "description": "Test Transaction",
             "image": "templates\airport-school-logo.png",
             "handler": function (response){
-                window.location.replace('success.html');
+                // window.location.replace('success.html');
+                window.location.href = '/submit';
             },
             "theme": {
                 "color": "#3399cc"
