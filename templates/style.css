@@ -1,3 +1,34 @@
+table{
+  width: 100%;
+  /* display: flex; */
+  justify-content: space-between;
+
+}
+
+td {
+  padding: 15px;
+}
+
+/* tr{
+  padding: 5px;
+} */
+
+
+.full-page,.attach-table,.student-details-table,.family-detail-table{
+    margin-left: auto;
+    margin-right: auto;
+}
+label{
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font: Roboto;
+  color: #072445;
+}
+
+
 .hero-img {
     height: 60vh;
     padding-bottom: 30px;
@@ -56,7 +87,6 @@
     width: 100%;
     /* margin: auto; */
     margin-top: 20px;
-    /* background-color: blue; */
   }
   
   .student-details-legend,.family-details-legend,.declaration-legend,.photo-add-legend{
@@ -72,7 +102,7 @@
     color: #072445;
   }
   
-  .full-name-text{
+  .first-name-label,.last-name-label{
     font-size: 15px;
     font-weight: bold;
     margin: auto;
@@ -81,11 +111,13 @@
     font: Roboto;
     color: #072445;
   }
-  .full-name-input{
-    width: 70%;
-    padding: 5px;
+  .first-name-input,.last-name-input{
+    padding: 5px 40px;
     
   }
+
+
+
   .student-details-main-div{
     width: 95%;
     margin: auto;
@@ -107,12 +139,12 @@
     color: #072445;
   }
   .applied-for-select, .academic-year-select{
-    /* width: 50%; */
-    padding: 5px 50px;
+    width: 100%;
+    padding: 5px 40px;
   }
   .applied-for{
     width: 50%;
-    display: inline;
+
   }
   
   .dob-inword, .years-months-days-div, .nationality-mothertounge-religion-div, .bloodgroup-gender-category-div{
@@ -122,7 +154,7 @@
     justify-content: space-between;
   }
   .dob, .inwords{
-    display: inline-block;
+    
     font-size: 15px;
     font-weight: bold;
     /* margin: auto; */
@@ -132,7 +164,9 @@
     color: #072445;
   }
   .dob-input, .dob-inwords-input{
-    padding: 5px 50px;
+    /* width: 50%; */
+    width: auto;
+    padding: 5px 40px;
   }
   
   .age-as-on{
@@ -183,7 +217,11 @@
     font: Roboto;
     color: #072445;
   }
-  .bloodgroup-input, .gender-input, .category-input{
+  .bloodgroup-select{
+    width: 100%;
+    padding: 5px 40px;
+  }
+  .gender-input, .category-input{
     padding: 5px 40px;
   }
 
@@ -211,7 +249,6 @@
   }
 
   .permanent-state-district-pincode-div,.correspondance-state-district-pincode-div{
-    display: flex;
     text-align: center;
     align-items: flex-start;
     justify-content: space-between;
@@ -229,10 +266,14 @@
   }
 
 
-  .permanent-state-select,.permanent-district-select,.permanent-pincode-input,.correspondance-state-select,.correspondance-district-select,.correspondance-pincode-input{
+  .permanent-pincode-input,.correspondance-pincode-input{
     padding: 5px 50px;
   }
 
+  .permanent-state-select,.permanent-district-select,.correspondance-state-select,.correspondance-district-select{
+    width: 100%;
+    padding: 5px 40px;
+  }
 
   .same-as-permanent-address-label{
     font-size: 15px;
@@ -245,12 +286,10 @@
   }
 
   
-
-  .father-mother-name-div,.father-mother-occupation-div,.father-mother-contact-div,.father-mother-email-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  .permanent-pincode-input,.correspondance-pincode-input{
+    padding: 5px 40px;
   }
+
 
 
   .father-name-label,.father-occupation-label,.father-contact-label,.father-email-label,.mother-name-label,.mother-occupation-label,.mother-contact-label,.mother-email-label,.family-annual-income-label{
@@ -268,13 +307,6 @@
     padding: 5px 40px;
   }
 
-
-
-  .guardian-name-relation-with-child-div,.guardian-occupation-contact-div,.guardian-email-annual-income-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
 
 
 
@@ -323,10 +355,6 @@
 
 
   }
-  .father-mother-file-add-div,.student-adhaar-file-add-div,.marksheet-file-add-div{
-    display: flex;
-    justify-content: space-evenly;
-  }
 
   .father-file-label,.mother-file-label,.student-file-label,.adhaar-file-label,.marksheet-file-label{
     font-size: 15px;
@@ -344,3 +372,78 @@
     border: 1px solid #d4d4d4;
     border-radius: 5px;
   }
+
+
+  .last-button{ 
+    text-align: center;
+  } 
+
+
+
+  
+
+
+
+
+/* Your existing CSS rules */
+
+/* Add this media query to apply styles for screens with a max width of 768px */
+@media (max-width: 768px) {
+  .student-details-table tr {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .student-details-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .student-details-table label {
+    margin-bottom: 5px;
+  }
+
+  .student-details-table input,
+  .student-details-table select,
+  .student-details-table textarea {
+    width: 100%;
+  }
+
+  .student-details-table .age-as-on,
+  .student-details-table .years-months-days-div,
+  .student-details-table .nationality-mothertounge-religion-div,
+  .student-details-table .bloodgroup-gender-category-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .student-details-table .applied-academic,
+  .student-details-table .complete-name {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .student-details-table .applied-for,
+  .student-details-table .academic-year-select,
+  .student-details-table .dob-input,
+  .student-details-table .dob-inwords-input,
+  .student-details-table .years-input,
+  .student-details-table .months-input,
+  .student-details-table .days-input,
+  .student-details-table .nationality-input,
+  .student-details-table .mothertounge-input,
+  .student-details-table .religion-input,
+  .student-details-table .gender-input,
+  .student-details-table .category-input,
+  .student-details-table .permanent-address-input,
+  .student-details-table .permanent-state-select,
+  .student-details-table .permanent-district-select,
+  .student-details-table .permanent-pincode-input,
+  .student-details-table .same-as-permanent-address-check,
+  .student-details-table .correspondance-address-input,
+  .student-details-table .correspondance-state-select,
+  .student-details-table .correspondance-district-select,
+  .student-details-table .correspondance-pincode-input {
+    margin-bottom: 10px;
+  }
+}

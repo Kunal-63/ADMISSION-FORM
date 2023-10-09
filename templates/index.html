@@ -1,26 +1,981 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uploaded Photos</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+  
+      
+  </style>
+
+
 </head>
 <body>
-    <h1>Uploaded Photos</h1>
+<table class="full-page" id="full-page">
 
-    <ul>
-        {% for image in images %}
-        <li>
-            <a href="/uploads/{{ image.id }}" target="_blank">{{ image.filename }}</a>
-        </li>
-        {% endfor %}
-    </ul>
 
-    <h2>Upload a New Photo</h2>
-    <form method="POST" action="/upload" enctype="multipart/form-data">
-        <label for="photo">Choose a photo:</label>
-        <input type="file" name="photo" id="photo" accept="image/*">
-        <button type="submit">Upload</button>
-    </form>
+
+    <tr>
+      <td>
+        <section class="hero">
+          <div>
+            <img
+              class="hero-img"
+              src="hero.jpg"
+              alt="admissions"
+              style="width:100%;" 
+            />
+          </div>
+        </section>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <section class="form">
+        <div class="form-main-container">
+          
+        <section class="logo">
+          <div class="logo-container">
+            <p>
+              <img
+                class="Airport-logo"
+                src="airport-school-logo.png"
+                alt="logo"
+              />
+            </p>
+            
+            <hr style= "border-top:1px solid black;">
+            <br>
+            <p class="admission-form-text">Admission Form 2023-24</p>
+          </div>
+        </section>
+
+        <form class="form-entry-container" id="myForm" method="POST">
+          <section class="student-details">
+
+            <br>
+            <br>
+
+
+              <fieldset class="photo-add-fieldset" style= "padding-bottom:20px;">
+
+              <legend class="photo-add-legend">
+                Documents
+              </legend>
+
+              
+              <div class="attach-main-div">
+
+                <table class="attach-table">
+
+                  <tr>
+                    <td>
+                      <div class="father-file-add">
+                        <label class="father-file-label" htmlFor="">
+                            Father's Photo
+                        </label>
+                        <br>
+                        <img src="dummy.jpg" width="131px" height="125px">
+                        <br>
+                        <input type="file" name="father-image" class="father-file-input"
+                        />
+                      </div>
+                    </td>
+
+                    <td>
+                      <div class="mother-file-add">
+                        <label class="mother-file-label" htmlFor="">
+                            Mother's Photo
+                          </label>
+                          <br>
+                          <img src="dummy.jpg" width="131px" height="125px">
+                          <br>
+                          <input type="file" name="mother-image" class="mother-file-input"
+                          />
+                      </div>
+                    </td>
+
+                  </tr>
+
+
+
+
+                  <tr>
+
+                    <td>
+                      <div class="student-file-add">
+                        <label class="student-file-label" htmlFor="">
+                            Student's Photo
+                        </label>
+                        <br>
+                        <img src="dummy.jpg" width="131px" height="125px">
+                        <br>
+                        <input type="file" name="student-image" class="student-file-input"
+                        />
+                      </div>
+                    </td>
+
+                    <td>
+                      <div class="adhaar-file-add">
+                        <label class="adhaar-file-label" htmlFor="">
+                            Adhaar's Photo
+                          </label>
+                          <br>
+                          <img src="dummy.jpg" width="131px" height="125px">
+                          <br>
+                          <input type="file" name="adhaar-image" class="adhaar-file-input"
+                          />
+                      </div>
+                    </td>
+
+
+                  </tr>
+
+
+                  <tr>
+                    <td>
+                      <div class="marksheet-file-add">
+                        <label class="marksheet-file-label" htmlFor="">
+                            Marksheet's Photo
+                        </label>
+                        <br>
+                        <img src="dummy.jpg" width="131px" height="125px">
+                        <br>
+                        <input type="file" name="marksheet-image" class="marksheet-file-input"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+
+                </table>
+              </div>
+              
+              </fieldset>
+            
+
+             <br>
+             <br>
+
+
+              <fieldset
+              class="student-details-fieldset"
+              style= "padding-bottom:20px;"
+            >
+              <legend class="student-details-legend">
+                Student Details
+              </legend>
+              <br>
+              <div class="student-details-main-div">
+                <table class="student-details-table">
+
+
+                <tr>
+
+                  <td>
+                    <label class="applied-for-label" htmlFor="applied-for">
+                      Applied For <span style="color:red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <select class="applied-for-select" required>
+                      <option value="nursery">Nursery</option>
+                      <option value="jrkg">JR.KG.</option>
+                      <option value="srkg">SR.KG.</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <label class="academic-year-label" htmlFor="academic-session">
+                      Academic Year <span style="color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <select
+                    class="academic-year-select"
+                    id="academic-session"
+                    required
+                  >
+                    <option value="2021-22">2023-24</option>
+                    <option value="2022-23">2024-25</option>
+                  </select>
+                  </td>
+                </tr>
+                  
+
+                <tr>
+
+                  <td>
+                    <label class="first-name-text" htmlFor="first-name-label">
+                      Student's First Name <span style="color: red;">* </span>
+                    </label>
+
+                  </td>
+
+                  <td>
+                    <input
+                    class="first-name-input"
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    required
+                  /> 
+                  </td>
+
+                  <td>
+                    <label class="last-name-text" htmlFor="last-name-label">
+                      Student's Last Name <span style="color: red;">* </span>
+                    </label>
+
+                  </td>
+
+                  <td>
+                    <input
+                    class="last-name-input"
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    required
+                  /> 
+                  </td>
+                  
+                </tr>
+
+
+                <tr>
+                  <td>
+                    <label class="dob-label" htmlFor="dob">
+                      Date of Birth <span style= "color: red;" >* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input
+                    class="dob-input"
+                    type="date"
+                    id="dob"
+                    required
+                    />
+                  </td>
+
+                  <td>
+                    <label class="dob-inwords-label" htmlFor="dob-inwords">
+                      Date of Birth in Words <span style= "color: red;" >* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input
+                      class="dob-inwords-input"
+                      type="text"
+                      id="dob-inwords"
+                      required
+                    />
+                  </td>
+
+                </tr>
+
+
+                <!-- <div class="age-as-on">Age as on (DD/MM/YYYY)</div> -->
+                <br>
+
+                <tr>
+
+                  <td>
+                    <label class="years-label" htmlFor="years">
+                      Years 
+                    </label>
+                  </td>
+                  
+                  <td>
+                    <input class="years-input" type="text" id="years" />
+                  </td>
+
+                  <td>
+                    <label class="months-label" htmlFor="months">
+                      Months 
+                    </label>
+                  </td>
+
+                  <td>
+                    <input class="months-input" type="text" id="months" />
+                  </td>
+
+                  <td>
+                    <label class="days-label" htmlFor="days">
+                      Days 
+                    </label>
+                  </td>
+
+                  <td>
+                    <input class="days-input" type="text" id="days" />
+                  </td>
+
+                </tr>
+
+                <!-- <br />
+                <hr />
+                <br /> -->
+
+                <tr>
+
+                  <td>
+                    <label class="nationality-label" htmlFor="nationality">
+                      Nationality <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input type="text" class="nationality-input" id="nationality" required/>
+                  </td>
+
+                  <td>
+                    <label class="mothertounge-label" htmlFor="mothertounge">
+                      Mother Tounge <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input type="text" class="mothertounge-input" id="mothertounge" required/>
+                  </td>
+
+                  <td>
+                    <label class="religion-label" htmlFor="religion">
+                      Religion <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input type="text" class="religion-input" id="religion" required/>
+                  </td>
+
+                </tr>
+                  
+                <tr>
+                  <td>
+                    <label class="bloodgroup-label" htmlFor="bloodgroup">
+                      Blood Group  <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <select type="text" class="bloodgroup-select" id="bloodgroup" required>
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="O+">O+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="O-">O-</option>
+                    <option value="AB-">AB-</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <label class="gender-label" htmlFor="gender">
+                      Gender <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input class="gender-input" type="text" name="gender" placeholder="Gender" id="gender" required/>
+                  </td>
+
+                  <td>
+                    <label class="category-label" htmlFor="category">
+                      Category <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input class="category-input" type="radio" id="gen" name="category" value="gen" required/>
+                    <label htmlFor="gen">Gen</label>
+                    <input class="category-input" type="radio" id="sc" name="category" value="sc" required/>
+                    <label htmlFor="sc">SC</label>
+                    <input class="category-input" type="radio" id="st" name="category" value="st" required/>
+                    <label htmlFor="st">ST</label>
+                    <input class="category-input" type="radio" id="obc" name="category" value="obc" required/>
+                    <label htmlFor="obc">OBC</label>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>
+                    <label class="permanent-address-label" htmlFor="permanent-address-input">
+                      Permanent Address <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+                  
+                  <td colspan="5">
+                    <textarea class="permanent-address-input" id="permanent-address-input">
+                    </textarea>
+                  </td>
+                </tr>
+                        
+            
+                
+                <tr>
+                  <td>
+                    <label class="permanent-state-label" htmlFor="">
+                      State <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <select class="permanent-state-select" id="permanent-state" required>
+                      <option value="nursery">Nursery</option>
+                      <option value="jrkg">JR.KG.</option>
+                      <option value="srkg">SR.KG.</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <label class="permanent-district-label" htmlFor="">
+                      District <span style= "color: red;">* </span>
+                  </label>
+                  </td>
+
+                  <td>
+                    <select class="permanent-district-select" id="permanent-district" required>
+                      <option value="nursery">Nursery</option>
+                      <option value="jrkg">JR.KG.</option>
+                      <option value="srkg">SR.KG.</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <label class="permanent-pincode-label" htmlFor="permanent-pincode">
+                      Pincode <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input type="text" class="permanent-pincode-input" id="permanent-pincode" name="permanent-pincode" required/>
+                  </td>
+                </tr>
+
+
+
+                <tr>
+                  <td>
+                    <label class="same-as-permanent-address-label" htmlFor="">
+                      Same as permanent address
+                    </label>
+                  </td>
+
+                  <td>
+                    <input type="checkbox"  class="same-as-permanent-address-check" name="same-as-permanent-address-label-checkbox" id="same-as-permanent-address-label-checkbox">
+                  </td>
+                </tr>
+                
+
+
+                <tr>
+                  <td>
+                    <label class="correspondance-address-label" htmlFor="correspondance-address-input">
+                      Correspondance Address <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td colspan="5">
+                    <textarea class="correspondance-address-input" id="correspondance-address-input">
+                    </textarea>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>
+                    <label class="correspondance-state-label" htmlFor="">
+                      State <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <select class="correspondance-state-select" id="correspondance-state" required>
+                      <option value="nursery">Nursery</option>
+                      <option value="jrkg">JR.KG.</option>
+                      <option value="srkg">SR.KG.</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <label class="correspondance-district-label" htmlFor="">
+                      District <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <select class="correspondance-district-select" id="correspondance-district" required>
+                      <option value="nursery">Nursery</option>
+                      <option value="jrkg">JR.KG.</option>
+                      <option value="srkg">SR.KG.</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <label class="correspondance-pincode-label" htmlFor="">
+                      Pincode <span style= "color: red;">* </span>
+                    </label>
+                  </td>
+
+                  <td>
+                    <input type="text"
+                    class="correspondance-pincode-input"
+                    id="correspondance-pincode"
+                    name="correspondance-pincode"
+                    required
+                    />
+                  </td>
+                </tr>
+
+                </table>
+              </div>
+              </fieldset>
+            
+
+              <br>
+              <br>
+
+
+              <fieldset
+                      class="family-details-fieldset"
+                      style= "padding-bottom:20px;"
+                  >
+                      <legend class="family-details-legend">
+                        Family Details
+                      </legend>
+                      <br>
+                      <div class="family-details-main-div">
+
+                      <table class="family-detail-table">
+                        <tr>
+
+                          <td>
+                            <label class="father-name-label"
+                            htmlFor="father-name">
+                            Father's Name <span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="father-name-input"
+                            type="text"
+                            id="father-name"
+                            placeholder="Name"
+                            required
+                          />
+                          </td>
+
+                          <td>
+                            <label class="mother-name-label"
+                              htmlFor="mother-name">
+                              Mother's Name <span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="mother-name-input"
+                            type="text"
+                            id="mother-name"
+                            placeholder="Name"
+                            required
+                          />
+                          </td>
+
+                        </tr>
+
+
+
+                        <tr>
+                          <td>
+                            <label class="father-occupation-label"
+                                  htmlFor="father-occupation">
+                                  Father's Occupation <span style="color:red;">* </span>
+                              </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="father-occupation-input"
+                            type="text"
+                            id="father-occupation"
+                            placeholder="occupation"
+                            required
+                          />
+                          </td>
+
+
+                          <td>
+                            <label class="mother-occupation-label"
+                                      htmlFor="mother-occupation">
+                                      Mother's Occupation <span style="color:red;">* </span>
+                                  </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="mother-occupation-input"
+                            type="text"
+                            id="mother-occupation"
+                            placeholder="occupation"
+                            required
+                          />
+                          </td>
+                        </tr>
+
+
+
+
+                        <tr>
+                          <td>
+                            <label class="father-contact-label"
+                              htmlFor="father-contact">
+                              Father's Contact No<span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="father-contact-input"
+                            type="text"
+                            id="father-contact"
+                            placeholder="contact"
+                            required
+                          />
+                          </td>
+
+                          <td>
+                            <label class="mother-contact-label"
+                            htmlFor="mother-contact">
+                              Mother's Contact No<span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="mother-contact-input"
+                            type="text"
+                            id="mother-contact"
+                            placeholder="contact"
+                            required
+                          />
+                          </td>
+                        </tr>
+                        
+
+
+                        <tr>
+
+                          <td>
+                            <label class="father-email-label"
+                                  htmlFor="father-email">
+                                  Father's Email <span style="color:red;">* </span>
+                              </label>
+                          </td>
+
+                          <td>
+                            <input
+                                class="father-email-input"
+                                type="text"
+                                id="father-email"
+                                placeholder="email"
+                                required
+                              />
+                          </td>
+
+                          <td>
+                            <label class="mother-email-label"
+                                      htmlFor="mother-email">
+                                      Mother's Email <span style="color:red;">* </span>
+                                  </label>
+                          </td>
+
+                          <td>
+                            <input
+                                    class="mother-email-input"
+                                    type="text"
+                                    id="mother-email"
+                                    placeholder="email"
+                                    required
+                                  />
+                          </td>
+
+                        </tr>
+
+                        <tr>
+
+
+                          <td>
+
+                            <label class="family-annual-income-label"
+                            htmlFor="family-annual-income">
+                            Family Annual Income <span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="family-annual-income-input"
+                            type="text"
+                            id="family-annual-income"
+                            placeholder="income"
+                            required
+                            />
+                          </td>
+                        </tr>
+
+<!--                         
+                        <br>
+                        <hr>
+                        <br> -->
+
+
+                        <tr>
+                          <td>
+                            <label class="guardian-name-label"
+                              htmlFor="guardian-name">
+                              Guardian's Name <span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="guardian-name-input"
+                            type="text"
+                            id="guardian-name"
+                            placeholder="Name"
+                            required
+                            />
+                          </td>
+
+                          <td>
+                            <label class="relation-with-child-label"
+                              htmlFor="relation-with-child">
+                              Relation with child <span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="relation-with-child-input"
+                            type="text"
+                            id="relation-with-child"
+                            required
+                          />
+                          </td>
+
+                        </tr>
+
+
+                        <tr>
+                          <td>
+                            <label class="guardian-occupation-label"
+                              htmlFor="guardian-occupation">
+                              Guardian's Occupation <span style="color:red;">* </span>
+                          </label>
+                          </td>
+
+                          <td>
+                            <input
+                                class="guardian-occupation-input"
+                                type="text"
+                                id="guardian-occupation"
+                                placeholder="occupation"
+                                required
+                                />
+                          </td>
+
+                          <td>
+                            <label class="guardian-contact-label"
+                                htmlFor="guardian-contact">
+                                Guardian's contact No<span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="guardian-contact-input"
+                            type="text"
+                            id="guardian-contact"
+                            placeholder="contact"
+                            required
+                            />
+                          </td>
+                        </tr>
+
+
+
+                        <tr>
+                          <td>
+                            <label class="guardian-email-label"
+                              htmlFor="guardian-email">
+                              Guardian's Email <span style="color:red;">* </span>
+                            </label>
+                          </td>
+                          
+                          <td>
+                            <input
+                                  class="guardian-email-input"
+                                  type="text"
+                                  id="guardian-email"
+                                  placeholder="email"
+                                  required
+                                  />
+                          </td>
+
+                          <td>
+                            <label class="guardian-annual-income-label"
+                              htmlFor="guardian-annual-income">
+                              Guardian's Annual Income<span style="color:red;">* </span>
+                            </label>
+                          </td>
+
+                          <td>
+                            <input
+                            class="guardian-annual-income-input"
+                            type="text"
+                            id="guardian-annual-income"
+                            placeholder="annual-income"
+                            required
+                            />
+                          </td>
+                        </tr>
+                      </table>
+                      </div>
+              </fieldset>
+            
+
+            
+              <br>
+              <br>
+
+              <fieldset class="declaration-fieldset" style= "padding-bottom:20px;">
+                  <legend class="declaration-legend">
+                    Declaration
+                  </legend>
+                  
+                  <table>
+
+                    <tr>
+                      <td>
+                        <label class="declaration1-label" htmlFor="">
+                          I/We hereby declare that the entire information provided by me/us is true and correct
+                          <span style="color:red;">* </span>
+                      </label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox"  class="declration1-check" name="declration1-checkbox">
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <label class="declaration2-label" htmlFor="">
+                          I/We understand that this is an application form not a guarantee for admission
+                          <span style="color:red;">* </span>
+                      </label>
+                      </td>
+
+                      <td>
+                        <input type="checkbox"  class="declaration2-check" name="declaration2-checkbox">
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td colspan="3" class="last-button">
+                        <button class="submit-button" type="submit" id="payment-gateway">
+                          Submit
+                        </button>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                  </div>
+
+
+              </fieldset>
+
+          </section>
+        </form>
+        </div>
+      </section>
+        </td>
+    </tr>
+  
+</table>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
+<script src="script.js"></script>
 </html>

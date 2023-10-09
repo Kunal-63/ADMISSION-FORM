@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table with Single Column</title>
+    <style>
+        /* Style for table cells */
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Optional: Add a scrollable container for the table */
+        .table-container {
+            max-height: 300px; /* Adjust as needed */
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Table with Single Column</h2>
+
+    <div class="table-container">
+        <table id="originalTable">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Age</td>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td>john@example.com</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>jane@example.com</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Bob Johnson</td>
+                    <td>bob@example.com</td>
+                    <td>35</td>
+                </tr>
+                <!-- Add more rows and columns as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Convert the table to a single column
+        document.addEventListener('DOMContentLoaded', function() {
+            const originalTable = document.getElementById('originalTable');
+            const tbody = originalTable.querySelector('tbody');
+            const rows = tbody.querySelectorAll('tr');
+
+            rows.forEach(function(row) {
+                const cells = row.querySelectorAll('td');
+                cells.forEach(function(cell) {
+                    const newRow = document.createElement('tr');
+                    const newCell = document.createElement('td');
+                    newCell.textContent = cell.textContent;
+                    newRow.appendChild(newCell);
+                    tbody.appendChild(newRow);
+                });
+                row.remove();
+            });
+        });
+    </script>
+</body>
+</html>
