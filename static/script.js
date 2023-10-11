@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
             "image": "templates\airport-school-logo.png",
             "handler": function (response){
                 // window.location.replace('success.html');
-                window.location.href = '/submit';
+                // window.location.href = '/submit';
+                return true;
             },
             "theme": {
                 "color": "#3399cc"
@@ -17,13 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         var rzp1 = new Razorpay(options);
         rzp1.on('payment.failed', function (response){
-                alert(response.error.code);
-                alert(response.error.description);
-                alert(response.error.source);
-                alert(response.error.step);
-                alert(response.error.reason);
-                alert(response.error.metadata.order_id);
-                alert(response.error.metadata.payment_id);
+                return false;
         });
         document.getElementById('payment-gateway').onclick = function(e){
             rzp1.open();
@@ -122,8 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkConnectionForm = document.getElementById("myForm");
     // const connectionStatus = document.getElementById("connectionStatus");
 
-    checkConnectionForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        PaymentGateway();
-    })
+    // checkConnectionForm.addEventListener("submit", async (e) => {
+    //     e.preventDefault();
+    //     PaymentGateway();
+    // })
 });

@@ -56,7 +56,7 @@
           </div>
         </section>
 
-        <form class="form-entry-container" id="myForm" method="POST" enctype="multipart/form-data">
+        <form class="form-entry-container" id="myForm" method="POST" enctype="multipart/form-data" action="/submit">
           <section class="student-details">
 
             <br>
@@ -96,7 +96,7 @@
                           <br>
                           <img src="static\images\dummy.jpg" width="131px" height="125px">
                           <br>
-                          <input type="file" name="mother-image" class="mother-file-input"
+                          <input type="file" name="mother-image" class="mother-file-input" required
                           />
                       </div>
                     </td>
@@ -116,7 +116,7 @@
                         <br>
                         <img src="static\images\dummy.jpg" width="131px" height="125px">
                         <br>
-                        <input type="file" name="student-image" class="student-file-input"
+                        <input type="file" name="student-image" class="student-file-input" required
                         />
                       </div>
                     </td>
@@ -127,9 +127,9 @@
                             Adhaar's Photo
                           </label>
                           <br>
-                          <img src="static\images\dummy.jpg" width="131px" height="125px">
+                          <img src="static\images\dummy.jpg" width="131px" height="125px" >
                           <br>
-                          <input type="file" name="adhaar-image" class="adhaar-file-input"
+                          <input type="file" name="adhaar-image" class="adhaar-file-input" required
                           />
                       </div>
                     </td>
@@ -142,12 +142,12 @@
                     <td>
                       <div class="marksheet-file-add">
                         <label class="marksheet-file-label" htmlFor="">
-                            Marksheet's Photo
+                            Birth Certificate
                         </label>
                         <br>
                         <img src="static\images\dummy.jpg" width="131px" height="125px">
                         <br>
-                        <input type="file" name="marksheet-image" class="marksheet-file-input"
+                        <input type="file" name="birth-certificate-image" class="marksheet-file-input" required
                         />
                       </div>
                     </td>
@@ -184,7 +184,7 @@
                   </td>
 
                   <td>
-                    <select class="applied-for-select" required>
+                    <select class="applied-for-select" name="applied-for"  required>
                       <option value="nursery">Nursery</option>
                       <option value="jrkg">JR.KG.</option>
                       <option value="srkg">SR.KG.</option>
@@ -213,7 +213,9 @@
                     <select
                     class="academic-year-select"
                     id="academic-session"
+                    name="academic-session"
                     required
+                    
                   >
                     <option value="2021-22">2023-24</option>
                     <option value="2022-23">2024-25</option>
@@ -236,7 +238,8 @@
                     class="first-name-input"
                     type="text"
                     id="name"
-                    placeholder="Name"
+                    placeholder="First Name"
+                    name="first-name"
                     required
                   /> 
                   </td>
@@ -253,7 +256,8 @@
                     class="last-name-input"
                     type="text"
                     id="name"
-                    placeholder="Name"
+                    placeholder="Last Name"
+                    name="last-name"
                     required
                   /> 
                   </td>
@@ -273,6 +277,7 @@
                     class="dob-input"
                     type="date"
                     id="dob"
+                    name="dob"
                     required
                     />
                   </td>
@@ -288,6 +293,7 @@
                       class="dob-inwords-input"
                       type="text"
                       id="dob-inwords"
+                      name="dob-inwords"
                       required
                     />
                   </td>
@@ -307,7 +313,7 @@
                   </td>
                   
                   <td>
-                    <input class="years-input" type="text" id="years" />
+                    <input class="years-input" type="text" id="years" name="years" />
                   </td>
 
                   <td>
@@ -317,7 +323,7 @@
                   </td>
 
                   <td>
-                    <input class="months-input" type="text" id="months" />
+                    <input class="months-input" type="text" id="months" name="months" />
                   </td>
 
                   <td>
@@ -327,7 +333,7 @@
                   </td>
 
                   <td>
-                    <input class="days-input" type="text" id="days" />
+                    <input class="days-input" type="text" id="days" name="days" />
                   </td>
 
                 </tr>
@@ -345,7 +351,7 @@
                   </td>
 
                   <td>
-                    <input type="text" class="nationality-input" id="nationality" required/>
+                    <input type="text" class="nationality-input" id="nationality" name="nationality" required/>
                   </td>
 
                   <td>
@@ -355,7 +361,7 @@
                   </td>
 
                   <td>
-                    <input type="text" class="mothertounge-input" id="mothertounge" required/>
+                    <input type="text" class="mothertounge-input" id="mothertounge" name="mothertounge" required/>
                   </td>
 
                   <td>
@@ -365,7 +371,7 @@
                   </td>
 
                   <td>
-                    <input type="text" class="religion-input" id="religion" required/>
+                    <input type="text" class="religion-input" id="religion" name="religion" required/>
                   </td>
 
                 </tr>
@@ -378,7 +384,7 @@
                   </td>
 
                   <td>
-                    <select type="text" class="bloodgroup-select" id="bloodgroup" required>
+                    <select type="text" class="bloodgroup-select" id="bloodgroup" name="bloodgroup" required>
                     <option value="A+">A+</option>
                     <option value="B+">B+</option>
                     <option value="O+">O+</option>
@@ -428,7 +434,7 @@
                   </td>
                   
                   <td colspan="5">
-                    <textarea class="permanent-address-input" id="permanent-address-input">
+                    <textarea class="permanent-address-input" id="permanent-address-input" name="permanent-address" required>
                     </textarea>
                   </td>
                 </tr>
@@ -443,7 +449,7 @@
                   </td>
 
                   <td>
-                    <select class="permanent-state-select" id="permanent-state" required>
+                    <select class="permanent-state-select" id="permanent-state" name="permanent-state" required>
                       <option value="nursery">Nursery</option>
                       <option value="jrkg">JR.KG.</option>
                       <option value="srkg">SR.KG.</option>
@@ -469,7 +475,7 @@
                   </td>
 
                   <td>
-                    <select class="permanent-district-select" id="permanent-district" required>
+                    <select class="permanent-district-select" id="permanent-district" name="permanent-district" required>
                       <option value="nursery">Nursery</option>
                       <option value="jrkg">JR.KG.</option>
                       <option value="srkg">SR.KG.</option>
@@ -495,7 +501,7 @@
                   </td>
 
                   <td>
-                    <input type="text" class="permanent-pincode-input" id="permanent-pincode" name="permanent-pincode" required/>
+                    <input type="text" class="permanent-pincode-input" id="permanent-pincode" name="permanent-pincode" name="permanent-pincode" required/>
                   </td>
                 </tr>
 
@@ -509,7 +515,7 @@
                   </td>
 
                   <td>
-                    <input type="checkbox"  class="same-as-permanent-address-check" name="same-as-permanent-address-label-checkbox" id="same-as-permanent-address-label-checkbox">
+                    <input type="checkbox"  class="same-as-permanent-address-check" id="same-as-permanent-address-label-checkbox">
                   </td>
                 </tr>
                 
@@ -523,7 +529,7 @@
                   </td>
 
                   <td colspan="5">
-                    <textarea class="correspondance-address-input" id="correspondance-address-input">
+                    <textarea class="correspondance-address-input" id="correspondance-address-input" name="correspondance-address" required>
                     </textarea>
                   </td>
                 </tr>
@@ -537,7 +543,7 @@
                   </td>
 
                   <td>
-                    <select class="correspondance-state-select" id="correspondance-state" required>
+                    <select class="correspondance-state-select" id="correspondance-state" name="correspondance-state" required>
                       <option value="nursery">Nursery</option>
                       <option value="jrkg">JR.KG.</option>
                       <option value="srkg">SR.KG.</option>
@@ -563,7 +569,7 @@
                   </td>
 
                   <td>
-                    <select class="correspondance-district-select" id="correspondance-district" required>
+                    <select class="correspondance-district-select" id="correspondance-district" name="correspondance-district" required>
                       <option value="nursery">Nursery</option>
                       <option value="jrkg">JR.KG.</option>
                       <option value="srkg">SR.KG.</option>
@@ -632,7 +638,8 @@
                             class="father-name-input"
                             type="text"
                             id="father-name"
-                            placeholder="Name"
+                            placeholder="Father's Name"
+                            name="father-name"
                             required
                           />
                           </td>
@@ -649,7 +656,8 @@
                             class="mother-name-input"
                             type="text"
                             id="mother-name"
-                            placeholder="Name"
+                            placeholder="Mother's Name"
+                            name="mother-name"
                             required
                           />
                           </td>
@@ -671,7 +679,8 @@
                             class="father-occupation-input"
                             type="text"
                             id="father-occupation"
-                            placeholder="occupation"
+                            placeholder="Occupation"
+                            name="father-occupation"
                             required
                           />
                           </td>
@@ -689,7 +698,8 @@
                             class="mother-occupation-input"
                             type="text"
                             id="mother-occupation"
-                            placeholder="occupation"
+                            placeholder="Occupation"
+                            name="mother-occupation"
                             required
                           />
                           </td>
@@ -712,6 +722,7 @@
                             type="text"
                             id="father-contact"
                             placeholder="contact"
+                            name="father-contact"
                             required
                           />
                           </td>
@@ -729,6 +740,7 @@
                             type="text"
                             id="mother-contact"
                             placeholder="contact"
+                            name="mother-contact"
                             required
                           />
                           </td>
@@ -751,6 +763,7 @@
                                 type="text"
                                 id="father-email"
                                 placeholder="email"
+                                name="father-email"
                                 required
                               />
                           </td>
@@ -768,6 +781,7 @@
                                     type="text"
                                     id="mother-email"
                                     placeholder="email"
+                                    name="mother-email"
                                     required
                                   />
                           </td>
@@ -791,6 +805,7 @@
                             type="text"
                             id="family-annual-income"
                             placeholder="income"
+                            name="family-annual-income"
                             required
                             />
                           </td>
@@ -816,6 +831,7 @@
                             type="text"
                             id="guardian-name"
                             placeholder="Name"
+                            name="guardian-name"
                             required
                             />
                           </td>
@@ -832,6 +848,7 @@
                             class="relation-with-child-input"
                             type="text"
                             id="relation-with-child"
+                            placeholder="relation"
                             required
                           />
                           </td>
@@ -870,6 +887,7 @@
                             type="text"
                             id="guardian-contact"
                             placeholder="contact"
+                            name="guardian-contact"
                             required
                             />
                           </td>
@@ -937,7 +955,7 @@
                       </td>
 
                       <td>
-                        <input type="checkbox"  class="declration1-check" name="declration1-checkbox" required>
+                        <input type="checkbox"  class="declration1-check" ] required>
                       </td>
                     </tr>
 
@@ -950,13 +968,13 @@
                       </td>
 
                       <td>
-                        <input type="checkbox"  class="declaration2-check" name="declaration2-checkbox" required>
+                        <input type="checkbox"  class="declaration2-check" ] required>
                       </td>
                     </tr>
 
                     <tr>
                       <td colspan="3" class="last-button">
-                        <button class="submit-button" type="submit" id="payment-gateway">
+                        <button class="submit-button" type="submit" id="payment-gateway" onsubmit="return PayemntGateway()">
                           Submit
                         </button>
                       </td>
