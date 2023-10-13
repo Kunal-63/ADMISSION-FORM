@@ -12,7 +12,9 @@ td {
 /* tr{
   padding: 5px;
 } */
-
+input{
+  text-transform: uppercase;
+}
 
 .full-page,.attach-table,.student-details-table,.family-detail-table{
     margin-left: auto;

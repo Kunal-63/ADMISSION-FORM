@@ -98,6 +98,7 @@ def upload_file():
     for i in request.form:
         lst.append(request.form[i])
     print(lst)
+    print(len(lst))
 
     
     cur.execute(query, lst)

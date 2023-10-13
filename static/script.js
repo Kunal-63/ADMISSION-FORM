@@ -121,4 +121,21 @@ document.addEventListener('DOMContentLoaded', function() {
     //     e.preventDefault();
     //     PaymentGateway();
     // })
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting in the traditional way
+    
+        // Create a FormData object to collect all form data
+        var formData = new FormData(this);
+    
+        // You can now access and manipulate the formData object
+        // For example, you can convert it to a JSON object for further processing
+        var formDataObject = {};
+        formData.forEach(function(value, key) {
+            formDataObject[key] = value;
+        });
+    
+        // You can now access and manipulate the formDataObject
+        console.log(formDataObject);
+    });
+    
 });
