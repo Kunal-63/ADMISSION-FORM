@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     function PaymentGateway() {
         var options = {
-            "key": "rzp_test_HDF1qRvb6Omkkz", 
+            "key": "rzp_test_KBSyL22SReUzU2", 
             "amount": "100", 
             "currency": "INR",
             "name": "Airport School ",
