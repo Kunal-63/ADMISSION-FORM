@@ -16,6 +16,9 @@ input{
   text-transform: uppercase;
 }
 
+.father-email-input, .mother-email-input, .guardian-email-input{
+  text-transform: lowercase;
+}
 .full-page,.attach-table,.student-details-table,.family-detail-table{
     margin-left: auto;
     margin-right: auto;
@@ -294,7 +297,7 @@ label{
 
 
 
-  .father-name-label,.father-occupation-label,.father-contact-label,.father-email-label,.mother-name-label,.mother-occupation-label,.mother-contact-label,.mother-email-label,.family-annual-income-label{
+  .father-name-label,.father-occupation-label,.father-contact-label,.father-email-label,.mother-name-label,.mother-occupation-label,.mother-contact-label,.mother-email-label,.family-annual-income-label, .WhatsApp-label{
     font-size: 15px;
     font-weight: bold;
     margin: auto;
@@ -305,7 +308,7 @@ label{
   }
 
 
-  .father-name-input,.father-occupation-input,.father-contact-input,.father-email-input, .mother-name-input,.mother-occupation-input,.mother-contact-input,.mother-email-input,.family-annual-income-input{
+  .father-name-input,.father-occupation-input,.father-contact-input,.father-email-input, .mother-name-input,.mother-occupation-input,.mother-contact-input,.mother-email-input,.family-annual-income-input, .WhatsApp-input{
     padding: 5px 40px;
   }
 
