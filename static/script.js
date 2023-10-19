@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     
-
     const permanentAddressInput = document.getElementById('permanent-address-input');
     const temporaryAddressInput = document.getElementById('correspondance-address-input');
     const sameAddressCheckbox = document.getElementById('same-as-permanent-address-label-checkbox');
@@ -89,83 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${month} ${day}, ${year}`;
     }
 
-    // var options = {
-    //     "key": "rzp_test_KBSyL22SReUzU2", 
-    //     "amount": "100", 
-    //     "currency": "INR",
-    //     "name": "Airport School ",
-    //     "description": "Test Transaction",
-    //     "image": "templates\airport-school-logo.png",
-    //     "handler": function (response){
-    //         // window.location.replace('success.html');
-    //         // window.location.href = '/submit';
-    //         return true;
-    //     },
-    //     "theme": {
-    //         "color": "#3399cc"
-    //     }
-    // };
-    // var rzp1 = new Razorpay(options);
-    // rzp1.on('payment.failed', function (response){
-    //         return false;
-    // });
-    // document.getElementsByClassName('submit-button').onclick = function(e){
-    //     rzp1.open();
-    //     e.preventDefault();
-    // }
-
-
-
-
-    // const checkConnectionForm = document.getElementById("myForm");
-    // const connectionStatus = document.getElementById("connectionStatus");
-
-    // checkConnectionForm.addEventListener("submit", async (e) => {
-    //     e.preventDefault();
-    //     PaymentGateway();
-    // })
-    // document.getElementById("myForm").addEventListener("submit", function(event) {
-    //     event.preventDefault();
-        
-       
-
-    //     alert("Payment Successful");
-    //     document.getElementById("myForm").submit();
-    //     // Create a FormData object to collect all form data
-    //     var formData = new FormData(this);
-    
-    //     // You can now access and manipulate the formData object
-    //     // For example, you can convert it to a JSON object for further processing
-    //     var formDataObject = {};
-    //     formData.forEach(function(value, key) {
-    //         formDataObject[key] = value;
-    //     });
-    
-    //     // You can now access and manipulate the formDataObject
-    //     console.log(formDataObject);
-    
-        
-    // });
-
-    function PaymentGateway(){
-        var options = {
-            "key": "rzp_test_KBSyL22SReUzU2",
-            "amount": "100",
-            "currency": "INR",
-            "name": "Airport School",
-            "description": "Test Transaction",
-            "image": "templates\airport-school-logo.png",
-            "handler": function (response){
-                alert("Payment Successful");
-                document.getElementById("myForm").submit();
-            },
-            "theme": {
-                "color": "#3399cc"
-            }
-        };
-        var rzp1 = new Razorpay(options);
-        rzp1.open();
-    }
 
 
 

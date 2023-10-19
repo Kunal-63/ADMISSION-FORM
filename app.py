@@ -117,8 +117,8 @@ def upload_file():
     connection.starttls()
     connection.login(user = "kunaladwani1456@gmail.com", password = "akzg uqgo opis tunl")
 
-    connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= father_email, msg= "Subject: Admission Form\n\nYour form has been submitted successfully")
-    connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= mother_email, msg= "Subject: Admission Form\n\nYour form has been submitted successfully")
+    connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= father_email, msg= "Subject: Admission Form\n\nYour form has been submitted successfully Testing")
+    connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= mother_email, msg= "Subject: Admission Form\n\nYour form has been submitted successfully Testing")
 
     connection.close()
 
@@ -133,11 +133,16 @@ def upload_success():
 
 @app.route('/admin', methods=['GET'])
 def admin():
-    return render_template('admin.php')
+    db1 = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
+    cur1 = db1.cursor()
+
+    cur1.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
+    data=cur1.fetchall()
+    return render_template('admin.html', data=data)
 
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=False, host="0.0.0.0")
