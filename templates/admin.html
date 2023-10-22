@@ -1,31 +1,218 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Admission Form Data</title>
-</head>
-<body>
+  <head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="static/css/admin.css" type="text/css" />
+  </head>
+  <body>
     <h1>Admission Form Data</h1>
-    
-    <table border="1">
+
+    <form
+      action="/delete"
+      method="POST"
+      onsubmit="return confirm('Are you sure you want to Continue?')"
+    >
+      <table>
         <tr>
-            <th></th>
-            <th>Form ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Gender</th>
-            <th>Father's Name</th>
-            <th>Mother's Name</th>
-            <th></th>
-            <th></th>
-            
+          <th>
+            <input
+              type="checkbox"
+              id="selectAll"
+              onclick="selectAllCheckboxes()"
+            />
+          </th>
+          <th>
+            <div>
+              Form ID
+              <span class="sort-icon up" onclick="sortTable(1,'up')"
+                >&#9650;</span
+              >
+              <span class="sort-icon down active" onclick="sortTable(1, 'down')"
+                >&#9660;</span
+              >
+            </div>
+          </th>
+          <th>
+            <div>
+              First Name
+              <span class="sort-icon up" onclick="sortTable(2, 'up')"
+                >&#9650;</span
+              >
+              <span class="sort-icon down active" onclick="sortTable(2, 'down')"
+                >&#9660;</span
+              >
+            </div>
+          </th>
+          <th>
+            Last Name
+            <span class="sort-icon up" onclick="sortTable(3, 'up')"
+              >&#9650;</span
+            >
+            <span class="sort-icon down active" onclick="sortTable(3, 'down')"
+              >&#9660;</span
+            >
+          </th>
+          <th>
+            Gender
+            <span class="sort-icon up" onclick="sortTable(4, 'up')"
+              >&#9650;</span
+            >
+            <span class="sort-icon down active" onclick="sortTable(4, 'down')"
+              >&#9660;</span
+            >
+          </th>
+          <th>
+            Father's Name
+            <span class="sort-icon up" onclick="sortTable(5, 'up')"
+              >&#9650;</span
+            >
+            <span class="sort-icon down active" onclick="sortTable(5, 'down')"
+              >&#9660;</span
+            >
+          </th>
+          <th>
+            Mother's Name
+            <span class="sort-icon up" onclick="sortTable(6, 'up')"
+              >&#9650;</span
+            >
+            <span class="sort-icon down active" onclick="sortTable(6, 'down')"
+              >&#9660;</span
+            >
+          </th>
+          <th></th>
+          <th></th>
         </tr>
         {% for row in data %}
         <tr>
-            <td>{{ row[0] }}</td>
-            <td>{{ row[1] }}</td>
-            <td>{{ row[2] }}</td>
+          <td>
+            <input
+              type="checkbox"
+              name="selected_checkboxes"
+              value="{{ row[0] }}"
+            />
+          </td>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+          <td><a href="/view?form_id={{row[0]}}">View</a></td>
+          <td><button>Edit</button></td>
         </tr>
         {% endfor %}
-    </table>
-</body>
+      </table>
+
+      <input type="submit" name="action" value="Delete" />
+      <input type="button" id="messageButton" value="Message" />
+      <input type="submit" name="action" value="Reports" />
+
+      <div id="messageModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeMessageModal()">&times;</span>
+          <textarea
+            id="messageInput"
+            name="message"
+            placeholder="Type your message here"
+          ></textarea>
+          <input id="sendButton" type="submit" name="action" value="Send" />
+        </div>
+      </div>
+    </form>
+  </body>
+
+  <script>
+    function selectAllCheckboxes() {
+      var checkboxes = document.getElementsByName("selected_checkboxes");
+      var selectAllCheckbox = document.getElementById("selectAll");
+
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = selectAllCheckbox.checked;
+      }
+    }
+
+    document.getElementById("messageButton").onclick = function () {
+      document.getElementById("messageModal").style.display = "block";
+    };
+
+    function closeMessageModal() {
+      document.getElementById("messageModal").style.display = "none";
+    }
+
+    document.getElementById("sendButton").onclick = function () {
+      var message = document.getElementById("messageInput").value;
+
+      // Validate the message
+      if (!message) {
+        document.getElementById("messageError").textContent =
+          "Message cannot be empty.";
+        return false; // Prevent form submission
+      }
+
+      // Clear any previous error message
+      document.getElementById("messageError").textContent = "";
+
+      // You can process or send the message here
+      alert("Message sent: " + message);
+      closeMessageModal();
+    };
+
+    var sortingOrder = {
+      columnIndex: -1, // Initial value to indicate no sorting
+      ascending: true, // Default sorting order is ascending
+    };
+
+    function sortTable(columnIndex, direction) {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.querySelector("table");
+      switching = true;
+
+      // Reset the sorting icons in all columns
+      table.rows[0].querySelectorAll(".sort-icon").forEach(function (el) {
+        el.classList.remove("active");
+      });
+
+      // Determine the sorting direction
+      if (direction === "up") {
+        sortingOrder.ascending = true;
+      } else if (direction === "down") {
+        sortingOrder.ascending = false;
+      }
+
+      // Set the sorting icons for the clicked column
+      var sortIconUp =
+        table.rows[0].querySelectorAll(".sort-icon.up")[columnIndex];
+      var sortIconDown =
+        table.rows[0].querySelectorAll(".sort-icon.down")[columnIndex];
+      sortIconUp.classList.toggle("active", sortingOrder.ascending);
+      sortIconDown.classList.toggle("active", !sortingOrder.ascending);
+
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        shouldSwitch = false;
+
+        for (i = 1; i < rows.length - 1; i++) {
+          x = rows[i].getElementsByTagName("td")[columnIndex];
+          y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+          var xValue = x.textContent.toLowerCase();
+          var yValue = y.textContent.toLowerCase();
+
+          if (
+            (xValue > yValue && sortingOrder.ascending) ||
+            (xValue < yValue && !sortingOrder.ascending)
+          ) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+  </script>
 </html>

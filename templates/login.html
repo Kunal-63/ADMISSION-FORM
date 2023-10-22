@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/login-success" method="POST">
+            <label for="username">Form ID:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Form ID" >
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" >
+
+            <button type="submit">Login</button>
+            <button name="action" type="submit" value="Forgot Password?" > Forgot Password? </button>
+        </form>
+    </div>
+    
+</body>
+</html>

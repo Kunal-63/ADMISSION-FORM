@@ -1,0 +1,71 @@
+/* CSS for the forgot password page matching the login page style */
+body {
+  background-color: #f5f5f5;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #072445; /* Adjust the color as needed */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  max-width: 350px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"],
+button[type="button"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #072445;
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #333;
+}
+
+button[type="button"] {
+  color: #072445; /* Change link text color to match your theme */
+  text-decoration: none;
+  margin: auto; /* Remove underline from the link */
+  margin-top: 10px; /* Add some spacing below the "Login" submit */
+  display: block; /* Ensure the link takes the full width */
+  text-align: center; /* Center-align the link */
+}
+
+button[type="button"]:hover {
+  color: #333; /* Change link text color on hover */
+}
