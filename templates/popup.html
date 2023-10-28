@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+    <link rel="stylesheet" href="static\css\popup.css">
+</head>
+<body>
+    <div class="container">
+        
+        <form action="/user-details" method="POST">
+            <h1>Details</h1>
+            <label for="father-name">Father's Name:</label>
+            <input type="text" id="father-name" father-name="father-name" placeholder="Enter Father's Name" required>
+
+            <label for="mother-name">Mother's Name:</label>
+            <input type="text" id="mother-name" mother-name="mother-name" placeholder="Enter Mother's Name" required>
+
+            <label for="child-name">Child's Name:</label>
+            <input type="text" id="child-name" child-name="child-name" placeholder="Enter Child's Name" required>
+
+            <label for="dob">Date of Birth of Child:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="whatsapp">WhatsApp Number:</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Enter WhatsApp Number" required>
+            
+            <input type="hidden" id="hidden" name="action" value="1"/>
+            
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+</body>
+<script src="static\scripts\popup.js"></script> 
+
+</html>

@@ -14,13 +14,13 @@ connection.login(user = "kunaladwani1456@gmail.com", password = "akzg uqgo opis 
 
 cur.execute('''CREATE TABLE IF NOT EXISTS ADMISSION_FORM (
     FORM_ID VARCHAR(255) PRIMARY KEY,
-    FATHER_PATH VARCHAR(255) NOT NULL,
-    MOTHER_PATH VARCHAR(255) NOT NULL,
-    STUDENT_PATH VARCHAR(255) NOT NULL,
-    ADHAAR_PATH VARCHAR(255) NOT NULL,
-    BIRTH_PATH VARCHAR(255) NOT NULL,
+    FATHER_PATH varchar(255) NOT NULL,
+    MOTHER_PATH varchar(255) NOT NULL,
+    STUDENT_PATH varchar(255) NOT NULL,
+    ADHAAR_PATH varchar(255) NOT NULL,
+    BIRTH_PATH varchar(255) NOT NULL,
     APPLIED_FOR VARCHAR(255) NOT NULL,
-    ACADEMIC_YEAR VARCHAR(255) NOT NULL,
+    ACADEMIC_YEAR VARCHAR(255) NOT NULL,    
     STUDENT_FIRST_NAME VARCHAR(255) NOT NULL,
     STUDENT_LAST_NAME VARCHAR(255) NOT NULL,
     DATE_OF_BIRTH VARCHAR(255) NOT NULL,
@@ -57,8 +57,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS ADMISSION_FORM (
     GUARDIAN_CONTACT VARCHAR(255) NOT NULL
 )''')
 
-query = '''INSERT INTO ADMISSION_FORM (
-    FORM_ID,
+query = '''INSERT INTO ADMISSION_FORM (FORM_ID,
     FATHER_PATH, MOTHER_PATH,STUDENT_PATH,ADHAAR_PATH,BIRTH_PATH,
     APPLIED_FOR, ACADEMIC_YEAR, STUDENT_FIRST_NAME, STUDENT_LAST_NAME,
     DATE_OF_BIRTH, DATE_OF_BIRTH_IN_WORDS, YEARS, MONTHS, DAYS, NATIONALITY,
@@ -108,8 +107,10 @@ def upload_file():
     for file_name in file_names:
         image = request.files[file_name]
         if image.filename != '':
-            image.save(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
-            lst.append(os.path.join(app.config['UPLOAD_FOLDER'], image.filename))
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'],image.filename)
+            image_path = image_path.replace(" ", "-")
+            image.save(image_path)
+            lst.append("..\\"+image_path)
 
     # for file_name in file_names:
     #     image = request.files[file_name].read()
@@ -124,41 +125,14 @@ def upload_file():
 
     
     
-    # print(father_email, mother_email) akzg uqgo opis tunl(
-   
-
     connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= father_email, msg= "Subject: Admission Form\n\nYour form has been submitted successfully\n\nYour form id is " + form_id + "\n\nPlease keep this id for future reference")
     connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= mother_email, msg= "Subject: Admission Form\n\nYour form has been submitted successfully\n\nYour form id is " + form_id + "\n\nPlease keep this id for future reference")
 
-    # connection.close()
+
 
 
     return render_template('success.html')
 
-
-
-# @app.route('/upload-success', methods=['GET'])
-# def upload_success():
-#     return render_template('success.html')
-
-# @app.route('/admin', methods=['GET'])
-# def admin():
-#     db1 = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
-#     cur1 = db1.cursor()
-
-#     cur1.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
-#     data=cur1.fetchall()
-#     return render_template('admin.html', data=data)
-
-# @app.route('/view', methods=['GET'])
-# def view():
-#     form_id = request.args.get('form_id')
-#     db2 = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
-#     cur2 = db2.cursor()
-
-#     cur2.execute("SELECT * FROM ADMISSION_FORM WHERE FORM_ID = %s", (form_id,))
-#     data=cur2.fetchall()
-#     return render_template('view.html', data=data)
 
 @app.route('/delete', methods=['POST'])
 def delete():
@@ -213,7 +187,8 @@ def login_success():
 
     action = request.form.get("action")
     if action == "Forgot Password?":
-        return render_template('forgot_password.html')
+        form_id = request.form.get("username")
+        return render_template('forgot_password.html', data=[form_id])
     else:
 
         data = request.form
@@ -238,47 +213,50 @@ def login_success():
             if data:
                 logincur.execute("SELECT * FROM ADMISSION_FORM WHERE FORM_ID = %s", (username,))
                 data = logincur.fetchall()
+                # print(data)
+                print(data)
+                data[0][1] = r"{}".format(data[0][1])
+                data[0][2] = r"{}".format(data[0][2])
+                data[0][3] = r"{}".format(data[0][3])
+                data[0][4] = r"{}".format(data[0][4])
+                data[0][5] = r"{}".format(data[0][5])
+                print(data)
+
+                print(data)
                 return render_template('view.html', data=data)
             else:
                 return "Invalid Credentials"
 
-@app.route('/send-otp', methods=['POST'])
+@app.route('/send-otp', methods=['POST', 'GET'])
 def send_otp():
-    # print("send otp request received")
-    action = request.form.get("action")
-    # print(action)
-    if action == "Send OTP":
+    # print("send otp request received"
+    if request.method == 'POST':
         data = request.form
         print(data)
         username = data['username']
+        user_otp = data['otp']
+        new_password = data['password']
+        new_password = new_password.strip()
+
+        stored_otp = session.get('otp')
+        if user_otp == stored_otp:
+        
+            reset_user_password(username, new_password)
+            return render_template('login.html')
+        else:
+            return "Invalid OTP"
+      
+    else:
+        
+        username = request.args.get("username")
         username = username.strip()
         otp = generate_otp()
         send_otp_to_user(username, otp)
 
         session['otp'] = otp
-        return redirect(request.referrer)
-    elif action == 'Submit':
-        return redirect(url_for('reset-password'))
-    else:
-        return "Unknown Action"
+        return render_template('forgot_password.html', data=[username])
 
 
-@app.route('/reset-password', methods=['POST'])
-def reset_password():
-    print("reset password request received")
-    data = request.form
-    username = data['username']
-    user_otp = data['otp']
-    new_password = data['password']
-    new_password = new_password.strip()
-
-    stored_otp = session.get('otp')
-    if user_otp == stored_otp:
-       
-        reset_user_password(username, new_password)
-        return render_template('login.html')
-    else:
-        return "Invalid OTP"
 
 
 def generate_otp():
@@ -304,11 +282,20 @@ def reset_user_password(username, new_password):
     reset_passworddb.close()
 
 
+@app.route('/user-details', methods=['POST'])
+def user_details():
+    data = request.form
+    action = data['action']
+    if action == "true":
+        return render_template('index.html')
+    else:
+        return "Unknown Action"
+
     
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('popup.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

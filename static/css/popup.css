@@ -1,0 +1,62 @@
+/* CSS for the user details form with increased width and length */
+body {
+  background-color: #f5f5f5;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+input{
+    text-transform: uppercase;
+}
+input::placeholder{
+    text-transform: capitalize;
+} 
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #072445; /* Adjust the color as needed */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  max-width: 500px; /* Increase the maximum width for the form */
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"] {
+  width: 95%; /* Make the input fields span the full width of the form */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 95%;
+  padding: 10px;
+  background-color: #072445;
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #333;
+}

@@ -1,11 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>View</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static\css\view.css">
 </head>
+
+
+
 <body>
-  Work under progress ... {{data}}
+  <div class="image">
+    <img
+      class="hero-img"
+      src="static\images\hero.jpg"
+      alt="admissions"
+      style="width:100%;" 
+    />
+  </div>
+
+
+
+
+  <form class="form-entry-container" id="myForm" method="POST" enctype="multipart/form-data" action="/submit">
+
+
+      <fieldset class="photo-add-fieldset" style= "padding-bottom:20px;">
+
+      <legend class="photo-add-legend">
+        Documents
+      </legend>
+
+      <div class="attach-main-div">
+
+        <div class="father-file-add">
+         <a href="{{data[0][1]}}">
+         </a>
+        </div>
+
+        <div class="mother-file-add">
+         <a href="{{data[0][2]}}" >
+         </a>
+          
+        </div>
+
+        <div class="student-file-add">
+         <a href="{{data[0][3]}}" >
+         </a>
+         
+        </div>
+
+
+        <div class="adhaar-file-add">
+         <a href="{{data[0][4]}}" >
+         </a>
+          
+        </div>
+
+        <div class="birth-certificate-file-add">
+         <a href="{{data[0][5]}}" >
+         </a>
+        
+        </div>
+
+      </div>
+      
+      </fieldset>
+
+      <fieldset class="student-details-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="student-details-legend">
+          Student Details
+        </legend>
+
+        <div class="student-details-main-div">
+
+          <div class="container-div" id="applied-for-div">
+            <label class="label" id="applied-for-label" htmlFor="applied-for">
+              Applied For <span style="color:red;">* </span>
+            </label>
+            <select class="input" id="applied-for-select" name="applied-for"  required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="academic-year-div">
+            <label class="label" id="academic-year-label" htmlFor="academic-session">
+              Academic Year <span style="color: red;">* </span>
+            </label>
+            <select
+              class="input" 
+              id="academic-year-select"
+              name="academic-session"
+              required
+              
+            >
+              <option value="2021-22">2023-24</option>
+              <option value="2022-23">2024-25</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="student-first-name-div">
+            <label class="label" id="student-first-name-text" htmlFor="student-first-name-label">
+              Student's First Name <span style="color: red;">* </span>
+            </label>
+            <input
+              class="input" 
+              id="student-first-name-input"
+              type="text"
+              placeholder="Student's First Name"
+              name="student-first-name"
+              required
+            /> 
+          </div>
+          
+
+          <div class="container-div" id="student-last-name-div">
+            <label class="label" id="student-last-name-text" htmlFor="student-last-name-label">
+              Student's Last Name <span style="color: red;">* </span>
+            </label>
+            <input
+              class="input" 
+              id="student-last-name-input"
+              type="text"
+              placeholder="Student's Last Name"
+              name="student-last-name"
+              required
+            /> 
+          </div>
+
+
+          <div class="container-div" id="dob-div">
+            <label class="label" id="dob-label" htmlFor="dob">
+              Date of Birth <span style= "color: red;" >* </span>
+            </label>
+            <input
+              class="input"
+              id="dob-input"
+              type="date"
+              name="dob"
+              required
+            />
+          </div>
+
+
+          <div class="container-div" id="dob-inwords-div">
+            <label class="label" id="dob-inwords-label" htmlFor="dob-inwords">
+              Date of Birth in Words <span style= "color: red;" >* </span>
+            </label>
+            <input
+              class="input"
+              id="dob-inwords-input"
+              type="text"
+              name="dob-inwords"
+              required
+            />
+          </div>
+
+
+          <div class="container-div" id="years-div">
+            <label class="label" id="years-label" htmlFor="years">
+              Years 
+            </label>
+            <input class="input" id="years-input" type="text" name="years" />
+          </div>
+
+          <div class="container-div" id="manths-div">
+            <label class="label" id="months-label" htmlFor="months">
+              Months 
+            </label>
+            <input class="input" id="months-input" type="text" name="months" />
+          </div>
+
+          <div class="container-div" id="days-div">
+            <label class="label" id="days-label" htmlFor="days">
+              Days 
+            </label>
+            <input class="input" id="days-input" type="text" name="days" />
+          </div>
+
+
+          <div class="container-div" id="nationality-div">
+            <label class="label" id="nationality-label" htmlFor="nationality">
+              Nationality <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="nationality-input" name="nationality" required/>
+          </div>
+
+          
+          <div class="container-div" id="mothertounge-div">
+            <label class="label" id="mothertounge-label" htmlFor="mothertounge">
+              Mother Tounge <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="mothertounge-input" name="mothertounge" required/>
+          </div>
+
+
+          <div class="container-div" id="religion-div">
+            <label class="label" id="religion-label" htmlFor="religion">
+              Religion <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="religion-input" name="religion" required/>
+          </div>
+
+
+          <div class="container-div" id="bloodgroup-div">
+            <label class="label" id="bloodgroup-label" htmlFor="bloodgroup">
+              Blood Group  <span style= "color: red;">* </span>
+            </label>
+            <select class="input" type="text" id="bloodgroup-select" name="bloodgroup" required>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="O+">O+</option>
+              <option value="AB+">AB+</option>
+              <option value="A-">A-</option>
+              <option value="B-">B-</option>
+              <option value="O-">O-</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+
+          <div class="container-div" id="gender-div">
+            <label class="label" id="gender-label" htmlFor="gender">
+              Gender <span style= "color: red;">* </span>
+            </label>
+            <input class="input" id="gender-input" type="text" name="gender" placeholder="Gender" required/>
+          </div>
+
+
+          <div class="container-div" id="category-div">
+            <label class="label" id="category-label" htmlFor="category">
+              Category <span style= "color: red;">* </span>
+            </label>
+            <input id="category-input" type="radio" name="category" value="gen" required/>
+            <label htmlFor="gen">Gen</label>
+            <input id="category-input" type="radio" name="category" value="sc" required/>
+            <label htmlFor="sc">SC</label>
+            <input id="category-input" type="radio" name="category" value="st" required/>
+            <label htmlFor="st">ST</label>
+            <input id="category-input" type="radio" name="category" value="obc" required/>
+            <label htmlFor="obc">OBC</label>
+          </div>
+
+
+          <div class="container-div" id="permanent-address-div">
+            <label class="label" id="permanent-address-label" htmlFor="permanent-address-input">
+              Permanent Address <span style= "color: red;">* </span>
+            </label>
+            <textarea class="input" id="permanent-address-input" name="permanent-address" required>
+            </textarea>
+          </div>
+
+
+          <div class="container-div" id="permanent-state-div">
+            <label class="label" id="permanent-state-label" htmlFor="">
+              State <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="permanent-state-select" name="permanent-state" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="permanent-district-div">
+            <label class="label" id="permanent-district-label" htmlFor="">
+              District <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="permanent-district-select" name="permanent-district" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="permanent-pincode-div">
+            <label class="label" id="permanent-pincode-label" htmlFor="permanent-pincode">
+              Pincode <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="permanent-pincode-input" name="permanent-pincode" name="permanent-pincode" required/>
+          </div>
+
+
+          <div class="container-div" id="same-as permanent-address-div">
+            <label class="label" id="same-as-permanent-address-label" htmlFor="">
+              Same as permanent address
+            </label>
+            <input type="checkbox" id="same-as-permanent-address-check">
+          </div>
+
+
+          <div class="container-div" id="correspondance-address-div">
+            <label class="label" id="correspondance-address-label" htmlFor="correspondance-address-input">
+              Correspondance Address <span style= "color: red;">* </span>
+            </label>
+            <textarea class="input" id="correspondance-address-input" name="correspondance-address" required>
+            </textarea>
+          </div>
+
+
+          <div class="container-div" id="correspondance-state-div">
+            <label class="label" id="correspondance-state-label" htmlFor="">
+              State <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="correspondance-state-select" name="correspondance-state" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="correspondance-district-div">
+            <label class="label" id="correspondance-district-label" htmlFor="">
+              District <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="correspondance-district-select" name="correspondance-district" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="correspondance-pincode-div">
+            <label class="label" id="correspondance-pincode-label" htmlFor="">
+              Pincode <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text"
+              id="correspondance-pincode-input"
+              name="correspondance-pincode"
+              required
+            />
+          </div>
+
+
+
+        </div>
+      </fieldset>
+
+      <fieldset class="family-details-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="family-details-legend">
+          Family Details
+        </legend>
+
+        <div class="family-details-main-div">
+
+        
+          <div class="container-div" id="father-name-div">
+            <label class="label" id="father-name-label" htmlFor="father-name">
+              Father's Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-name-input" type="text" id="father-name" placeholder="Father's Name" name="father-name" required/>
+          </div>
+
+          <div class="container-div" id="mother-name-div">
+            <label class="label" id="mother-name-label" htmlFor="mother-name">
+              Mother's Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-name-input" type="text" id="mother-name" placeholder="Mother's Name" name="mother-name" required/>
+          </div>
+      
+          <div class="container-div" id="father-occupation-div">
+            <label class="label" id="father-occupation-label" htmlFor="father-occupation">
+              Father's Occupation <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-occupation-input" type="text" id="father-occupation" placeholder="Occupation" name="father-occupation" required/>
+          </div>
+
+          <div class="container-div" id="mother-occupation-div">
+            <label class="label" id="mother-occupation-label" htmlFor="mother-occupation">
+              Mother's Occupation <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-occupation-input" type="text" id="mother-occupation" placeholder="Occupation" name="mother-occupation" required/>
+          </div>
+
+          <div class="container-div" id="father-contact-div">
+            <label class="label" id="father-contact-label" htmlFor="father-contact">
+              Father's Contact <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-contact-input" type="text" id="father-contact" placeholder="Contact" name="father-contact" required/>
+          </div>
+
+          <div class="container-div" id="mother-contact-div">
+            <label class="label" id="mother-contact-label" htmlFor="mother-contact">
+              Mother's Contact <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-contact-input" type="text" id="mother-contact" placeholder="Contact" name="mother-contact" required/>
+          </div>
+
+          <div class="container-div" id="father-email-div">
+            <label class="label" id="father-email-label" htmlFor="father-email">
+              Father's Email <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-email-input" type="text" id="father-email" placeholder="Email" name="father-email" required/>
+          </div>
+
+          <div class="container-div" id="mother-email-div">
+            <label class="label" id="mother-email-label" htmlFor="mother-email">
+              Mother's Email <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-email-input" type="text" id="mother-email" placeholder="Email" name="mother-email" required/>
+          </div>
+
+          <div class="container-div" id="family-annual-income-div">
+            <label class="label" id="family-annual-income-label" htmlFor="family-annual-income">
+              Family Annual Income <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="family-annual-income-input" type="text" id="family-annual-income" placeholder="Income" name="family-annual-income" required/>
+          </div>
+
+          <div class="container-div" id="guardian-name-div">
+            <label class="label" id="guardian-name-label" htmlFor="guardian-name">
+              Guardian's Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="guardian-name-input" type="text" id="guardian-name" placeholder="Guardian's Name" name="guardian-name" required/>
+          </div>
+
+          <div class="container-div" id="relation-with-child-div">
+            <label class="label" id="relation-with-child-label"  htmlFor="relation-with-child">
+              Relation with child <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="relation-with-child-input" type="text" id="relation-with-child" placeholder="Relation" required/>
+          </div>
+
+          <div class="container-div" id="guardian-contact-div">
+            <label class="label" id="guardian-contact-label" htmlFor="guardian-contact">
+              Guardian's Contact <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="guardian-contact-input" type="text" id="guardian-contact" placeholder="Contact" name="guardian-contact" required/>
+          </div>
+
+
+      </div>
+      </fieldset>
+
+      <fieldset class="declaration-fieldset" style= "padding-bottom:20px;">
+        <legend class="declaration-legend">
+          Declaration
+        </legend>
+
+        <div class="declaration-main-div">
+
+
+          <div class="container-div" id="declaration1">
+            <label class="label"  id="declaration1-label" htmlFor="">
+              We certify that all information stated by us in this form, to the best of our knowledge, is correct and we agree that if any information is found incorrect after admission of our child, the institution at its discretion can cancel the admission and we shall not take any objection in any manner whatsoever.
+              <span style="color:red;">* </span>
+            </label>
+            <input type="checkbox"  id="declration1-check" required>
+          </div>
+
+          <div class="container-div" id="declaration2">
+            <label class="label"  id="declaration2-label" htmlFor="">
+              We assure you that our child is physically and mentally normal. We shall here by observe the rules, regulations and discipline of the school.
+              <span style="color:red;">* </span>
+            </label>
+            <input type="checkbox"  id="declaration2-check" required>
+          </div>
+
+          <div class="container-div">
+            <button class="submit-button" type="submit">
+              Submit
+            </button>
+          </div>
+
+        </div>
+
+
+      </fieldset>
+
+
+  </form>
 </body>
 </html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  {{data}}
+</body>
+</html> -->
