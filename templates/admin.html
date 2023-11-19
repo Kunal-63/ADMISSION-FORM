@@ -12,7 +12,7 @@
       method="POST"
       onsubmit="return confirm('Are you sure you want to Continue?')"
     >
-      <table>
+      <table id="admin-table">
         <tr>
           <th>
             <input
@@ -105,7 +105,7 @@
 
       <input type="submit" name="action" value="Delete" />
       <input type="button" id="messageButton" value="Message" />
-      <input type="submit" name="action" value="Reports" />
+      <input type="button" onclick="downloadTableAsCSV('admin-table')" value="Download" />
 
       <div id="messageModal" class="modal">
         <div class="modal-content">
@@ -122,6 +122,38 @@
   </body>
 
   <script>
+    function downloadTableAsCSV(tableId) {
+      // Get the table by its ID
+      const table = document.getElementById(tableId);
+
+      // Create an empty CSV string
+      let csv = "";
+
+      // Loop through the table rows
+      const rows = table.querySelectorAll("tr");
+      rows.forEach((row) => {
+        const rowData = [];
+        row.querySelectorAll("th, td").forEach((cell) => {
+          rowData.push(cell.textContent);
+        });
+        csv += rowData.join(",") + "\n";
+      });
+
+      // Create a Blob containing the CSV data
+      const blob = new Blob([csv], { type: "text/csv" });
+
+      // Create a download link
+      const a = document.createElement("a");
+      a.href = window.URL.createObjectURL(blob);
+      a.download = "table.csv";
+      a.style.display = "none";
+
+      // Append the download link to the body and trigger the download
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
     function selectAllCheckboxes() {
       var checkboxes = document.getElementsByName("selected_checkboxes");
       var selectAllCheckbox = document.getElementById("selectAll");

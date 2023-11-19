@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>User Details</title>
-    <link rel="stylesheet" href="static\css\popup.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form 2023-24 : Airport School Ahmedabad</title>
+    <link rel="stylesheet" href="static/css/popup.css">
+    
 </head>
 <body>
     <div class="container">
-        
         <form action="/user-details" method="POST">
             <h1>Details</h1>
-            <label for="father-name">Father's Name:</label>
+            <label for="father-name">Father's Name:<span style="color:red;">* </span></label>
             <input type="text" id="father-name" father-name="father-name" placeholder="Enter Father's Name" required>
 
-            <label for="mother-name">Mother's Name:</label>
+            <label for="mother-name">Mother's Name:<span style="color:red;">* </span></label>
             <input type="text" id="mother-name" mother-name="mother-name" placeholder="Enter Mother's Name" required>
 
-            <label for="child-name">Child's Name:</label>
+            <label for="child-name">Child's Name:<span style="color:red;">* </span></label>
             <input type="text" id="child-name" child-name="child-name" placeholder="Enter Child's Name" required>
 
-            <label for="dob">Date of Birth of Child:</label>
+            <label for="dob">Date of Birth of Child:<span style="color:red;">* </span></label>
             <input type="date" id="dob" name="dob" required>
 
-            <label for="whatsapp">WhatsApp Number:</label>
+            <label for="whatsapp">WhatsApp Number:<span style="color:red;">* </span></label>
             <input type="tel" id="whatsapp" name="whatsapp" placeholder="Enter WhatsApp Number" required>
-            
-            <input type="hidden" id="hidden" name="action" value="1"/>
-            
-            <button type="submit">Submit</button>
 
+            <input type="hidden" id="hidden" name="action" value="1">
+
+            <button type="submit">Submit</button>
         </form>
     </div>
+    <script src="../static/scripts/popup.js"></script>
 </body>
-<script src="static\scripts\popup.js"></script> 
-
 </html>

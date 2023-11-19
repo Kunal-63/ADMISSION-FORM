@@ -19,7 +19,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS ADMISSION_FORM (
     STUDENT_PATH varchar(255) NOT NULL,
     ADHAAR_PATH varchar(255) NOT NULL,
     BIRTH_PATH varchar(255) NOT NULL,
-    APPLIED_FOR VARCHAR(255) NOT NULL,
+    APPLIED_FOR VARCHAR(255) NOT NULL,  
     ACADEMIC_YEAR VARCHAR(255) NOT NULL,    
     STUDENT_FIRST_NAME VARCHAR(255) NOT NULL,
     STUDENT_LAST_NAME VARCHAR(255) NOT NULL,
@@ -173,8 +173,7 @@ def delete():
         admincur = admindb.cursor()
         admincur.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
         return render_template('admin.html', data=admincur.fetchall())
-    elif action == 'Reports':
-        return render_template('report.html')
+    
     else:
         return "Unknown Action"
 
@@ -287,9 +286,10 @@ def user_details():
     data = request.form
     action = data['action']
     if action == "true":
+        
         return render_template('index.html')
     else:
-        return "Unknown Action"
+        return render_template('failed.html')
 
     
 

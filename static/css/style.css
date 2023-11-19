@@ -1,454 +1,52 @@
-table{
-  width: 100%;
-  /* display: flex; */
-  justify-content: space-between;
+body,
+label {
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #072445;
+}
 
+table {
+  width: 100%;
+  justify-content: space-between;
 }
 
 td {
   padding: 15px;
 }
 
-/* tr{
-  padding: 5px;
-} */
-input{
+input {
   text-transform: uppercase;
 }
 
-.father-email-input, .mother-email-input, .guardian-email-input{
+.father-email-input,
+.mother-email-input,
+.guardian-email-input {
   text-transform: lowercase;
 }
-.full-page,.attach-table,.student-details-table,.family-detail-table{
-    margin-left: auto;
-    margin-right: auto;
-}
-label{
-  font-size: 15px;
-  font-weight: bold;
-  margin: auto;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font: Roboto;
-  color: #072445;
+
+.full-page,
+.attach-table,
+.student-details-table,
+.family-detail-table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-.hero-img {
-    height: 60vh;
-    padding-bottom: 30px;
-  }
-  .logo {
-    padding: 10px 10px;
-    margin: auto;
-    margin-top: 10px;
-    width: 90%;
-    
-  }
-  .logo-container{
-    /* padding: 10px 10px; */
-    background-color: #ffffff; /* Set the background color of the div */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 10px 10px;
-    margin-top: 20px;
-  }
-  .form {
-    padding-bottom: 30px;
-    
-    background-color: #ffffff; /* Set the background color of the div */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    width: 90vw;
-    margin: auto;
-    margin-bottom: 30px;
-  }
-  .form-main-container {
-    width: 90%;
-    padding-bottom: 30px;
-    
-    margin: auto;
-    margin-bottom: 30px;
-  }
-  
-  .Airport-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 40%;
-  }
-  
-  .admission-form-text {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  
-  .student-details,.family-details,.declaration,.photo-add{
-    width: 100%;
-    /* margin: auto; */
-    margin-top: 20px;
-  }
-  
-  .student-details-legend,.family-details-legend,.declaration-legend,.photo-add-legend{
-    font-size: 25px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    background-color: #c5a336;
-    border-radius: 8px;
-    padding: 5px 5px;
-    color: #072445;
-  }
-  
-  .first-name-label,.last-name-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  .first-name-input,.last-name-input{
-    padding: 5px 40px;
-    
-  }
-
-
-
-  .student-details-main-div{
-    width: 95%;
-    margin: auto;
-  }
-  .applied-academic,.complete-name{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .applied-for-label, .academic-year-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    align-items: end;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  .applied-for-select, .academic-year-select{
-    width: 100%;
-    padding: 5px 40px;
-  }
-  .applied-for{
-    width: 50%;
-
-  }
-  
-  .dob-inword, .years-months-days-div, .nationality-mothertounge-religion-div, .bloodgroup-gender-category-div{
-    display: flex;
-    text-align: center;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-  .dob, .inwords{
-    
-    font-size: 15px;
-    font-weight: bold;
-    /* margin: auto; */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  .dob-input, .dob-inwords-input{
-    /* width: 50%; */
-    width: auto;
-    padding: 5px 40px;
-  }
-  
-  .age-as-on{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  
-  .years-label, .months-label, .days-label{
-    
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  
-  .years-input, .months-input, .days-input{
-    padding: 5px 40px;
-  }
-  
-  .nationality-label, .mothertounge-div, .religion-div{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  
-  .nationality-input, .mothertounge-input, .religion-input{
-    padding: 5px 40px;
-  }
-  
-  .bloodgroup-label, .gender-label, .category-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445;
-  }
-  .bloodgroup-select{
-    width: 100%;
-    padding: 5px 40px;
-  }
-  .gender-input, .category-input{
-    padding: 5px 40px;
-  }
-
-/* .permanent-address-div{
-    display: flex;
-    flex-direction: column;
-
-} */
-
-
-
-  .permanent-address-label,.correspondance-address-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445
-  }
-
-  .permanent-address-input,.correspondance-address-input{
-    width:100%;
-    height: 20vh;
-  }
-
-  .permanent-state-district-pincode-div,.correspondance-state-district-pincode-div{
-    text-align: center;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-
-  .permanent-state-label,.permanent-district-label,.permanent-pincode-label,.correspondance-state-label,.correspondance-district-label,.correspondance-pincode-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445
-  }
-
-
-  .permanent-pincode-input,.correspondance-pincode-input{
-    padding: 5px 50px;
-  }
-
-  .permanent-state-select,.permanent-district-select,.correspondance-state-select,.correspondance-district-select{
-    width: 100%;
-    padding: 5px 40px;
-  }
-
-  .same-as-permanent-address-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445
-  }
-
-  
-  .permanent-pincode-input,.correspondance-pincode-input{
-    padding: 5px 40px;
-  }
-
-
-
-  .father-name-label,.father-occupation-label,.father-contact-label,.father-email-label,.mother-name-label,.mother-occupation-label,.mother-contact-label,.mother-email-label,.family-annual-income-label, .WhatsApp-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445
-  }
-
-
-  .father-name-input,.father-occupation-input,.father-contact-input,.father-email-input, .mother-name-input,.mother-occupation-input,.mother-contact-input,.mother-email-input,.family-annual-income-input, .WhatsApp-input{
-    padding: 5px 40px;
-  }
-
-
-
-
-  .guardian-name-label,.relation-with-child-label,.guardian-occupation-label,.guardian-contact-label,.guardian-email-label,.guardian-annual-income-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445
-  }
-
-
-  .guardian-name-input,.relation-with-child-input,.guardian-occupation-input,.guardian-contact-input,.guardian-email-input,.guardian-annual-income-input{
-    padding: 5px 40px;
-  }
-
-
-  .declaration1-label,.declaration2-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445
-  }
-
-  .submit-button{
-    background-color: #072445;
-    color: #ffffff;
-    padding: 15px 30px;
-    border-radius: 5px;
-  }
-
-  .submit-button:hover {
-    background-color: #47964a;
-  }
-
-
-  .attach-main-div{
-    justify-content: space-between;
-    align-items: center;
-    
-
-
-  }
-
-  .father-file-label,.mother-file-label,.student-file-label,.adhaar-file-label,.marksheet-file-label{
-    font-size: 15px;
-    font-weight: bold;
-    margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font: Roboto;
-    color: #072445
-  }
-
-  .father-file-add, .mother-file-add, .student-file-add, .adhaar-file-add, .marksheet-file-add{
-    text-align: CENTER;
-    padding: 30px 20px;
-    border: 1px solid #d4d4d4;
-    border-radius: 5px;
-  }
-
-
-  .last-button{ 
-    text-align: center;
-  } 
-
-
-
-  
-
-
-
+/* Add other common styles here */
 
 /* Your existing CSS rules */
 
-/* Add this media query to apply styles for screens with a max width of 768px */
+/* Add media query for responsiveness here */
 @media (max-width: 768px) {
-  .student-details-table tr {
-    display: block;
-    margin-bottom: 20px;
-  }
-
+  .student-details-table tr,
   .student-details-table td {
     display: block;
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .student-details-table label {
     margin-bottom: 5px;
   }
 
-  .student-details-table input,
-  .student-details-table select,
-  .student-details-table textarea {
-    width: 100%;
-  }
-
-  .student-details-table .age-as-on,
-  .student-details-table .years-months-days-div,
-  .student-details-table .nationality-mothertounge-religion-div,
-  .student-details-table .bloodgroup-gender-category-div {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .student-details-table .applied-academic,
-  .student-details-table .complete-name {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .student-details-table .applied-for,
-  .student-details-table .academic-year-select,
-  .student-details-table .dob-input,
-  .student-details-table .dob-inwords-input,
-  .student-details-table .years-input,
-  .student-details-table .months-input,
-  .student-details-table .days-input,
-  .student-details-table .nationality-input,
-  .student-details-table .mothertounge-input,
-  .student-details-table .religion-input,
-  .student-details-table .gender-input,
-  .student-details-table .category-input,
-  .student-details-table .permanent-address-input,
-  .student-details-table .permanent-state-select,
-  .student-details-table .permanent-district-select,
-  .student-details-table .permanent-pincode-input,
-  .student-details-table .same-as-permanent-address-check,
-  .student-details-table .correspondance-address-input,
-  .student-details-table .correspondance-state-select,
-  .student-details-table .correspondance-district-select,
-  .student-details-table .correspondance-pincode-input {
-    margin-bottom: 10px;
-  }
+  /* Add other responsive styles here */
 }
