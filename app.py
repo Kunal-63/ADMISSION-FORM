@@ -95,6 +95,9 @@ app.secret_key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+#===============================================================================================================================================================================
+
+
 @app.route('/submit', methods=['POST'])
 def upload_file():
 
@@ -137,6 +140,8 @@ def upload_file():
     return render_template('success.html')
 
 
+#===============================================================================================================================================================================
+
 @app.route('/delete', methods=['POST'])
 def delete():
     
@@ -157,12 +162,8 @@ def delete():
             messagecur.execute("SELECT FATHER_EMAIL, MOTHER_EMAIL FROM ADMISSION_FORM WHERE FORM_ID = %s", (i,))
             data = messagecur.fetchall()
             for j in data:
-                # connection = smtplib.SMTP('smtp.gmail.com', 587)
-                # connection.starttls()
-                # connection.login(user = "kunaladwani1456@gmail.com", password = "akzg uqgo opis tunl")
                 connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= j[0], msg= "Subject: Admission Form\n\n" + message)
                 connection.sendmail(from_addr= "kunaladwani1456@gmail.com", to_addrs= j[1], msg= "Subject: Admission Form\n\n" + message)
-                # connection.close()
         messagedb.commit()
         messagedb.close()
         admindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
@@ -172,6 +173,9 @@ def delete():
     
     else:
         return "Unknown Action"
+    
+
+#===============================================================================================================================================================================
 
 @app.route('/login', methods=['GET'])
 def login():
@@ -221,6 +225,10 @@ def login_success():
                 return render_template('view.html', data=data)
             else:
                 return "Invalid Credentials"
+
+
+#===============================================================================================================================================================================
+
 
 @app.route('/send-otp', methods=['POST', 'GET'])
 def send_otp():
@@ -278,8 +286,7 @@ def reset_user_password(username, new_password):
 
 
 
-
-
+#===============================================================================================================================================================================
 
 
 @app.route('/documentation', methods=['POST'])
