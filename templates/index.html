@@ -13,7 +13,7 @@
   <div class="image">
     <img
       class="hero-img"
-      src="static\images\hero.jpg"
+      src="\static\images\hero.jpg"
       alt="admissions"
       style="width:100%;" 
     />
@@ -324,6 +324,49 @@
             <label htmlFor="obc">OBC</label>
           </div>
 
+          <div class="container-div" id="elective-subjects-div">
+            <label class="label" id="elective-subjects-text" htmlFor="elective-subjects-label">
+              Elective Subjects <span style="color: red;">* </span>
+            </label>
+            <input
+              class="input" 
+              id="elective-subjects-input"
+              type="text"
+              placeholder="Elective Subjects "
+              name="elective-subjects"
+              required
+            /> 
+          </div>
+
+          <div class="container-div" id="last-school-attended-div">
+            <label class="label" id="last-school-attended-text" htmlFor="last-school-attended-label">
+              Last School Attended <span style="color: red;">* </span>
+            </label>
+            <input
+              class="input" 
+              id="last-school-attended-input"
+              type="text"
+              placeholder="Last School Attended "
+              name="last-school-attended"
+              required
+            /> 
+          </div>
+
+
+
+
+        </div>
+      </fieldset>
+
+
+      <fieldset class="address-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="address-legend">
+          Address
+        </legend>
+
+        <div class="address-main-div">
+
 
           <div class="container-div" id="permanent-address-div">
             <label class="label" id="permanent-address-label" htmlFor="permanent-address-input">
@@ -387,6 +430,20 @@
               Pincode <span style= "color: red;">* </span>
             </label>
             <input class="input" type="text" id="permanent-pincode-input" name="permanent-pincode" name="permanent-pincode" required/>
+          </div>
+
+          <div class="container-div" id="permanent-taluka-div">
+            <label class="label" id="permanent-taluka-label" htmlFor="permanent-taluka">
+              Taluka <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="permanent-taluka-input" name="permanent-taluka" name="permanent-taluka" required/>
+          </div>
+
+          <div class="container-div" id="permanent-country-div">
+            <label class="label" id="permanent-country-label" htmlFor="permanent-country">
+              Country <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="permanent-country-input" name="permanent-country" name="permanent-country" required/>
           </div>
 
 
@@ -467,17 +524,33 @@
           </div>
 
 
+          <div class="container-div" id="permanent-taluka-div">
+            <label class="label" id="permanent-taluka-label" htmlFor="permanent-taluka">
+              Taluka <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="permanent-taluka-input" name="permanent-taluka" name="permanent-taluka" required/>
+          </div>
+
+          <div class="container-div" id="permanent-country-div">
+            <label class="label" id="permanent-country-label" htmlFor="permanent-country">
+              Country <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="permanent-country-input" name="permanent-country" name="permanent-country" required/>
+          </div>
+
+
 
         </div>
       </fieldset>
 
-      <fieldset class="family-details-fieldset" style= "padding-bottom:20px;">
 
-        <legend class="family-details-legend">
-          Family Details
+      <fieldset class="parents-details-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="parents-details-legend">
+          Parents Details
         </legend>
 
-        <div class="family-details-main-div">
+        <div class="parents-details-main-div">
 
         
           <div class="container-div" id="father-name-div">
@@ -508,6 +581,80 @@
             <input class="input" id="mother-occupation-input" type="text" id="mother-occupation" placeholder="Occupation" name="mother-occupation" required/>
           </div>
 
+
+          <div class="container-div" id="father-qualification-div">
+            <label class="label" id="father-qualification-label" htmlFor="father-qualification">
+              Father's Qualification <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-qualification-input" type="text" id="father-qualification" placeholder="Qualification" name="father-qualification" required/>
+          </div>
+
+          <div class="container-div" id="mother-qualification-div">
+            <label class="label" id="mother-qualification-label" htmlFor="mother-qualification">
+              Mother's Qualification <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-qualification-input" type="text" id="mother-qualification" placeholder="Qualification" name="mother-qualification" required/>
+          </div>
+
+          <div class="container-div" id="languages-known-div">
+            <label class="label" id="languages-known-label" htmlFor="languages-known">
+              Languages Known <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="languages-known-input" type="text" id="languages-known" placeholder="Languages Known" name="languages-known" required/>
+          </div>
+
+          <div class="container-div" id="languages-known-div">
+            <label class="label" id="languages-known-label" htmlFor="languages-known">
+              Languages Known <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="languages-known-input" type="text" id="languages-known" placeholder="Languages Known" name="languages-known" required/>
+          </div>
+
+
+          <div class="container-div" id="business-services-div">
+            <label class="label" id="business-services-label" htmlFor="business-services">
+              Business/Service <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="business-services-input" type="text" id="business-services" placeholder="Business/Service " name="business-services" required/>
+          </div>
+
+          <div class="container-div" id="business-services-div">
+            <label class="label" id="business-services-label" htmlFor="business-services">
+              Business/Service <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="business-services-input" type="text" id="business-services" placeholder="Business/Service " name="business-services" required/>
+          </div>
+
+
+          <div class="container-div" id="details-of-business-div">
+            <label class="label" id="details-of-business-label" htmlFor="details-of-business">
+              Details Of Business <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="details-of-business-input" type="text" id="details-of-business" placeholder="Details Of Business " name="details-of-business" required/>
+          </div>
+
+          <div class="container-div" id="details-of-business-div">
+            <label class="label" id="details-of-business-label" htmlFor="details-of-business">
+              Details Of Business <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="details-of-business-input" type="text" id="details-of-business" placeholder="Details Of Business " name="details-of-business" required/>
+          </div>
+
+
+          <div class="container-div" id="designation-div">
+            <label class="label" id="designation-label" htmlFor="designation">
+              Designation (If in service)<span style="color:red;">* </span>
+            </label>
+            <input class="input" id="designation-input" type="text" id="designation" placeholder="Designation" name="designation" required/>
+          </div>
+
+          <div class="container-div" id="designation-div">
+            <label class="label" id="designation-label" htmlFor="designation">
+              Designation (If in service)<span style="color:red;">* </span>
+            </label>
+            <input class="input" id="designation-input" type="text" id="designation" placeholder="Designation" name="designation" required/>
+          </div>
+
           <div class="container-div" id="father-contact-div">
             <label class="label" id="father-contact-label" htmlFor="father-contact">
               Father's Contact <span style="color:red;">* </span>
@@ -536,6 +683,20 @@
             <input class="input" id="mother-email-input" type="text" id="mother-email" placeholder="Email" name="mother-email" required/>
           </div>
 
+          <div class="container-div" id="business-services-address-div">
+            <label class="label" id="business-services-address-label" htmlFor="business-services-address">
+              Business/Service Address <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="business-services-address-input" type="text" id="business-services-address" placeholder="Business/Service Address " name="business-services-address" required/>
+          </div>
+
+          <div class="container-div" id="business-services-address-div">
+            <label class="label" id="business-services-address-label" htmlFor="business-services-address">
+              Business/Service Address <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="business-services-address-input" type="text" id="business-services-address" placeholder="Business/Service Address " name="business-services-address" required/>
+          </div>
+
           <div class="container-div" id="family-annual-income-div">
             <label class="label" id="family-annual-income-label" htmlFor="family-annual-income">
               Family Annual Income <span style="color:red;">* </span>
@@ -543,12 +704,85 @@
             <input class="input" id="family-annual-income-input" type="text" id="family-annual-income" placeholder="Income" name="family-annual-income" required/>
           </div>
 
+
+        </div>
+      </fieldset>
+
+
+      <fieldset class="guardian-details-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="guardian-details-legend">
+          Guardian Details
+        </legend>
+
+        <div class="guardian-details-main-div">
+
           <div class="container-div" id="guardian-name-div">
             <label class="label" id="guardian-name-label" htmlFor="guardian-name">
               Guardian's Name <span style="color:red;">* </span>
             </label>
             <input class="input" id="guardian-name-input" type="text" id="guardian-name" placeholder="Guardian's Name" name="guardian-name" required/>
           </div>
+
+          <div class="container-div" id="guardian-qualification-div">
+            <label class="label" id="guardian-qualification-label" htmlFor="guardian-qualification">
+              Guardian's Qualification <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="guardian-qualification-input" type="text" id="guardian-qualification" placeholder="Qualification" name="guardian-qualification" required/>
+          </div>
+
+          <div class="container-div" id="languages-known-div">
+            <label class="label" id="languages-known-label" htmlFor="languages-known">
+              Languages Known <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="languages-known-input" type="text" id="languages-known" placeholder="Languages Known" name="languages-known" required/>
+          </div>
+
+          <div class="container-div" id="guardian-email-div">
+            <label class="label" id="guardian-email-label" htmlFor="guardian-email">
+              Guardian's Email <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="guardian-email-input" type="text" id="guardian-email" placeholder="Email" name="guardian-email" required/>
+          </div>
+
+          <div class="container-div" id="business-services-div">
+            <label class="label" id="business-services-label" htmlFor="business-services">
+              Business/Service <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="business-services-input" type="text" id="business-services" placeholder="Business/Service " name="business-services" required/>
+          </div>
+
+          <div class="container-div" id="guardian-address-div">
+            <label class="label" id="guardian-address-label" htmlFor="guardian-address">
+              Guardian Address <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="guardian-address-input" type="text" id="guardian-address" placeholder="Business/Service Address " name="guardian-address" required/>
+          </div>
+
+
+          <div class="container-div" id="details-of-business-div">
+            <label class="label" id="details-of-business-label" htmlFor="details-of-business">
+              Details Of Business <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="details-of-business-input" type="text" id="details-of-business" placeholder="Details Of Business " name="details-of-business" required/>
+          </div>
+
+
+          <div class="container-div" id="designation-div">
+            <label class="label" id="designation-label" htmlFor="designation">
+              Designation (If in service)<span style="color:red;">* </span>
+            </label>
+            <input class="input" id="designation-input" type="text" id="designation" placeholder="Designation" name="designation" required/>
+          </div>
+
+
+          <div class="container-div" id="business-services-address-div">
+            <label class="label" id="business-services-address-label" htmlFor="business-services-address">
+              Business/Service Address <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="business-services-address-input" type="text" id="business-services-address" placeholder="Business/Service Address " name="business-services-address" required/>
+          </div>
+
 
           <div class="container-div" id="relation-with-child-div">
             <label class="label" id="relation-with-child-label"  htmlFor="relation-with-child">
@@ -568,6 +802,66 @@
       </div>
       </fieldset>
 
+
+      <fieldset class="brother-sister-details-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="brother-sister-details-legend">
+          Brother Sister Details
+        </legend>
+
+        <div class="brother-sister-details-main-div">
+
+        
+          <div class="container-div" id="full-name-div">
+            <label class="label" id="full-name-label" htmlFor="full-name">
+              Full Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="full-name-input" type="text" id="full-name" placeholder="Full Name" name="full-name" required/>
+          </div>
+
+          <div class="container-div" id="class-division-div">
+            <label class="label" id="class-division-label" htmlFor="class-division">
+              Class Division <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="class-division-input" type="text" id="class-division" placeholder="Class Division" name="class-division" required/>
+          </div>
+
+          <div class="container-div" id="full-name-div">
+            <label class="label" id="full-name-label" htmlFor="full-name">
+              Full Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="full-name-input" type="text" id="full-name" placeholder="Full Name" name="full-name" required/>
+          </div>
+
+          <div class="container-div" id="class-division-div">
+            <label class="label" id="class-division-label" htmlFor="class-division">
+              Class Division <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="class-division-input" type="text" id="class-division" placeholder="Class Division" name="class-division" required/>
+          </div>
+
+
+          <div class="container-div" id="full-name-div">
+            <label class="label" id="full-name-label" htmlFor="full-name">
+              Full Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="full-name-input" type="text" id="full-name" placeholder="Full Name" name="full-name" required/>
+          </div>
+
+          <div class="container-div" id="class-division-div">
+            <label class="label" id="class-division-label" htmlFor="class-division">
+              Class Division <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="class-division-input" type="text" id="class-division" placeholder="Class Division" name="class-division" required/>
+          </div>
+
+
+          
+
+        </div>
+      </fieldset>
+
+
       <fieldset class="declaration-fieldset" style= "padding-bottom:20px;">
         <legend class="declaration-legend">
           Declaration
@@ -581,7 +875,7 @@
               We certify that all information stated by us in this form, to the best of our knowledge, is correct and we agree that if any information is found incorrect after admission of our child, the institution at its discretion can cancel the admission and we shall not take any objection in any manner whatsoever.
               <span style="color:red;">* </span>
             </label>
-            <input type="checkbox"  id="declration1-check" required>
+            <input type="checkbox"  id="declaration1-check" required>
           </div>
 
           <div class="container-div" id="declaration2">

@@ -32,7 +32,7 @@ fieldset{
 }
 
 
-.student-details-legend,.family-details-legend,.family-details-2-legend,.declaration-legend,.photo-add-legend{
+.student-details-legend,.address-legend,.parents-details-legend,.guardian-details-legend,.brother-sister-details-legend,.declaration-legend,.photo-add-legend{
   font-size: 25px;
   font-weight: bold;
   margin: auto;
@@ -78,12 +78,33 @@ fieldset{
 }
 
 
-
-.family-details-main-div{
+.address-main-div{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+
+.parents-details-main-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
+.guardian-details-main-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
+.brother-sister-details-main-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 
 .container-div{
   flex: 1 0 calc(50% - 40px);
@@ -123,4 +144,33 @@ fieldset{
   margin: 20px 20px 12px 10px;
   width: calc(100% - 30px);
   text-align: center;
+}
+
+
+#declaration1-check{
+  width: 25px;
+  height: 25px;
+}
+
+
+#declaration2-check{
+  width: 25px;
+  height: 25px;
+}
+
+#same-as-permanent-address-check{
+  width: 25px;
+  height: 25px;
+}
+
+
+
+
+
+@media only screen and (max-width: 480px){
+  .container-div{
+    flex: 1 calc(100% - 40px);
+    margin: 20px 20px 12px 10px;
+    width: calc(100% - 20px);
+  }
 }
