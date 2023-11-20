@@ -6,7 +6,7 @@ import random
 import datetime
 
 
-mydb = con.connect(host="localhost", user="root", passwd="yash1234", database="ADMISSION_FORM")
+mydb = con.connect(host="localhost", user="root", passwd="root", database="ADMISSION_FORM")
 cur = mydb.cursor()
 
 connection = smtplib.SMTP('smtp.gmail.com', 587)
