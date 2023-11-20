@@ -3,9 +3,10 @@ import os
 import mysql.connector as con
 import smtplib
 import random
+import datetime
 
 
-mydb = con.connect(host="localhost", user="root", passwd="", database="ADMISSION_FORM")
+mydb = con.connect(host="localhost", user="root", passwd="root", database="ADMISSION_FORM")
 cur = mydb.cursor()
 
 connection = smtplib.SMTP('smtp.gmail.com', 587)
@@ -84,6 +85,8 @@ query = '''INSERT INTO ADMISSION_FORM (FORM_ID,
 cur.execute('CREATE TABLE IF NOT EXISTS login_details(FORM_ID VARCHAR(255) PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, PASSWORD VARCHAR(255) NOT NULL)')
 query1 = "INSERT INTO LOGIN_DETAILS (FORM_ID, USERNAME, PASSWORD) VALUES (%s,%s, %s)"
 
+cur.execute("CREATE TABLE IF NOT EXISTS POPUP_LOGIN_DETAILS (SRNO INT PRIMARY KEY AUTO_INCREMENT,FATHER_NAME VARCHAR(255) NOT NULL, MOTHER_NAME VARCHAR(255) NOT NULL, CHILD_NAME VARCHAR(255) NOT NULL, DATE_OF_BIRTH VARCHAR(255) NOT NULL, WHATSAPP_NUMBER VARCHAR(255) NOT NULL, ACTION VARCHAR(255) NOT NULL, DATE_AND_TIME VARCHAR(255) NOT NULL)")
+popupQuery = "INSERT INTO POPUP_LOGIN_DETAILS(FATHER_NAME,MOTHER_NAME,CHILD_NAME,DATE_OF_BIRTH,WHATSAPP_NUMBER,ACTION,DATE_AND_TIME) VALUES (%s, %s, %s, %s, %s, %s, %s)"
 mydb.commit()
 
 app = Flask(__name__)
@@ -142,18 +145,11 @@ def delete():
     message = request.form.get("message")
     # print(message, action, selected)
 
-    if action == "Delete":
-        deletedb = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
-        deletecur = deletedb.cursor()
-        for i in selected:
-            deletecur.execute("DELETE FROM ADMISSION_FORM WHERE FORM_ID = %s", (i,))
-        deletedb.commit()
-        deletedb.close()
-        admindb = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
-        admincur = admindb.cursor()
-        admincur.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
-        return render_template('admin.html', data=admincur.fetchall())
-        
+    if action == "PopUp":
+        popdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
+        popcur = popdb.cursor()
+        popcur.execute("SELECT * FROM POPUP_LOGIN_DETAILS")
+        return render_template('popup_details.html', data=popcur.fetchall())
     elif action == "Send":
         messagedb = con.connect(host='localhost', user='root', password='', database='ADMISSION_FORM')
         messagecur = messagedb.cursor()
@@ -169,7 +165,7 @@ def delete():
                 # connection.close()
         messagedb.commit()
         messagedb.close()
-        admindb = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
+        admindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
         admincur = admindb.cursor()
         admincur.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
         return render_template('admin.html', data=admincur.fetchall())
@@ -197,7 +193,7 @@ def login_success():
         password = password.strip()
 
         if username == 'admin' and password == 'admin':
-            db1 = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
+            db1 = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
             cur1 = db1.cursor()
 
             cur1.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
@@ -205,7 +201,7 @@ def login_success():
             return render_template('admin.html', data=data)
         
         else:
-            logindb = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
+            logindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
             logincur = logindb.cursor()
             logincur.execute("SELECT * FROM LOGIN_DETAILS WHERE USERNAME = %s AND PASSWORD = %s", (username, password))
             data = logincur.fetchall()
@@ -263,7 +259,7 @@ def generate_otp():
 
 def send_otp_to_user(username, otp):
     print("Send OTP to the user's email requesting")
-    otpdb = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
+    otpdb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
     otpcur = otpdb.cursor()
     otpcur.execute("SELECT FATHER_EMAIL, MOTHER_EMAIL FROM ADMISSION_FORM WHERE FORM_ID = %s", (username,))
     data = otpcur.fetchall()
@@ -274,23 +270,56 @@ def send_otp_to_user(username, otp):
 
 
 def reset_user_password(username, new_password):
-    reset_passworddb = con.connect(host="localhost", user="root", password="", database="ADMISSION_FORM")
+    reset_passworddb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
     reset_passwordcur = reset_passworddb.cursor()
     reset_passwordcur.execute("UPDATE LOGIN_DETAILS SET PASSWORD = %s WHERE USERNAME = %s", (new_password, username))
     reset_passworddb.commit()
     reset_passworddb.close()
 
 
+
+
+
+
+
+@app.route('/documentation', methods=['POST'])
+def documentation():
+     if request.method == 'POST':
+        confirmation_checkbox = request.form.get('confirmation-checkbox')
+
+        if confirmation_checkbox:
+            return render_template('index.html')
+        else:
+            return render_template('documentation.html')
+
+
+#===============================================================================================================================================================================
+
+
 @app.route('/user-details', methods=['POST'])
 def user_details():
+
     data = request.form
     action = data['action']
+    popupdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
+    popupcur = popupdb.cursor()
+    popupdata=[]
+    popupdata.append(data['father-name'].upper())
+    popupdata.append(data['mother-name'].upper())
+    popupdata.append(data['child-name'].upper())
+    popupdata.append(data['dob'].upper())
+    popupdata.append(data['whatsapp'].upper())
+    popupdata.append(data['action'].upper())
+    popupdata.append(datetime.datetime.now().strftime("%d-%m-%y %H:%M"))
+    popupcur.execute(popupQuery, popupdata)
+    popupdb.commit()
     if action == "true":
-        
-        return render_template('index.html')
+        return render_template('documentation.html')
     else:
         return render_template('failed.html')
 
+
+#===============================================================================================================================================================================
     
 
 @app.route('/', methods=['GET'])

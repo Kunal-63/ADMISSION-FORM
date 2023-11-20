@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Admin</title>
-    <link rel="stylesheet" href="static/css/admin.css" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PopUp Details</title>
   </head>
+  <link rel="stylesheet" href="../static/css/admin.css" type="text/css" />
   <body>
-    <h1>Admission Form Data</h1>
+    <h1>PopUp Form Details</h1>
 
     <form
       action="/delete"
       method="POST"
       onsubmit="return confirm('Are you sure you want to Continue?')"
     >
-      <table id="admin-table">
+      <table id="popup-table">
         <tr>
           <th>
             <input
@@ -23,7 +25,7 @@
           </th>
           <th>
             <div>
-              Form ID
+              SR NO
               <span class="sort-icon up" onclick="sortTable(1,'up')"
                 >&#9650;</span
               >
@@ -34,7 +36,7 @@
           </th>
           <th>
             <div>
-              First Name
+              Father's Name
               <span class="sort-icon up" onclick="sortTable(2, 'up')"
                 >&#9650;</span
               >
@@ -44,7 +46,7 @@
             </div>
           </th>
           <th>
-            Last Name
+            Mothers's Name
             <span class="sort-icon up" onclick="sortTable(3, 'up')"
               >&#9650;</span
             >
@@ -53,7 +55,7 @@
             >
           </th>
           <th>
-            Gender
+            Child's Name
             <span class="sort-icon up" onclick="sortTable(4, 'up')"
               >&#9650;</span
             >
@@ -62,7 +64,7 @@
             >
           </th>
           <th>
-            Father's Name
+            Date Of Birth
             <span class="sort-icon up" onclick="sortTable(5, 'up')"
               >&#9650;</span
             >
@@ -71,7 +73,7 @@
             >
           </th>
           <th>
-            Mother's Name
+            WhatsApp Number
             <span class="sort-icon up" onclick="sortTable(6, 'up')"
               >&#9650;</span
             >
@@ -79,8 +81,24 @@
               >&#9660;</span
             >
           </th>
-          <th></th>
-          <th></th>
+          <th>
+            Action
+            <span class="sort-icon up" onclick="sortTable(7, 'up')"
+              >&#9750;</span
+            >
+            <span class="sort-icon down active" onclick="sortTable(7, 'down')"
+              >&#9660;</span
+            >
+          </th>
+          <th>
+            Date And Time
+            <span class="sort-icon up" onclick="sortTable(8, 'up')"
+              >&#9650;</span
+            >
+            <span class="sort-icon down active" onclick="sortTable(8, 'down')"
+              >&#9660;</span
+            >
+          </th>
         </tr>
         {% for row in data %}
         <tr>
@@ -97,16 +115,18 @@
           <td>{{ row[3] }}</td>
           <td>{{ row[4] }}</td>
           <td>{{ row[5] }}</td>
-          <td><a href="/view?form_id={{row[0]}}">View</a></td>
-          <td><button>Edit</button></td>
+          <td>{{ row[6] }}</td>
+          <td>{{ row[7] }}</td>
         </tr>
         {% endfor %}
       </table>
 
-      <input type="submit" name="action" value="PopUp" />
-      <input type="button" id="messageButton" value="Message" />
-      <input type="button" onclick="downloadTableAsCSV('admin-table')" value="Download" />
 
+      <input
+        type="button"
+        onclick="downloadTableAsCSV('popup-table')"
+        value="Download"
+      />
 
       <div id="messageModal" class="modal">
         <div class="modal-content">

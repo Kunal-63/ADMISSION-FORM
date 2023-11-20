@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nursery Admission Information</title>
+    <link rel="stylesheet" href="../static/css/documentation.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            margin-bottom: 35px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #072445;
+            color: #fff;
+        }
+
+        form {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box; /* Ensures padding is included in max-width */
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #072445;  
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #072445;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 768px) {
+            form {
+                padding: 10px;
+            }
+
+            button {
+                width: auto; /* Make the button adapt to content */
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <header>
+        <h1>Admission Information</h1>
+    </header>
+
+    <form action="/documentation" method="POST">
+        <section id="admission-info">
+            <h2>Admission Guidelines</h2>
+            <p>Welcome to our school! Here are the guidelines for nursery admission as per CBSE:</p>
+            <ul>
+                <li>Age Criteria: Children should be between 3 to 4 years as of September 1st.</li>
+                <li>Documents Required: Birth certificate, residence proof, parent's ID, etc.</li>
+                <li>Admission Procedure: Fill the online form, submit documents, attend interview.</li>
+            </ul>
+        </section>
+
+        <section id="payment-guidelines">
+            <h2>Payment Guidelines</h2>
+            <p>For your convenience, we use HDFC's secure payment gateway for fee payments. Follow these guidelines:</p>
+            <ol>
+                <li>Visit our official website and log in to your parent portal.</li>
+                <li>Select the payment option and choose HDFC as the payment gateway.</li>
+                <li>Enter the required details, including student ID and payment amount.</li>
+                <li>Proceed to payment and securely complete the transaction.</li>
+            </ol>
+        </section>
+
+        <section id="confirmation">
+            <h2>Confirmation</h2>
+            <p>I confirm that I have read and understood all the admission guidelines and HDFC payment gateway instructions.</p>
+            <label for="confirmation-checkbox">
+                <input type="checkbox" id="confirmation-checkbox" name="confirmation-checkbox" required>
+                I confirm
+            </label>
+            <button type="submit" style="padding: 10px; background-color: #072445; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+        </section>
+    </form>
+
+    <footer>
+        <p>Contact us for any assistance: 9904904175</p>
+    </footer>
+
 </body>
 </html>

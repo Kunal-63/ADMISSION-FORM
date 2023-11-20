@@ -13,13 +13,13 @@
         <form action="/user-details" method="POST">
             <h1>Details</h1>
             <label for="father-name">Father's Name:<span style="color:red;">* </span></label>
-            <input type="text" id="father-name" father-name="father-name" placeholder="Enter Father's Name" required>
+            <input type="text" id="father-name" father-name="father-name" name="father-name" placeholder="Enter Father's Name" required>
 
             <label for="mother-name">Mother's Name:<span style="color:red;">* </span></label>
-            <input type="text" id="mother-name" mother-name="mother-name" placeholder="Enter Mother's Name" required>
+            <input type="text" id="mother-name" mother-name="mother-name" name="mother-name" placeholder="Enter Mother's Name" required>
 
             <label for="child-name">Child's Name:<span style="color:red;">* </span></label>
-            <input type="text" id="child-name" child-name="child-name" placeholder="Enter Child's Name" required>
+            <input type="text" id="child-name" child-name="child-name" name="child-name" placeholder="Enter Child's Name" required>
 
             <label for="dob">Date of Birth of Child:<span style="color:red;">* </span></label>
             <input type="date" id="dob" name="dob" required>
@@ -30,7 +30,10 @@
             <input type="hidden" id="hidden" name="action" value="1">
 
             <button type="submit">Submit</button>
+            <a href="login" class="login-button">Already Registered? Login</a>
         </form>
+
+        
     </div>
     <script src="../static/scripts/popup.js"></script>
 </body>

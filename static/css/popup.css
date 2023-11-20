@@ -59,13 +59,17 @@ label {
 input[type="text"],
 input[type="date"],
 input[type="tel"] {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  text-transform: uppercase; /* Retained uppercase property */
 }
 
+input::placeholder {
+  text-transform: capitalize; /* Retained capitalize property */
+}
 button[type="submit"] {
   width: 100%;
   padding: 10px;
@@ -79,6 +83,20 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #333;
+}
+
+.login-button {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #072445;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.login-button:hover {
+  color: #333;
+  cursor: pointer; /* Add this line to indicate the button is clickable */
 }
 
 /* Media queries for responsiveness */

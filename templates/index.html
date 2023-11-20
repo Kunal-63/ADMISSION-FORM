@@ -1,1025 +1,610 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="static\css\style.css">
-
-    <style>
-  
-      
-  </style>
-
-
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
+
+
+
 <body>
+  <div class="image">
+    <img
+      class="hero-img"
+      src="static\images\hero.jpg"
+      alt="admissions"
+      style="width:100%;" 
+    />
+  </div>
 
-  
-<table class="full-page" id="full-page">
 
 
 
-    <tr>
-      <td>
-        <section class="hero">
-          <div>
-            <img
-              class="hero-img"
-              src="static\images\hero.jpg"
-              alt="admissions"
-              style="width:100%;" 
+  <form class="form-entry-container" id="myForm" method="POST" enctype="multipart/form-data" action="/submit">
+
+
+      <fieldset class="photo-add-fieldset" style= "padding-bottom:20px;">
+
+      <legend class="photo-add-legend">
+        Documents
+      </legend>
+
+      <div class="attach-main-div">
+
+        <div class="father-file-add">
+          <p>
+            <img src="static\images\dummy.jpg" width="131px" height="125px">
+          </p>
+          <p>
+            <label class="father-file-label" htmlFor="">
+              Father's Photo
+            </label>
+            <input type="file" name="father-image" class="father-file-input" required/>
+          </p>
+        </div>
+
+        <div class="mother-file-add">
+          <p>
+            <img src="static\images\dummy.jpg" width="131px" height="125px">
+          </p>
+          <p>
+            <label class="mother-file-label" htmlFor="">
+              Mother's Photo
+            </label>
+        
+            <input type="file" name="mother-image" class="mother-file-input" required
+            />
+          </p>
+        </div>
+
+        <div class="student-file-add">
+          <p>
+            <img src="static\images\dummy.jpg" width="131px" height="125px">
+          </p>
+          <p>
+            <label class="student-file-label" htmlFor="">
+              Student's Photo
+            </label>
+        
+            <input type="file" name="student-image" class="student-file-input" required
+            />
+          </p>
+        </div>
+
+
+        <div class="adhaar-file-add">
+          <p>
+            <img src="static\images\dummy.jpg" width="131px" height="125px">
+          </p>
+          <p>
+            <label class="adhaar-file-label" htmlFor="">
+              Adhaar's Photo
+            </label>
+        
+            <input type="file" name="adhaar-image" class="adhaar-file-input" required
+            />
+          </p>
+        </div>
+
+        <div class="birth-certificate-file-add">
+          <p>
+            <img src="static\images\dummy.jpg" width="131px" height="125px">
+          </p>
+          <p>
+            <label class="birth-certificate-file-label" htmlFor="">
+              Birth Certificate's Photo
+            </label>
+        
+            <input type="file" name="birth-certificate-image" class="birth-certificate-file-input" required
+            />
+          </p>
+        </div>
+
+      </div>
+      
+      </fieldset>
+
+      <fieldset class="student-details-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="student-details-legend">
+          Student Details
+        </legend>
+
+        <div class="student-details-main-div">
+
+          <div class="container-div" id="applied-for-div">
+            <label class="label" id="applied-for-label" htmlFor="applied-for">
+              Applied For <span style="color:red;">* </span>
+            </label>
+            <select class="input" id="applied-for-select" name="applied-for"  required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="academic-year-div">
+            <label class="label" id="academic-year-label" htmlFor="academic-session">
+              Academic Year <span style="color: red;">* </span>
+            </label>
+            <select
+              class="input" 
+              id="academic-year-select"
+              name="academic-session"
+              required
+              
+            >
+              <option value="2021-22">2023-24</option>
+              <option value="2022-23">2024-25</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="student-first-name-div">
+            <label class="label" id="student-first-name-text" htmlFor="student-first-name-label">
+              Student's First Name <span style="color: red;">* </span>
+            </label>
+            <input
+              class="input" 
+              id="student-first-name-input"
+              type="text"
+              placeholder="Student's First Name"
+              name="student-first-name"
+              required
+            /> 
+          </div>
+          
+
+          <div class="container-div" id="student-last-name-div">
+            <label class="label" id="student-last-name-text" htmlFor="student-last-name-label">
+              Student's Last Name <span style="color: red;">* </span>
+            </label>
+            <input
+              class="input" 
+              id="student-last-name-input"
+              type="text"
+              placeholder="Student's Last Name"
+              name="student-last-name"
+              required
+            /> 
+          </div>
+          <div class="container-div" id="aadhar-number-div">
+          <label class="label" id="aadhar-number-text" htmlFor="aadhar-number-label">
+            Aadhar Number <span style="color: red;">* </span>
+          </label>
+          <input
+            class="input" 
+            id="aadhar-number-label"
+            type="text"
+            placeholder="Aadhar Number"
+            name="aadhar-number"
+            required
+          />  
+          </div>
+
+          <div class="container-div" id="ordinal-postional-div">
+            <label class="label" id="ordinal-postional-text" htmlFor="ordinal-postional-label">
+              Ordinal Position Of The Child <span style="color: red;">* </span>
+            </label>
+            <input
+              class="input" 
+              id="ordinal-postional-label"
+              type="text"
+              placeholder="Ordinal Postional"
+              name="ordinal-postional"
+              required
+            />  
+            </div>
+
+
+          <div class="container-div" id="dob-div">
+            <label class="label" id="dob-label" htmlFor="dob">
+              Date of Birth <span style= "color: red;" >* </span>
+            </label>
+            <input
+              class="input"
+              id="dob-input"
+              type="date"
+              name="dob"
+              required
             />
           </div>
-        </section>
-      </td>
-    </tr>
 
-    <tr>
-      <td>
-        <section class="form">
-        <div class="form-main-container">
-          
-        <section class="logo">
-          <div class="logo-container">
-            <p>
-              <img
-                class="Airport-logo"
-                src="static\images\airport-school-logo.png"
-                alt="logo"
-              />
-            </p>
-            
-            <hr style= "border-top:1px solid black;">
-            <br>  
-            <p class="admission-form-text">Admission Form 2023-24</p>
+
+          <div class="container-div" id="dob-inwords-div">
+            <label class="label" id="dob-inwords-label" htmlFor="dob-inwords">
+              Date of Birth in Words <span style= "color: red;" >* </span>
+            </label>
+            <input
+              class="input"
+              id="dob-inwords-input"
+              type="text"
+              name="dob-inwords"
+              required
+            />
           </div>
-        </section>
-
-        <form class="form-entry-container" id="myForm" method="POST" enctype="multipart/form-data" action="/submit">
-          <section class="student-details">
-
-            <br>
-            <br>
-
-
-              <fieldset class="photo-add-fieldset" style= "padding-bottom:20px;">
-
-              <legend class="photo-add-legend">
-                Documents
-              </legend>
-
-              
-              <div class="attach-main-div">
-
-                <table class="attach-table">
-
-                  <tr>
-                    <td>
-                      <div class="father-file-add">
-                        <label class="father-file-label" htmlFor="">
-                            Father's Photo
-                        </label>
-                        <br>
-                        <img src="static\images\dummy.jpg" width="131px" height="125px">
-                        <br>
-                        <input type="file" name="father-image" class="father-file-input" required
-                        />
-                      </div>
-                    </td>
-
-                    <td>
-                      <div class="mother-file-add">
-                        <label class="mother-file-label" htmlFor="">
-                            Mother's Photo
-                          </label>
-                          <br>
-                          <img src="static\images\dummy.jpg" width="131px" height="125px">
-                          <br>
-                          <input type="file" name="mother-image" class="mother-file-input" required
-                          />
-                      </div>
-                    </td>
-
-                  </tr>
-
-
-
-
-                  <tr>
-
-                    <td>
-                      <div class="student-file-add">
-                        <label class="student-file-label" htmlFor="">
-                            Student's Photo
-                        </label>
-                        <br>
-                        <img src="static\images\dummy.jpg" width="131px" height="125px">
-                        <br>
-                        <input type="file" name="student-image" class="student-file-input" required
-                        />
-                      </div>
-                    </td>
-
-                    <td>
-                      <div class="adhaar-file-add">
-                        <label class="adhaar-file-label" htmlFor="">
-                            Adhaar's Photo
-                          </label>
-                          <br>
-                          <img src="static\images\dummy.jpg" width="131px" height="125px" >
-                          <br>
-                          <input type="file" name="adhaar-image" class="adhaar-file-input" required
-                          />
-                      </div>
-                    </td>
-
-
-                  </tr>
-
-
-                  <tr>
-                    <td>
-                      <div class="marksheet-file-add">
-                        <label class="marksheet-file-label" htmlFor="">
-                            Birth Certificate
-                        </label>
-                        <br>
-                        <img src="static\images\dummy.jpg" width="131px" height="125px">
-                        <br>
-                        <input type="file" name="birth-certificate-image" class="marksheet-file-input" required
-                        />
-                      </div>
-                    </td>
-                  </tr>
-
-                </table>
-              </div>
-              
-              </fieldset>
-            
-
-             <br>
-             <br>
-
-
-              <fieldset
-              class="student-details-fieldset"
-              style= "padding-bottom:20px;"
-            >
-              <legend class="student-details-legend">
-                Student Details
-              </legend>
-              <br>
-              <div class="student-details-main-div">
-                <table class="student-details-table">
-
-
-                <tr>
-
-                  <td>
-                    <label class="applied-for-label" htmlFor="applied-for">
-                      Applied For <span style="color:red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <select class="applied-for-select" name="applied-for"  required>
-                      <option value="nursery">Nursery</option>
-                      <option value="jrkg">JR.KG.</option>
-                      <option value="srkg">SR.KG.</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-                  </td>
-
-                  <td>
-                    <label class="academic-year-label" htmlFor="academic-session">
-                      Academic Year <span style="color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <select
-                    class="academic-year-select"
-                    id="academic-session"
-                    name="academic-session"
-                    required
-                    
-                  >
-                    <option value="2021-22">2023-24</option>
-                    <option value="2022-23">2024-25</option>
-                  </select>
-                  </td>
-                </tr>
-                  
-
-                <tr>
-
-                  <td>
-                    <label class="first-name-text" htmlFor="first-name-label">
-                      Student's First Name <span style="color: red;">* </span>
-                    </label>
-
-                  </td>
-
-                  <td>
-                    <input
-                    class="first-name-input"
-                    type="text"
-                    id="name"
-                    placeholder="First Name"
-                    name="first-name"
-                    required
-                  /> 
-                  </td>
-
-                  <td>
-                    <label class="last-name-text" htmlFor="last-name-label">
-                      Student's Last Name <span style="color: red;">* </span>
-                    </label>
-
-                  </td>
-
-                  <td>
-                    <input
-                    class="last-name-input"
-                    type="text"
-                    id="name"
-                    placeholder="Last Name"
-                    name="last-name"
-                    required
-                  /> 
-                  </td>
-                  
-                </tr>
-
-
-                <tr>
-                  <td>
-                    <label class="dob-label" htmlFor="dob">
-                      Date of Birth <span style= "color: red;" >* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input
-                    class="dob-input"
-                    type="date"
-                    id="dob"
-                    name="dob"
-                    required
-                    />
-                  </td>
-
-                  <td>
-                    <label class="dob-inwords-label" htmlFor="dob-inwords">
-                      Date of Birth in Words <span style= "color: red;" >* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input
-                      class="dob-inwords-input"
-                      type="text"
-                      id="dob-inwords"
-                      name="dob-inwords"
-                      required
-                    />
-                  </td>
-
-                </tr>
-
-
-                <!-- <div class="age-as-on">Age as on (DD/MM/YYYY)</div> -->
-                <br>
-
-                <tr>
-
-                  <td>
-                    <label class="years-label" htmlFor="years">
-                      Years 
-                    </label>
-                  </td>
-                  
-                  <td>
-                    <input class="years-input" type="text" id="years" name="years" />
-                  </td>
-
-                  <td>
-                    <label class="months-label" htmlFor="months">
-                      Months 
-                    </label>
-                  </td>
-
-                  <td>
-                    <input class="months-input" type="text" id="months" name="months" />
-                  </td>
-
-                  <td>
-                    <label class="days-label" htmlFor="days">
-                      Days 
-                    </label>
-                  </td>
-
-                  <td>
-                    <input class="days-input" type="text" id="days" name="days" />
-                  </td>
-
-                </tr>
-
-                <!-- <br />
-                <hr />
-                <br /> -->
-
-                <tr>
-
-                  <td>
-                    <label class="nationality-label" htmlFor="nationality">
-                      Nationality <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input type="text" class="nationality-input" id="nationality" name="nationality" required/>
-                  </td>
-
-                  <td>
-                    <label class="mothertounge-label" htmlFor="mothertounge">
-                      Mother Tounge <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input type="text" class="mothertounge-input" id="mothertounge" name="mothertounge" required/>
-                  </td>
-
-                  <td>
-                    <label class="religion-label" htmlFor="religion">
-                      Religion <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input type="text" class="religion-input" id="religion" name="religion" required/>
-                  </td>
-
-                </tr>
-                  
-                <tr>
-                  <td>
-                    <label class="bloodgroup-label" htmlFor="bloodgroup">
-                      Blood Group  <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <select type="text" class="bloodgroup-select" id="bloodgroup" name="bloodgroup" required>
-                    <option value="A+">A+</option>
-                    <option value="B+">B+</option>
-                    <option value="O+">O+</option>
-                    <option value="AB+">AB+</option>
-                    <option value="A-">A-</option>
-                    <option value="B-">B-</option>
-                    <option value="O-">O-</option>
-                    <option value="AB-">AB-</option>
-                    </select>
-                  </td>
-                  
-
-                  <td>
-                    <label class="gender-label" htmlFor="gender">
-                      Gender <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input class="gender-input" type="text" name="gender" placeholder="Gender" id="gender" required/>
-                  </td>
-
-                  <td>
-                    <label class="category-label" htmlFor="category">
-                      Category <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input class="category-input" type="radio" id="gen" name="category" value="gen" required/>
-                    <label htmlFor="gen">Gen</label>
-                    <input class="category-input" type="radio" id="sc" name="category" value="sc" required/>
-                    <label htmlFor="sc">SC</label>
-                    <input class="category-input" type="radio" id="st" name="category" value="st" required/>
-                    <label htmlFor="st">ST</label>
-                    <input class="category-input" type="radio" id="obc" name="category" value="obc" required/>
-                    <label htmlFor="obc">OBC</label>
-                  </td>
-                </tr>
-
-
-                <tr>
-                  <td>
-                    <label class="permanent-address-label" htmlFor="permanent-address-input">
-                      Permanent Address <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-                  
-                  <td colspan="5">
-                    <textarea class="permanent-address-input" id="permanent-address-input" name="permanent-address" required>
-                    </textarea>
-                  </td>
-                </tr>
-                        
-            
-                
-                <tr>
-                  <td>
-                    <label class="permanent-state-label" htmlFor="">
-                      State <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <select class="permanent-state-select" id="permanent-state" name="permanent-state" required>
-                      <option value="nursery">Nursery</option>
-                      <option value="jrkg">JR.KG.</option>
-                      <option value="srkg">SR.KG.</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-                  </td>
-
-                  <td>
-                    <label class="permanent-district-label" htmlFor="">
-                      District <span style= "color: red;">* </span>
-                  </label>
-                  </td>
-
-                  <td>
-                    <select class="permanent-district-select" id="permanent-district" name="permanent-district" required>
-                      <option value="nursery">Nursery</option>
-                      <option value="jrkg">JR.KG.</option>
-                      <option value="srkg">SR.KG.</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-                  </td>
-
-                  <td>
-                    <label class="permanent-pincode-label" htmlFor="permanent-pincode">
-                      Pincode <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input type="text" class="permanent-pincode-input" id="permanent-pincode" name="permanent-pincode" name="permanent-pincode" required/>
-                  </td>
-                </tr>
-
-
-
-                <tr>
-                  <td>
-                    <label class="same-as-permanent-address-label" htmlFor="">
-                      Same as permanent address
-                    </label>
-                  </td>
-
-                  <td>
-                    <input type="checkbox"  class="same-as-permanent-address-check" id="same-as-permanent-address-label-checkbox">
-                  </td>
-                </tr>
-                
-
-
-                <tr>
-                  <td>
-                    <label class="correspondance-address-label" htmlFor="correspondance-address-input">
-                      Correspondance Address <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td colspan="5">
-                    <textarea class="correspondance-address-input" id="correspondance-address-input" name="correspondance-address" required>
-                    </textarea>
-                  </td>
-                </tr>
-
-
-                <tr>
-                  <td>
-                    <label class="correspondance-state-label" htmlFor="">
-                      State <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <select class="correspondance-state-select" id="correspondance-state" name="correspondance-state" required>
-                      <option value="nursery">Nursery</option>
-                      <option value="jrkg">JR.KG.</option>
-                      <option value="srkg">SR.KG.</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-                  </td>
-
-                  <td>
-                    <label class="correspondance-district-label" htmlFor="">
-                      District <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <select class="correspondance-district-select" id="correspondance-district" name="correspondance-district" required>
-                      <option value="nursery">Nursery</option>
-                      <option value="jrkg">JR.KG.</option>
-                      <option value="srkg">SR.KG.</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-                  </td>
-
-                  <td>
-                    <label class="correspondance-pincode-label" htmlFor="">
-                      Pincode <span style= "color: red;">* </span>
-                    </label>
-                  </td>
-
-                  <td>
-                    <input type="text"
-                    class="correspondance-pincode-input"
-                    id="correspondance-pincode"
-                    name="correspondance-pincode"
-                    required
-                    />
-                  </td>
-                </tr>
-
-                </table>
-              </div>
-              </fieldset>
-            
-
-              <br>
-              <br>
-
-
-              <fieldset
-                      class="family-details-fieldset"
-                      style= "padding-bottom:20px;"
-                  >
-                      <legend class="family-details-legend">
-                        Family Details
-                      </legend>
-                      <br>
-                      <div class="family-details-main-div">
-
-                      <table class="family-detail-table">
-                        <tr>
-
-                          <td>
-                            <label class="father-name-label"
-                            htmlFor="father-name">
-                            Father's Name <span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="father-name-input"
-                            type="text"
-                            id="father-name"
-                            placeholder="Father's Name"
-                            name="father-name"
-                            required
-                          />
-                          </td>
-
-                          <td>
-                            <label class="mother-name-label"
-                              htmlFor="mother-name">
-                              Mother's Name <span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="mother-name-input"
-                            type="text"
-                            id="mother-name"
-                            placeholder="Mother's Name"
-                            name="mother-name"
-                            required
-                          />
-                          </td>
-
-                        </tr>
-
-
-
-                        <tr>
-                          <td>
-                            <label class="father-occupation-label"
-                                  htmlFor="father-occupation">
-                                  Father's Occupation <span style="color:red;">* </span>
-                              </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="father-occupation-input"
-                            type="text"
-                            id="father-occupation"
-                            placeholder="Occupation"
-                            name="father-occupation"
-                            required
-                          />
-                          </td>
-
-
-                          <td>
-                            <label class="mother-occupation-label"
-                                      htmlFor="mother-occupation">
-                                      Mother's Occupation <span style="color:red;">* </span>
-                                  </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="mother-occupation-input"
-                            type="text"
-                            id="mother-occupation"
-                            placeholder="Occupation"
-                            name="mother-occupation"
-                            required
-                          />
-                          </td>
-                        </tr>
-
-
-
-
-                        <tr>
-                          <td>
-                            <label class="father-contact-label"
-                              htmlFor="father-contact">
-                              Father's Contact No<span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="father-contact-input"
-                            type="text"
-                            id="father-contact"
-                            placeholder="contact"
-                            name="father-contact"
-                            required
-                          />
-                          </td>
-
-                          <td>
-                            <label class="mother-contact-label"
-                            htmlFor="mother-contact">
-                              Mother's Contact No<span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="mother-contact-input"
-                            type="text"
-                            id="mother-contact"
-                            placeholder="contact"
-                            name="mother-contact"
-                            required
-                          />
-                          </td>
-                        </tr>
-                        
-
-
-                        <tr>
-
-                          <td>
-                            <label class="father-email-label"
-                                  htmlFor="father-email">
-                                  Father's Email <span style="color:red;">* </span>
-                              </label>
-                          </td>
-
-                          <td>
-                            <input
-                                class="father-email-input"
-                                type="text"
-                                id="father-email"
-                                placeholder="email"
-                                name="father-email"
-                                required
-                              />
-                          </td>
-
-                          <td>
-                            <label class="mother-email-label"
-                                      htmlFor="mother-email">
-                                      Mother's Email <span style="color:red;">* </span>
-                                  </label>
-                          </td>
-
-                          <td>
-                            <input
-                                    class="mother-email-input"
-                                    type="text"
-                                    id="mother-email"
-                                    placeholder="email"
-                                    name="mother-email"
-                                    required
-                                  />
-                          </td>
-
-                        </tr>
-
-                        <tr>
-
-
-                          <td>
-
-                            <label class="family-annual-income-label"
-                            htmlFor="family-annual-income">
-                            Family Annual Income <span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="family-annual-income-input"
-                            type="text"
-                            id="family-annual-income"
-                            placeholder="income"
-                            name="family-annual-income"
-                            required
-                            />
-                          </td>
-                       
-
-
-                          <td>
-
-                            <label class="WhatsApp-label"
-                            htmlFor="WhatsApp">
-                            WhatsApp Number <span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="WhatsApp-input"
-                            type="text"
-                            id="WhatsApp"
-                            placeholder="WhatsApp"
-                            name="WhatsApp"
-                            required
-                            />
-                          </td>
-                        </tr>
-                        
-
-<!--                         
-                        <br>
-                        <hr>
-                        <br> -->
-
-
-                        <tr>
-                          <td>
-                            <label class="guardian-name-label"
-                              htmlFor="guardian-name">
-                              Guardian's Name <span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="guardian-name-input"
-                            type="text"
-                            id="guardian-name"
-                            placeholder="Name"
-                            name="guardian-name"
-                            required
-                            />
-                          </td>
-
-                          <td>
-                            <label class="relation-with-child-label"
-                              htmlFor="relation-with-child">
-                              Relation with child <span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="relation-with-child-input"
-                            type="text"
-                            id="relation-with-child"
-                            placeholder="relation"
-                            name="relation-with-child"
-                            required
-                          />
-                          </td>
-
-                        </tr>
-
-
-                        <tr>
-                          <!-- <td>
-                            <label class="guardian-occupation-label"
-                              htmlFor="guardian-occupation">
-                              Guardian's Occupation <span style="color:red;">* </span>
-                          </label>
-                          </td>
-
-                          <td>
-                            <input
-                                class="guardian-occupation-input"
-                                type="text"
-                                id="guardian-occupation"
-                                placeholder="occupation"
-                                required
-                                />
-                          </td> -->
-
-                          <td>
-                            <label class="guardian-contact-label"
-                                htmlFor="guardian-contact">
-                                Guardian's contact No<span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="guardian-contact-input"
-                            type="text"
-                            id="guardian-contact"
-                            placeholder="contact"
-                            name="guardian-contact"
-                            required
-                            />
-                          </td>
-                        </tr>
-
-
-
-                        <!-- <tr>
-                          <td>
-                            <label class="guardian-email-label"
-                              htmlFor="guardian-email">
-                              Guardian's Email <span style="color:red;">* </span>
-                            </label>
-                          </td>
-                          
-                          <td>
-                            <input
-                                  class="guardian-email-input"
-                                  type="text"
-                                  id="guardian-email"
-                                  placeholder="email"
-                                  required
-                                  />
-                          </td>
-
-                          <td>
-                            <label class="guardian-annual-income-label"
-                              htmlFor="guardian-annual-income">
-                              Guardian's Annual Income<span style="color:red;">* </span>
-                            </label>
-                          </td>
-
-                          <td>
-                            <input
-                            class="guardian-annual-income-input"
-                            type="text"
-                            id="guardian-annual-income"
-                            placeholder="annual-income"
-                            required
-                            />
-                          </td>
-                        </tr> -->
-                      </table>
-                      </div>
-              </fieldset>
-            
-
-            
-              <br>
-              <br>
-
-              <fieldset class="declaration-fieldset" style= "padding-bottom:20px;">
-                  <legend class="declaration-legend">
-                    Declaration
-                  </legend>
-                  
-                  <table>
-
-                    <tr>
-                      <td>
-                        <label class="declaration1-label" htmlFor="">
-                          We certify that all information stated by us in this form, to the best of our knowledge, is correct and we agree that if any information is found incorrect after admission of our child, the institution at its discretion can cancel the admission and we shall not take any objection in any manner whatsoever.
-                          <span style="color:red;">* </span>
-                      </label>
-                      </td>
-
-                      <td>
-                        <input type="checkbox"  class="declration1-check"  required>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <label class="declaration2-label" htmlFor="">
-                          We assure you that our child is physically and mentally normal. We shall here by observe the rules, regulations and discipline of the school.
-                          <span style="color:red;">* </span>
-                      </label>
-                      </td>
-
-                      <td>
-                        <input type="checkbox"  class="declaration2-check" ] required>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td colspan="3" class="last-button">
-                        <button class="submit-button" type="submit" id="payment-gateway" >
-                          Submit
-                        </button>
-                      </td>
-                    </tr>
-                    
-                  </table>
-                  </div>
-
-
-              </fieldset>
-
-          </section>
-        </form>
+
+
+          <div class="container-div" id="years-div">
+            <label class="label" id="years-label" htmlFor="years">
+              Years 
+            </label>
+            <input class="input" id="years-input" type="text" name="years" />
+          </div>
+
+          <div class="container-div" id="manths-div">
+            <label class="label" id="months-label" htmlFor="months">
+              Months 
+            </label>
+            <input class="input" id="months-input" type="text" name="months" />
+          </div>
+
+          <div class="container-div" id="days-div">
+            <label class="label" id="days-label" htmlFor="days">
+              Days 
+            </label>
+            <input class="input" id="days-input" type="text" name="days" />
+          </div>
+
+
+          <div class="container-div" id="nationality-div">
+            <label class="label" id="nationality-label" htmlFor="nationality">
+              Nationality <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="nationality-input" name="nationality" required/>
+          </div>
+
+          
+          <div class="container-div" id="mothertounge-div">
+            <label class="label" id="mothertounge-label" htmlFor="mothertounge">
+              Mother Tounge <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="mothertounge-input" name="mothertounge" required/>
+          </div>
+
+
+          <div class="container-div" id="religion-div">
+            <label class="label" id="religion-label" htmlFor="religion">
+              Religion <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="religion-input" name="religion" required/>
+          </div>
+
+
+          <div class="container-div" id="bloodgroup-div">
+            <label class="label" id="bloodgroup-label" htmlFor="bloodgroup">
+              Blood Group  <span style= "color: red;">* </span>
+            </label>
+            <select class="input" type="text" id="bloodgroup-select" name="bloodgroup" required>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="O+">O+</option>
+              <option value="AB+">AB+</option>
+              <option value="A-">A-</option>
+              <option value="B-">B-</option>
+              <option value="O-">O-</option>
+              <option value="AB-">AB-</option>
+            </select>
+          </div>
+
+          <div class="container-div" id="gender-div">
+            <label class="label" id="gender-label" htmlFor="gender">
+              Gender <span style= "color: red;">* </span>
+            </label>
+            <input class="input" id="gender-input" type="text" name="gender" placeholder="Gender" required/>
+          </div>
+
+
+          <div class="container-div" id="category-div">
+            <label class="label" id="category-label" htmlFor="category">
+              Category <span style= "color: red;">* </span>
+            </label>
+            <input id="category-input" type="radio" name="category" value="gen" required/>
+            <label htmlFor="gen">Gen</label>
+            <input id="category-input" type="radio" name="category" value="sc" required/>
+            <label htmlFor="sc">SC</label>
+            <input id="category-input" type="radio" name="category" value="st" required/>
+            <label htmlFor="st">ST</label>
+            <input id="category-input" type="radio" name="category" value="obc" required/>
+            <label htmlFor="obc">OBC</label>
+          </div>
+
+
+          <div class="container-div" id="permanent-address-div">
+            <label class="label" id="permanent-address-label" htmlFor="permanent-address-input">
+              Permanent Address <span style= "color: red;">* </span>
+            </label>
+            <textarea class="input" id="permanent-address-input" name="permanent-address" required>
+            </textarea>
+          </div>
+
+
+          <div class="container-div" id="permanent-state-div">
+            <label class="label" id="permanent-state-label" htmlFor="">
+              State <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="permanent-state-select" name="permanent-state" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="permanent-district-div">
+            <label class="label" id="permanent-district-label" htmlFor="">
+              District <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="permanent-district-select" name="permanent-district" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="permanent-pincode-div">
+            <label class="label" id="permanent-pincode-label" htmlFor="permanent-pincode">
+              Pincode <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text" id="permanent-pincode-input" name="permanent-pincode" name="permanent-pincode" required/>
+          </div>
+
+
+          <div class="container-div" id="same-as permanent-address-div">
+            <label class="label" id="same-as-permanent-address-label" htmlFor="">
+              Same as permanent address
+            </label>
+            <input type="checkbox" id="same-as-permanent-address-check">
+          </div>
+
+
+          <div class="container-div" id="correspondance-address-div">
+            <label class="label" id="correspondance-address-label" htmlFor="correspondance-address-input">
+              Correspondance Address <span style= "color: red;">* </span>
+            </label>
+            <textarea class="input" id="correspondance-address-input" name="correspondance-address" required>
+            </textarea>
+          </div>
+
+
+          <div class="container-div" id="correspondance-state-div">
+            <label class="label" id="correspondance-state-label" htmlFor="">
+              State <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="correspondance-state-select" name="correspondance-state" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="correspondance-district-div">
+            <label class="label" id="correspondance-district-label" htmlFor="">
+              District <span style= "color: red;">* </span>
+            </label>
+            <select class="input" id="correspondance-district-select" name="correspondance-district" required>
+              <option value="nursery">Nursery</option>
+              <option value="jrkg">JR.KG.</option>
+              <option value="srkg">SR.KG.</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+
+          <div class="container-div" id="correspondance-pincode-div">
+            <label class="label" id="correspondance-pincode-label" htmlFor="">
+              Pincode <span style= "color: red;">* </span>
+            </label>
+            <input class="input" type="text"
+              id="correspondance-pincode-input"
+              name="correspondance-pincode"
+              required
+            />
+          </div>
+
+
+
         </div>
-      </section>
-        </td>
-    </tr>
-  
-</table>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      </fieldset>
+
+      <fieldset class="family-details-fieldset" style= "padding-bottom:20px;">
+
+        <legend class="family-details-legend">
+          Family Details
+        </legend>
+
+        <div class="family-details-main-div">
+
+        
+          <div class="container-div" id="father-name-div">
+            <label class="label" id="father-name-label" htmlFor="father-name">
+              Father's Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-name-input" type="text" id="father-name" placeholder="Father's Name" name="father-name" required/>
+          </div>
+
+          <div class="container-div" id="mother-name-div">
+            <label class="label" id="mother-name-label" htmlFor="mother-name">
+              Mother's Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-name-input" type="text" id="mother-name" placeholder="Mother's Name" name="mother-name" required/>
+          </div>
+      
+          <div class="container-div" id="father-occupation-div">
+            <label class="label" id="father-occupation-label" htmlFor="father-occupation">
+              Father's Occupation <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-occupation-input" type="text" id="father-occupation" placeholder="Occupation" name="father-occupation" required/>
+          </div>
+
+          <div class="container-div" id="mother-occupation-div">
+            <label class="label" id="mother-occupation-label" htmlFor="mother-occupation">
+              Mother's Occupation <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-occupation-input" type="text" id="mother-occupation" placeholder="Occupation" name="mother-occupation" required/>
+          </div>
+
+          <div class="container-div" id="father-contact-div">
+            <label class="label" id="father-contact-label" htmlFor="father-contact">
+              Father's Contact <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-contact-input" type="text" id="father-contact" placeholder="Contact" name="father-contact" required/>
+          </div>
+
+          <div class="container-div" id="mother-contact-div">
+            <label class="label" id="mother-contact-label" htmlFor="mother-contact">
+              Mother's Contact <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-contact-input" type="text" id="mother-contact" placeholder="Contact" name="mother-contact" required/>
+          </div>
+
+          <div class="container-div" id="father-email-div">
+            <label class="label" id="father-email-label" htmlFor="father-email">
+              Father's Email <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="father-email-input" type="text" id="father-email" placeholder="Email" name="father-email" required/>
+          </div>
+
+          <div class="container-div" id="mother-email-div">
+            <label class="label" id="mother-email-label" htmlFor="mother-email">
+              Mother's Email <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="mother-email-input" type="text" id="mother-email" placeholder="Email" name="mother-email" required/>
+          </div>
+
+          <div class="container-div" id="family-annual-income-div">
+            <label class="label" id="family-annual-income-label" htmlFor="family-annual-income">
+              Family Annual Income <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="family-annual-income-input" type="text" id="family-annual-income" placeholder="Income" name="family-annual-income" required/>
+          </div>
+
+          <div class="container-div" id="guardian-name-div">
+            <label class="label" id="guardian-name-label" htmlFor="guardian-name">
+              Guardian's Name <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="guardian-name-input" type="text" id="guardian-name" placeholder="Guardian's Name" name="guardian-name" required/>
+          </div>
+
+          <div class="container-div" id="relation-with-child-div">
+            <label class="label" id="relation-with-child-label"  htmlFor="relation-with-child">
+              Relation with child <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="relation-with-child-input" type="text" id="relation-with-child" placeholder="Relation" required/>
+          </div>
+
+          <div class="container-div" id="guardian-contact-div">
+            <label class="label" id="guardian-contact-label" htmlFor="guardian-contact">
+              Guardian's Contact <span style="color:red;">* </span>
+            </label>
+            <input class="input" id="guardian-contact-input" type="text" id="guardian-contact" placeholder="Contact" name="guardian-contact" required/>
+          </div>
+
+
+      </div>
+      </fieldset>
+
+      <fieldset class="declaration-fieldset" style= "padding-bottom:20px;">
+        <legend class="declaration-legend">
+          Declaration
+        </legend>
+
+        <div class="declaration-main-div">
+
+
+          <div class="container-div" id="declaration1">
+            <label class="label"  id="declaration1-label" htmlFor="">
+              We certify that all information stated by us in this form, to the best of our knowledge, is correct and we agree that if any information is found incorrect after admission of our child, the institution at its discretion can cancel the admission and we shall not take any objection in any manner whatsoever.
+              <span style="color:red;">* </span>
+            </label>
+            <input type="checkbox"  id="declration1-check" required>
+          </div>
+
+          <div class="container-div" id="declaration2">
+            <label class="label"  id="declaration2-label" htmlFor="">
+              We assure you that our child is physically and mentally normal. We shall here by observe the rules, regulations and discipline of the school.
+              <span style="color:red;">* </span>
+            </label>
+            <input type="checkbox"  id="declaration2-check" required>
+          </div>
+
+          <div class="container-div">
+            <button class="submit-button" type="submit">
+              Submit
+            </button>
+          </div>
+
+        </div>
+
+
+      </fieldset>
+
+
+  </form>
 </body>
-<script src="static\scripts\script.js"></script>
+<script src="../static/scripts/script.js"></script>
 </html>
