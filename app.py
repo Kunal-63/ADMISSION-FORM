@@ -13,74 +13,98 @@ connection = smtplib.SMTP('smtp.gmail.com', 587)
 connection.starttls()
 connection.login(user = "kunaladwani1456@gmail.com", password = "akzg uqgo opis tunl")
 
+# Define the columns of your table
+columns = [
+    "FORM_ID", "CURRENT_DATE1", "INTERVIEW_DATE", "SELECTED_VALUE", "FATHER_PATH",
+    "MOTHER_PATH", "STUDENT_PATH", "ADHAAR_PATH", "BIRTH_PATH", "FIRST_NAME",
+    "LAST_NAME", "AADHAR_NUMBER", "GENDER", "APPLIED_FOR", "CONTACT_NO",
+    "PLACE_OF_BIRTH", "DATE_OF_BIRTH", "DATE_OF_BIRTH_IN_WORDS", "ORDINAL_POSITION",
+    "BLOOD_GROUP", "CATEGORY", "NATIONALITY", "CASTE", "RELIGION", "SKILLS",
+    "PADDRESS", "PTALUKA", "PDISTRICT", "PSTATE", "PPINCODE", "PCOUNTRY",
+    "CADDRESS", "CTALUKA", "CDISTRICT", "CSTATE", "CPINCODE", "CCOUNTRY",
+    "FATHER_NAME", "MOTHER_NAME", "FATHER_OCCUPATION", "MOTHER_OCCUPATION",
+    "FATHER_QUALIFICATION", "MOTHER_QUALIFICATION", "LANG_KNOWN_FATHER",
+    "LANG_KNOWN_MOTHER", "FATHER_BUSINESS", "MOTHER_BUSINESS", "DETAILS_OF_FATHER",
+    "DETAILS_OF_MOTHER", "DESIGNATION_OF_FATHER", "DESIGNATION_OF_MOTHER",
+    "FATHER_CONTACT", "MOTHER_CONTACT", "FATHER_EMAIL", "MOTHER_EMAIL",
+    "ADDRESS_FATHER", "ADDRESS_MOTHER", "FAMILY_INCOME", "GUARDIAN_NAME",
+    "RELATION_WITH_CHILD", "GUARDIAN_CONTACT", "NAME1", "CLASS1", "NAME2",
+    "CLASS2", "NAME3", "CLASS3"
+]
+
 cur.execute('''CREATE TABLE IF NOT EXISTS ADMISSION_FORM (
-    FORM_ID VARCHAR(255) PRIMARY KEY,
-    FATHER_PATH varchar(255) NOT NULL,
-    MOTHER_PATH varchar(255) NOT NULL,
-    STUDENT_PATH varchar(255) NOT NULL,
-    ADHAAR_PATH varchar(255) NOT NULL,
-    BIRTH_PATH varchar(255) NOT NULL,
-    APPLIED_FOR VARCHAR(255) NOT NULL,  
-    ACADEMIC_YEAR VARCHAR(255) NOT NULL,    
-    STUDENT_FIRST_NAME VARCHAR(255) NOT NULL,
-    STUDENT_LAST_NAME VARCHAR(255) NOT NULL,
-    DATE_OF_BIRTH VARCHAR(255) NOT NULL,
-    DATE_OF_BIRTH_IN_WORDS VARCHAR(255) NOT NULL,
-    YEARS VARCHAR(255) NOT NULL,
-    MONTHS VARCHAR(255) NOT NULL,
-    DAYS VARCHAR(255) NOT NULL,
-    NATIONALITY VARCHAR(255) NOT NULL,
-    MOTHER_TONGUE VARCHAR(255) NOT NULL,
-    RELIGION VARCHAR(255) NOT NULL,
-    BLOOD_GROUP VARCHAR(255) NOT NULL,
-    GENDER VARCHAR(255) NOT NULL,
-    CATEGORY VARCHAR(255) NOT NULL,
-    PERMANENT_ADDRESS VARCHAR(255) NOT NULL,
-    PERMANENT_STATE VARCHAR(255) NOT NULL,
-    PERMANENT_DISTRICT VARCHAR(255) NOT NULL,
-    PERMANENT_PINCODE VARCHAR(255) NOT NULL,
-    CORRESPONDENCE_ADDRESS VARCHAR(255) NOT NULL,
-    CORRESPONDENCE_STATE VARCHAR(255) NOT NULL,
-    CORRESPONDENCE_DISTRICT VARCHAR(255) NOT NULL,
-    CORRESPONDENCE_PINCODE VARCHAR(255) NOT NULL,
-    FATHER_NAME VARCHAR(255) NOT NULL,
-    MOTHER_NAME VARCHAR(255) NOT NULL,
-    FATHER_OCCUPATION VARCHAR(255) NOT NULL,
-    MOTHER_OCCUPATION VARCHAR(255) NOT NULL,
-    FATHER_CONTACT VARCHAR(255) NOT NULL,
-    MOTHER_CONTACT VARCHAR(255) NOT NULL,
-    FATHER_EMAIL VARCHAR(255) NOT NULL,
-    MOTHER_EMAIL VARCHAR(255) NOT NULL,
-    FAMILY_INCOME VARCHAR(255) NOT NULL,
-    WHATSAPP_CONTACT VARCHAR(255) NOT NULL,
-    GUARDIAN_NAME VARCHAR(255) NOT NULL,
-    RELATION_WITH_CHILD VARCHAR(255) NOT NULL,
-    GUARDIAN_CONTACT VARCHAR(255) NOT NULL
+    FORM_ID VARCHAR(200) PRIMARY KEY,
+    CURRENT_DATE1 VARCHAR(200) NOT NULL,
+    INTERVIEW_DATE VARCHAR(200) NOT NULL,
+    SELECTED_VALUE INT NOT NULL,
+    FATHER_PATH varchar(200) NOT NULL,
+    MOTHER_PATH varchar(200) NOT NULL,
+    STUDENT_PATH varchar(200) NOT NULL,
+    ADHAAR_PATH varchar(200) NOT NULL,
+    BIRTH_PATH varchar(200) NOT NULL,
+    FIRST_NAME varchar(200) NOT NULL,
+    LAST_NAME varchar(200) NOT NULL,
+    AADHAR_NUMBER varchar(200) NOT NULL,
+    GENDER varchar(200) NOT NULL,
+    APPLIED_FOR varchar(200) NOT NULL,
+    CONTACT_NO varchar(200) NOT NULL,
+    PLACE_OF_BIRTH varchar(200) NOT NULL,
+    DATE_OF_BIRTH varchar(200) NOT NULL,
+    DATE_OF_BIRTH_IN_WORDS varchar(200) NOT NULL,
+    ORDINAL_POSITION varchar(200) NOT NULL,
+    BLOOD_GROUP varchar(200) NOT NULL,
+    CATEGORY varchar(200) NOT NULL,
+    NATIONALITY varchar(200) NOT NULL,
+    CASTE varchar(200) NOT NULL,
+    RELIGION varchar(200) NOT NULL,
+    SKILLS varchar(200) NOT NULL,
+    PADDRESS varchar(255) NOT NULL,
+    PTALUKA varchar(200) NOT NULL,
+    PDISTRICT varchar(200) NOT NULL,
+    PSTATE varchar(200) NOT NULL,
+    PPINCODE varchar(200) NOT NULL,
+    PCOUNTRY varchar(200) NOT NULL,
+    CADDRESS varchar(255) NOT NULL,
+    CTALUKA varchar(200) NOT NULL,
+    CDISTRICT varchar(200) NOT NULL,
+    CSTATE varchar(200) NOT NULL,
+    CPINCODE varchar(200) NOT NULL,
+    CCOUNTRY varchar(200) NOT NULL,
+    FATHER_NAME varchar(200) NOT NULL,
+    MOTHER_NAME varchar(200) NOT NULL,
+    FATHER_OCCUPATION varchar(200) NOT NULL,
+    MOTHER_OCCUPATION varchar(200) NOT NULL,
+    FATHER_QUALIFICATION varchar(200) NOT NULL,
+    MOTHER_QUALIFICATION varchar(200) NOT NULL,
+    LANG_KNOWN_FATHER varchar(200) NOT NULL,
+    LANG_KNOWN_MOTHER varchar(200) NOT NULL,
+    FATHER_BUSINESS VARCHAR(200) NOT NULL,
+    MOTHER_BUSINESS VARCHAR(200) NOT NULL,
+    DETAILS_OF_FATHER VARCHAR(200) NOT NULL,
+    DETAILS_OF_MOTHER VARCHAR(200) NOT NULL,
+    DESIGNATION_OF_FATHER VARCHAR(200) NOT NULL,
+    DESIGNATION_OF_MOTHER VARCHAR(200) NOT NULL,
+    FATHER_CONTACT varchar(200) NOT NULL,
+    MOTHER_CONTACT varchar(200) NOT NULL,
+    FATHER_EMAIL varchar(200) NOT NULL,
+    MOTHER_EMAIL varchar(200) NOT NULL,
+    ADDRESS_FATHER varchar(200) NOT NULL,
+    ADDRESS_MOTHER varchar(200) NOT NULL,
+    FAMILY_INCOME varchar(200) NOT NULL,
+    GUARDIAN_NAME varchar(200) NOT NULL,
+    RELATION_WITH_CHILD varchar(200) NOT NULL,
+    GUARDIAN_CONTACT varchar(200) NOT NULL,
+    NAME1 varchar(200) NOT NULL,
+    CLASS1 varchar(200) NOT NULL,
+    NAME2 varchar(200) NOT NULL,
+    CLASS2 varchar(200) NOT NULL,
+    NAME3 varchar(200) NOT NULL,
+    CLASS3 varchar(200) NOT NULL
 )''')
 
-query = '''INSERT INTO ADMISSION_FORM (FORM_ID,
-    FATHER_PATH, MOTHER_PATH,STUDENT_PATH,ADHAAR_PATH,BIRTH_PATH,
-    APPLIED_FOR, ACADEMIC_YEAR, STUDENT_FIRST_NAME, STUDENT_LAST_NAME,
-    DATE_OF_BIRTH, DATE_OF_BIRTH_IN_WORDS, YEARS, MONTHS, DAYS, NATIONALITY,
-    MOTHER_TONGUE, RELIGION, BLOOD_GROUP, GENDER, CATEGORY,
-    PERMANENT_ADDRESS, PERMANENT_STATE, PERMANENT_DISTRICT, PERMANENT_PINCODE,
-    CORRESPONDENCE_ADDRESS, CORRESPONDENCE_STATE, CORRESPONDENCE_DISTRICT, CORRESPONDENCE_PINCODE,
-    FATHER_NAME, MOTHER_NAME, FATHER_OCCUPATION, MOTHER_OCCUPATION,
-    FATHER_CONTACT, MOTHER_CONTACT, FATHER_EMAIL, MOTHER_EMAIL,
-    FAMILY_INCOME,WHATSAPP_CONTACT, GUARDIAN_NAME, RELATION_WITH_CHILD, GUARDIAN_CONTACT
-) VALUES ( 
-    %s,
-    %s, %s, %s, %s, %s,
-    %s, %s, %s, %s,
-    %s, %s, %s, %s, %s, %s,
-    %s, %s, %s, %s, %s,
-    %s, %s, %s, %s,%s,
-    %s, %s, %s, %s,
-    %s, %s, %s, %s,
-    %s, %s, %s, %s,
-    %s, %s, %s, %s
-);
-''' 
+
+
+
 
 cur.execute('CREATE TABLE IF NOT EXISTS login_details(FORM_ID VARCHAR(255) PRIMARY KEY, USERNAME VARCHAR(255) NOT NULL, PASSWORD VARCHAR(255) NOT NULL)')
 query1 = "INSERT INTO LOGIN_DETAILS (FORM_ID, USERNAME, PASSWORD) VALUES (%s,%s, %s)"
@@ -105,24 +129,45 @@ def upload_file():
     data = cur.fetchall()
     form_id = "APS"+str(data[0][0] + 1)
 
-    lst = []
-    lst.append(form_id)
-    
-    file_names=['father-image','mother-image','student-image','adhaar-image', 'birth-certificate-image']
+    lst = [form_id, datetime.datetime.now().strftime("%d-%m-%y %H:%M"), "NONE", 0]
+
+    file_values = []
+
+    file_names = ['father-image', 'mother-image', 'student-image', 'adhaar-image', 'birth-certificate-image']
 
     for file_name in file_names:
         image = request.files[file_name]
         if image.filename != '':
-            image_path = os.path.join(app.config['UPLOAD_FOLDER'],image.filename)
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
             image_path = image_path.replace(" ", "-")
             image.save(image_path)
-            lst.append("..\\"+image_path)
+            file_values.append("..\\" + image_path)
 
-    # for file_name in file_names:
-    #     image = request.files[file_name].read()
-    #     lst.append(image)
-    for i in request.form:
-        lst.append(request.form[i])
+    form_values = [request.form[i] for i in request.form]
+
+    # Combine form_values, file_values, and the form_id
+    lst = lst + file_values + form_values
+    print(len(lst))
+    # Execute the query
+    query = f'''INSERT INTO ADMISSION_FORM (
+    FORM_ID, CURRENT_DATE1, INTERVIEW_DATE, SELECTED_VALUE,
+    FATHER_PATH, MOTHER_PATH, STUDENT_PATH, ADHAAR_PATH, BIRTH_PATH,
+    FIRST_NAME, LAST_NAME, AADHAR_NUMBER, GENDER, APPLIED_FOR,
+    CONTACT_NO, PLACE_OF_BIRTH, DATE_OF_BIRTH, DATE_OF_BIRTH_IN_WORDS,
+    ORDINAL_POSITION, BLOOD_GROUP, CATEGORY, NATIONALITY, CASTE, RELIGION,
+    SKILLS, PADDRESS, PTALUKA, PDISTRICT, PSTATE, PPINCODE, PCOUNTRY,
+    CADDRESS, CTALUKA, CDISTRICT, CSTATE, CPINCODE, CCOUNTRY, FATHER_NAME,
+    MOTHER_NAME, FATHER_OCCUPATION, MOTHER_OCCUPATION, FATHER_QUALIFICATION,
+    MOTHER_QUALIFICATION, LANG_KNOWN_FATHER, LANG_KNOWN_MOTHER,
+    FATHER_BUSINESS, MOTHER_BUSINESS, DETAILS_OF_FATHER, DETAILS_OF_MOTHER,
+    DESIGNATION_OF_FATHER, DESIGNATION_OF_MOTHER, FATHER_CONTACT,
+    MOTHER_CONTACT, FATHER_EMAIL, MOTHER_EMAIL, ADDRESS_FATHER,
+    ADDRESS_MOTHER, FAMILY_INCOME, GUARDIAN_NAME, RELATION_WITH_CHILD,
+    GUARDIAN_CONTACT, NAME1, CLASS1, NAME2, CLASS2, NAME3, CLASS3
+) VALUES (
+    {', '.join(['%s'] * len(lst))}
+);
+'''
     cur.execute(query, lst)
     father_email = request.form['father-email']
     mother_email = request.form['mother-email']
@@ -136,8 +181,8 @@ def upload_file():
 
 
 
-
-    return render_template('success.html')
+    data = [form_id, father_email]
+    return render_template('success.html', data=data)
 
 
 #===============================================================================================================================================================================
@@ -168,12 +213,67 @@ def delete():
         messagedb.close()
         admindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
         admincur = admindb.cursor()
-        admincur.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
+        admincur.execute("SELECT FORM_ID,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
         return render_template('admin.html', data=admincur.fetchall())
     
     else:
         return "Unknown Action"
-    
+
+#===============================================================================================================================================================================
+@app.route('/edit', methods=['GET'])
+def edit():
+    username = request.args.get("form_id")
+
+    logindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
+    logincur = logindb.cursor()
+
+    logincur.execute("SELECT * FROM ADMISSION_FORM WHERE FORM_ID = %s", (username,))
+    data = logincur.fetchall()[0]
+    data = list(data)
+    # print(data)
+    data[4] = r"{}".format(data[4])
+    data[5] = r"{}".format(data[5])
+    data[6] = r"{}".format(data[6])
+    data[7] = r"{}".format(data[7])
+    data[8] = r"{}".format(data[8])
+    # print(data)
+
+    # print(data)
+    cur.execute("SELECT PASSWORD FROM LOGIN_DETAILS where username = %s", (username,))
+    password = cur.fetchall()[0][0]
+
+    data.append(password)
+    return render_template('edit.html', data=data)
+
+
+#===============================================================================================================================================================================
+
+@app.route('/view', methods=['GET'])
+def view():
+    username = request.args.get("form_id")
+
+    logindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
+    logincur = logindb.cursor()
+
+    logincur.execute("SELECT * FROM ADMISSION_FORM WHERE FORM_ID = %s", (username,))
+    data = logincur.fetchall()[0]
+    data = list(data)
+    # print(data)
+    data[4] = r"{}".format(data[4])
+    data[5] = r"{}".format(data[5])
+    data[6] = r"{}".format(data[6])
+    data[7] = r"{}".format(data[7])
+    data[8] = r"{}".format(data[8])
+    # print(data)
+
+    # print(data)
+    cur.execute("SELECT PASSWORD FROM LOGIN_DETAILS where username = %s", (username,))
+    password = cur.fetchall()[0][0]
+
+    data.append(password)
+    return render_template('view.html', data=data)
+
+
 
 #===============================================================================================================================================================================
 
@@ -200,7 +300,7 @@ def login_success():
             db1 = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
             cur1 = db1.cursor()
 
-            cur1.execute("SELECT FORM_ID,STUDENT_FIRST_NAME,STUDENT_LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
+            cur1.execute("SELECT FORM_ID,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
             data=cur1.fetchall()
             return render_template('admin.html', data=data)
         
@@ -211,17 +311,21 @@ def login_success():
             data = logincur.fetchall()
             if data:
                 logincur.execute("SELECT * FROM ADMISSION_FORM WHERE FORM_ID = %s", (username,))
-                data = logincur.fetchall()
+                data = logincur.fetchall()[0]
+                data = list(data)
                 # print(data)
-                print(data)
-                data[0][1] = r"{}".format(data[0][1])
-                data[0][2] = r"{}".format(data[0][2])
-                data[0][3] = r"{}".format(data[0][3])
-                data[0][4] = r"{}".format(data[0][4])
-                data[0][5] = r"{}".format(data[0][5])
-                print(data)
+                data[4] = r"{}".format(data[4])
+                data[5] = r"{}".format(data[5])
+                data[6] = r"{}".format(data[6])
+                data[7] = r"{}".format(data[7])
+                data[8] = r"{}".format(data[8])
+                # print(data)
 
-                print(data)
+                # print(data)
+                cur.execute("SELECT PASSWORD FROM LOGIN_DETAILS where username = %s", (username,))
+                password = cur.fetchall()[0][0]
+
+                data.append(password)
                 return render_template('view.html', data=data)
             else:
                 return "Invalid Credentials"
