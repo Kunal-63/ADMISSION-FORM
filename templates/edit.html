@@ -14,7 +14,7 @@
       id="myForm"
       method="POST"
       enctype="multipart/form-data"
-      action="/submit"
+      action="/edit-update"
       onsubmit="return UndoDisables()"
     >
       <section class="logo">
@@ -34,7 +34,7 @@
       </section>
       
       <fieldset class="photo-add-fieldset" style="padding-bottom: 20px">
-        <legend class="photo-add-legend">Documents</legend>
+        <legend class="photo-add-legend">User Details</legend>
 
         <div class="container-div" id="form-id-div">
           <label
@@ -51,6 +51,7 @@
             placeholder="Student's First Name"
             name="form-id"
             value="{{ data[0]}}"
+            disabled
             
           />
         </div>
@@ -92,71 +93,7 @@
           />
         </div>
 
-        <div class="attach-main-div">
-          <div class="father-file-add">
-            <p>
-              <img src="static\images\dummy.jpg" width="131px" height="125px" />
-            </p>
-            <p>
-              <label class="father-file-label" htmlFor="">
-                Father's Photo
-              </label>
-              <a href="{{data[4]}}"> <button type="button" class="btn btn-primary">Open</button></a>
-            </p>
-          </div>
-
-          <div class="mother-file-add">
-            <p>
-              <img src="static\images\dummy.jpg" width="131px" height="125px" />
-            </p>
-            <p>
-              <label class="mother-file-label" htmlFor="">
-                Mother's Photo
-              </label>
-
-              <a href="{{data[5]}}"> <button type="button" class="btn btn-primary">Open</button></a>
-            </p>
-          </div>
-
-          <div class="student-file-add">
-            <p>
-              <img src="static\images\dummy.jpg" width="131px" height="125px" />
-            </p>
-            <p>
-              <label class="student-file-label" htmlFor="">
-                Student's Photo
-              </label>
-
-              <a href="{{data[6]}}"> <button type="button" class="btn btn-primary">Open</button></a>
-            </p>
-          </div>
-
-          <div class="adhaar-file-add">
-            <p>
-              <img src="static\images\dummy.jpg" width="131px" height="125px" />
-            </p>
-            <p>
-              <label class="adhaar-file-label" htmlFor="">
-                Adhaar's Photo
-              </label>
-
-              <a href="{{data[7]}}"> <button type="button" class="btn btn-primary">Open</button></a>
-            </p>
-          </div>
-
-          <div class="birth-certificate-file-add">
-            <p>
-              <img src="static\images\dummy.jpg" width="131px" height="125px" />
-            </p>
-            <p>
-              <label class="birth-certificate-file-label" htmlFor="">
-                Birth Certificate's Photo
-              </label>
-
-              <a href="{{data[8]}}"> <button type="button" class="btn btn-primary">Open</button></a>
-            </p>
-          </div>
-        </div>
+       
       </fieldset>
 
       <fieldset class="student-details-fieldset" style="padding-bottom: 20px">
@@ -1292,5 +1229,5 @@
       </fieldset>
     </form>
   </body>
-  <script src="../static/scripts/script.js"></script>
+  <script src="../static/scripts/edit_script.js"></script>
 </html>

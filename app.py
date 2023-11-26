@@ -11,9 +11,9 @@ cur = mydb.cursor()
 
 connection = smtplib.SMTP('smtp.gmail.com', 587)
 connection.starttls()
-connection.login(user = "kunaladwani1456@gmail.com", password = "akzg uqgo opis tunl")
+connection.login(user = "kunaladwani1456@gmail.com", password = "zppx vlsy loce ptoe")
 
-# Define the columns of your table
+
 columns = [
     "FORM_ID", "CURRENT_DATE1", "INTERVIEW_DATE", "SELECTED_VALUE", "FATHER_PATH",
     "MOTHER_PATH", "STUDENT_PATH", "ADHAAR_PATH", "BIRTH_PATH", "FIRST_NAME",
@@ -184,6 +184,42 @@ def upload_file():
     data = [form_id, father_email]
     return render_template('success.html', data=data)
 
+
+#===============================================================================================================================================================================
+@app.route('/edit-update', methods=['POST'])
+def edit_update():
+    editdb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
+    editcur = editdb.cursor()
+    data = request.form
+    form_id = data['form-id']
+    password = data['Password']
+    # print(data, form_id, password)
+    # del data['Password']
+    lst = []
+    for i,j in data.items():
+        lst.append(j)
+    # print(lst)
+    del lst[0:3]
+    print(len(lst))
+    lst.append(form_id)
+    print(lst)
+    editcur.execute('''UPDATE ADMISSION_FORM SET FIRST_NAME=%s,
+    LAST_NAME=%s, AADHAR_NUMBER=%s, GENDER=%s, APPLIED_FOR=%s, CONTACT_NO=%s,
+    PLACE_OF_BIRTH=%s, DATE_OF_BIRTH=%s, DATE_OF_BIRTH_IN_WORDS=%s, ORDINAL_POSITION=%s,
+    BLOOD_GROUP=%s, CATEGORY=%s, NATIONALITY=%s, CASTE=%s, RELIGION=%s, SKILLS=%s,
+    PADDRESS=%s, PTALUKA=%s, PDISTRICT=%s, PSTATE=%s, PPINCODE=%s, PCOUNTRY=%s,
+    CADDRESS=%s, CTALUKA=%s, CDISTRICT=%s, CSTATE=%s, CPINCODE=%s, CCOUNTRY=%s,
+    FATHER_NAME=%s, MOTHER_NAME=%s, FATHER_OCCUPATION=%s, MOTHER_OCCUPATION=%s,
+    FATHER_QUALIFICATION=%s, MOTHER_QUALIFICATION=%s, LANG_KNOWN_FATHER=%s,
+    LANG_KNOWN_MOTHER=%s, FATHER_BUSINESS=%s, MOTHER_BUSINESS=%s, DETAILS_OF_FATHER=%s,
+    DETAILS_OF_MOTHER=%s, DESIGNATION_OF_FATHER=%s, DESIGNATION_OF_MOTHER=%s,
+    FATHER_CONTACT=%s, MOTHER_CONTACT=%s, FATHER_EMAIL=%s, MOTHER_EMAIL=%s,
+    ADDRESS_FATHER=%s, ADDRESS_MOTHER=%s, FAMILY_INCOME=%s, GUARDIAN_NAME=%s,
+    RELATION_WITH_CHILD=%s, GUARDIAN_CONTACT=%s, NAME1=%s, CLASS1=%s, NAME2=%s,
+    CLASS2=%s, NAME3=%s, CLASS3=%s where FORM_ID = %s''', lst)
+    editcur.execute("UPDATE LOGIN_DETAILS SET PASSWORD = %s WHERE USERNAME = %s", (password, form_id))
+    editdb.commit()
+    return render_template('success.html', data=[form_id, password])
 
 #===============================================================================================================================================================================
 
