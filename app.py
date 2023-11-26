@@ -116,7 +116,7 @@ mydb.commit()
 app = Flask(__name__)
 app.secret_key = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 #===============================================================================================================================================================================
@@ -141,7 +141,7 @@ def upload_file():
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], image.filename)
             image_path = image_path.replace(" ", "-")
             image.save(image_path)
-            file_values.append("..\\" + image_path)
+            file_values.append(image_path)
 
     form_values = [request.form[i] for i in request.form]
 
