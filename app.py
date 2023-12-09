@@ -120,7 +120,16 @@ UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 #===============================================================================================================================================================================
+@app.route('/download', methods=['POST'])
+def download():
+    form_id = request.form.get("form-id")
+    downloaddb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
+    downloadcur = downloaddb.cursor()
+    downloadcur.execute("SELECT FIRST_NAME,DATE_OF_BIRTH_IN_WORDS,FATHER_NAME,LAST_NAME,ORDINAL_POSITION,AADHAR_NUMBER,BLOOD_GROUP,GENDER,NATIONALITY,APPLIED_FOR,CATEGORY,CONTACT_NO,CASTE,PLACE_OF_BIRTH,RELIGION,DATE_OF_BIRTH,SKILLS,PADDRESS,CADDRESS,PTALUKA,CTALUKA,PDISTRICT,CDISTRICT,PSTATE,CSTATE,PPINCODE,CPINCODE,PCOUNTRY,CCOUNTRY,FATHER_NAME,MOTHER_NAME,FATHER_QUALIFICATION,MOTHER_QUALIFICATION,LANG_KNOWN_FATHER,LANG_KNOWN_MOTHER,FATHER_BUSINESS,MOTHER_BUSINESS,DETAILS_OF_FATHER,DETAILS_OF_MOTHER,DESIGNATION_OF_FATHER,DESIGNATION_OF_MOTHER,FATHER_CONTACT,MOTHER_CONTACT,FATHER_EMAIL,MOTHER_EMAIL,ADDRESS_FATHER,ADDRESS_MOTHER,FAMILY_INCOME,NAME1,CLASS1,NAME2,CLASS2,NAME3,CLASS3,GUARDIAN_NAME,GUARDIAN_CONTACT,RELATION_WITH_CHILD FROM ADMISSION_FORM WHERE form_id = %s", (form_id,))    
+    data = downloadcur.fetchall()[0]
+    return render_template('download.html', data=data)
 
+#================================================================================================================================================================
 
 @app.route('/submit', methods=['POST'])
 def upload_file():
@@ -235,7 +244,31 @@ def delete():
         popdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
         popcur = popdb.cursor()
         popcur.execute("SELECT * FROM POPUP_LOGIN_DETAILS")
+        popdb.commit()
+        popdb.close()
         return render_template('popup_details.html', data=popcur.fetchall())
+    
+    elif action == "Remove":
+        selectdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
+        selectcur = selectdb.cursor()
+        for i in selected:
+            selectcur.execute("UPDATE ADMISSION_FORM SET SELECTED_VALUE = 0 WHERE FORM_ID = %s", (i,))
+        selectdb.commit()
+        selectcur.execute('SELECT FORM_ID,INTERVIEW_DATE,CURRENT_DATE1,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM where SELECTED_VALUE = 1')
+        data = selectcur.fetchall()
+        selectdb.close()
+        return render_template('selected.html', data=data)
+    elif action == 'Select':
+        selectdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
+        selectcur = selectdb.cursor()
+        for i in selected:
+            selectcur.execute("UPDATE ADMISSION_FORM SET SELECTED_VALUE = 1 WHERE FORM_ID = %s", (i,))
+        selectdb.commit()
+        selectcur.execute('SELECT FORM_ID,INTERVIEW_DATE,CURRENT_DATE1,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM where SELECTED_VALUE = 1')
+        data = selectcur.fetchall()
+        selectdb.close()
+        return render_template('selected.html', data=data)
+        # return render_template('selected.html', data=selectcur.fetchall())
     elif action == "Send":
         messagedb = con.connect(host='localhost', user='root', password='', database='ADMISSION_FORM')
         messagecur = messagedb.cursor()
@@ -256,9 +289,10 @@ def delete():
         return "Unknown Action"
 
 #===============================================================================================================================================================================
-@app.route('/edit', methods=['GET'])
+@app.route('/edit', methods=['POST'])
 def edit():
-    username = request.args.get("form_id")
+    username = request.form.get("form_id")
+
 
     logindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
     logincur = logindb.cursor()
@@ -284,9 +318,9 @@ def edit():
 
 #===============================================================================================================================================================================
 
-@app.route('/view', methods=['GET'])
+@app.route('/view', methods=['POST'])
 def view():
-    username = request.args.get("form_id")
+    username = request.form.get("form_id")
 
     logindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
     logincur = logindb.cursor()
@@ -336,7 +370,7 @@ def login_success():
             db1 = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
             cur1 = db1.cursor()
 
-            cur1.execute("SELECT FORM_ID,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
+            cur1.execute("SELECT FORM_ID,INTERVIEW_DATE,CURRENT_DATE1,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM where SELECTED_VALUE = 0")
             data=cur1.fetchall()
             return render_template('admin.html', data=data)
         

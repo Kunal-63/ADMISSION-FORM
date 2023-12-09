@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <link rel="stylesheet" href="../static/css/download.css">
+</head>
+
+<body>
+<div id="full-page" style="width:200;">
+
+
+    <div class="head">
+
+
+        <div class="logo-details">
+
+            <img src="../static/images/school_logo.png" alt="Logo">
+            <div>
+                <h2>
+                    Airport School - Ahmedabad
+                </h2>
+                <h4>
+                    CBSE AFFILIATION NO. 430133
+                </h4>
+            ADDRESS : AAI RESIDENTIAL QUARTERS, OPP. SVP
+            <br>
+            INTERNATIONAL AIRPORT, SARDARNAGAR, AHMEDABAD - 382475
+            <br>
+            PHONE : <b>079-22864175, 22869014</b>
+            <br>
+            EMAIL : <b>info@airportschoolahm.in</b>
+            <br>
+            WEBSITE : <b>www.airportschoolahm.in</b>
+            </div>
+        
+                        
+        </div>
+
+
+        <div class="head-box"></div>
+
+    </div>
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+
+
+    <table id="MAIN-TABLE">
+
+        <tr>
+            <td colspan="4" class="legend" id="student-details-legend">
+                Student  Details
+            </td>
+        </tr>
+
+        <tr>
+            <td class="key">STUDENT FIRST NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[0]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key" rowspan=2>DATE OF BIRTH IN WORDS</td>
+            <td rowspan=2 >
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[1]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td class="key">STUDENT MIDDLE NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[2]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="key">STUDENT LAST NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">: {{data[3]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">ORDINAL POSITION OF THE CHILD </td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[4]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">AADHAR NUMBER</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">: {{data[5]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">BLOOD GROUP</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[6]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td class="key">GENDER</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">: {{data[7]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">NATIONALITY</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[8]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">CLASS FOR WHICH ADMISSION IS SOUGHT</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">: {{data[9]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">CATEGORY</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[10]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">CONTACT NO</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">: {{data[11]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">CASTE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[12]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">PLACE OF BIRTH</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">: {{data[13]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">RELIGION</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[14]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">DATE OF BIRTH (IN FIGURES)</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">: {{data[15]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">SPECIAL SKILLS & INTERESTS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[16]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+<!-- ------------------------------------------------------------------------------------ -->
+
+        <tr>
+            <td colspan="4" class="legend" id="student-details-legend">
+                Address
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">PRESENT ADDRESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[17]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">PRESENT ADDRESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[18]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">TALUKA</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[19]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">TALUKA</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[20]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">DISTRICT</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[21]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">DISTRICT</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[22]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">STATE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[23]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">STATE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[24]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">PINCODE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[25]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">PINCODE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[26]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">COUNTRY</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[27]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">COUNTRY</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[28]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+<!-- ------------------------------------------------------------------------------------------ -->
+        
+
+        <tr>
+            <td colspan="4" class="legend" id="student-details-legend">
+                Parent's  Details
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">FATHER'S FULL NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[29]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">MOTHER'S FULL NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[30]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">EDUCATIONAL QUALIFICATION</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[31]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">EDUCATIONAL QUALIFICATION</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[32]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">LANGUAGES KNOWN</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[33]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">LANGUAGES KNOWN</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[34]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">BUSINESS/SERVICE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[35]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">BUSINESS/SERVICE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[36]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            <td class="key">DETAILS OF BUSINESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[37]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">DETAILS OF BUSINESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[38]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td class="key">DESIGNATION (IF IN SERVICE)</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[39]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">DESIGNATION (IF IN SERVICE)</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[40]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td class="key">MOBILE NO</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[41]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">MOBILE NO</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[42]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">EMAIL ID</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[43]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">EMAIL ID</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[44]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">BUSINESS/SERVICE ADDRESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[45]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">BUSINESS/SERVICE ADDRESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[46]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">MONTHLY INCOME OF PARENTS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[47]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+<!-- ------------------------------------------------------------------------------------------ -->
+
+        <tr>
+            <td colspan="4" class="legend" id="student-details-legend">
+                Brother/Sister  Details
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td class="key">FULL NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[48]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">CLASS/DIVISION</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[49]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">FULL NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[50]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">CLASS/DIVISION</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[51]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">FULL NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[52]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">CLASS/DIVISION</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[53]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+<!-- ------------------------------------------------------------------------------------- -->
+        
+
+        <tr>
+            <td colspan="4" class="legend" id="student-details-legend">
+                Guardian  Details
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td class="key">GUARDIAN'S FULL NAME</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[54]}}</div>
+                    </div>
+                </div>
+            </td>
+
+            <!-- <td class="key">EDUCATIONAL QUALIFICATION</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td> -->
+            <td class="key">MOBILE NO.</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[55]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+        <!-- <tr>
+            
+
+            <td class="key">LANGUAGES KNOWN</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td>
+        </tr> -->
+
+
+        <!-- <tr>
+            <td class="key">EMAIL ID</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">BUSINESS/SERVICE</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td>
+        </tr> -->
+
+
+        <!-- <tr>
+            <td class="key">GUARDIAN ADDRESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">DETAILS OF BUSINESS</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td>
+        </tr> -->
+
+
+        <!-- <tr>
+            <td class="key">DESIGNATION (IF IN SERVICE)</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">BUSINESS/SERVICE ADDRESS :</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : YASH</div>
+                    </div>
+                </div>
+            </td>
+        </tr> -->
+
+
+        <tr>
+            <td class="key">RELATIONSHIP WITH CHILD</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value"> : {{data[56]}}</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+        <tr>
+            <td  colspan="4" class="legend" id="declaration">
+                <br><br>
+                We certify that all information stated by us in this form, to the best of our knowledge, is correct and we agree that if 
+                any information is found incorrect after admission of our child, the institution at its discretion can cancel the 
+                admission and we shall not take any objection in any manner whatsoever.
+                <br><br>
+                We assure you that our child is physically and mentally normal. We shall here by observe the rules, regulations and 
+                discipline of the school.
+                <br><br>
+            </td>
+        </tr>
+
+
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+
+
+        <tr>
+
+            <td class="signature-div">
+                <div class="signature">
+                </div>
+                <b>
+                    STUDENT'S SIGNATURE
+                </b>
+            </td>
+
+            <td class="signature-div">
+                <div class="signature">
+                </div>
+                <b>
+                    FATHER'S SIGNATURE
+                </b>
+            </td>
+
+            <td class="signature-div">
+                <div class="signature">
+                </div>
+                <b>
+                    MOTHER'S SIGNATURE
+                </b>    
+            </td>
+
+
+            <td class="signature-div">
+                <div class="signature">
+                </div>
+                <b>
+                    GUARDIAN'S SIGNATURE
+                </b>
+            </td>
+
+        </tr>
+
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+        <tr>
+            <td  colspan="2" class="photo-div">
+                <div class="photo">
+                </div>
+                <b>
+                    FATHER'S PHOTOGRAPH
+                </b>    
+            </td>
+
+
+            <td  colspan="2" class="photo-div">
+                <div class="photo">
+                </div>
+                <b>
+                    MOTHER'S PHOTOGRAPH
+                </b>
+            </td>
+        </tr>
+
+
+    </table>
+
+
+    <table id="office-table">
+
+        <tr>
+            <td colspan="4" class="legend" id="student-details-legend">
+                For  Office  Use :
+            </td>
+        </tr>
+
+
+        <tr>
+            <td class="key">Photograph of the student</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">Previous year Report Card
+            </td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td class="key">Copy of Birth Certificate</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">Copy of Aadhar Card of the student</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td class="key">Copy of Transfer certificate</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">Photo ID proof of Father</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td class="key">Medical Cetificate</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">Admitted</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value" id="box"></div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+        
+
+        <tr>
+            <td class="key">Date of Admission</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">____________________</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">Amount of Fees paid</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">____________________</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td class="key">Fee Reciept No.</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">____________________</div>
+                    </div>
+                </div>
+            </td>
+
+            <td class="key">Admission No.</td>
+            <td>
+                <div class="grid">
+                    <div class="subgrid">
+                        <div class="value">____________________</div>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="last">
+
+        <div class="last-element">
+            <div class="last-line">
+            </div>
+            <div>Date</div>
+        </div>
+
+        <div class="last-element">
+            <div class="last-line">
+            </div>
+            <div>Admission</div>
+            <div>Incharge</div>
+        </div>
+
+        <div class="last-element">
+            <div class="last-line">
+            </div>
+            <div>Principal</div>
+        </div>
+
+
+    </div>
+
+
+    <br><br><br>
+    <input id="download-button" type="button" value="Download" onclick="convertHTMLtoPDF()">
+    
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script type="text/javascript">
+    function convertHTMLtoPDF() {
+
+        const btn = document.querySelector('#download-button');
+        btn.style.display = 'none';
+
+
+        var { jsPDF } = window.jspdf;
+
+        var doc = new jsPDF('portrait', 'pt', 'a4');
+        var pdfjs = document.querySelector('#full-page');
+
+        doc.html(pdfjs, {
+            html2canvas: {
+            scale: 0.35 // Adjust the scale as needed
+            },
+            margin: [20, 0, 20 ,0], // Top,Right,Bottom,Left
+            callback: function(doc) {
+                doc.save("newpdf.pdf");
+            },
+            x: 35,
+            y: 20
+        });
+
+        const myTimeout = setTimeout(closing, 3000);
+        function closing(){
+            btn.style.display = 'block';
+        }
+
+    }            
+</script>
+</html>

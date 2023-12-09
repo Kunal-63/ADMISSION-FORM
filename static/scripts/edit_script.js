@@ -118,6 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const appliedFor = document.getElementById("applied-for-input");
 
     const FormID = document.getElementById("form-id-input");
+
+    const admissionDate = document.getElementById("Date-input");
   
     
     temporaryAddressInput.disabled = false;
@@ -129,5 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
     dobInWordsInput.disabled = false;
     appliedFor.disabled = false;
     FormID.disabled = false;
+    admissionDate.disabled = false;
     return true;
   }
