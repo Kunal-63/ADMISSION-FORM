@@ -35,29 +35,7 @@
           <th>
             <div>
               Interview Date
-              <span class="sort-icon up" onclick="sortTable(1,'up')"
-                >&#9650;</span
-              >
-              <span class="sort-icon down active" onclick="sortTable(1, 'down')"
-                >&#9660;</span
-              >
-            </div>
-          </th>
-          <th>
-            <div>
-              Date & Time
-              <span class="sort-icon up" onclick="sortTable(1,'up')"
-                >&#9650;</span
-              >
-              <span class="sort-icon down active" onclick="sortTable(1, 'down')"
-                >&#9660;</span
-              >
-            </div>
-          </th>
-          <th>
-            <div>
-              First Name
-              <span class="sort-icon up" onclick="sortTable(2, 'up')"
+              <span class="sort-icon up" onclick="sortTable(2,'up')"
                 >&#9650;</span
               >
               <span class="sort-icon down active" onclick="sortTable(2, 'down')"
@@ -66,38 +44,60 @@
             </div>
           </th>
           <th>
+            <div>
+              Date & Time
+              <span class="sort-icon up" onclick="sortTable(3,'up')"
+                >&#9650;</span
+              >
+              <span class="sort-icon down active" onclick="sortTable(3, 'down')"
+                >&#9660;</span
+              >
+            </div>
+          </th>
+          <th>
+            <div>
+              First Name
+              <span class="sort-icon up" onclick="sortTable1(4, 'up')"
+                >&#9650;</span
+              >
+              <span class="sort-icon down active" onclick="sortTable1(4, 'down')"
+                >&#9660;</span
+              >
+            </div>
+          </th>
+          <th>
             Last Name
-            <span class="sort-icon up" onclick="sortTable(3, 'up')"
+            <span class="sort-icon up" onclick="sortTable1(5, 'up')"
               >&#9650;</span
             >
-            <span class="sort-icon down active" onclick="sortTable(3, 'down')"
+            <span class="sort-icon down active" onclick="sortTable1(5, 'down')"
               >&#9660;</span
             >
           </th>
           <th>
             Gender
-            <span class="sort-icon up" onclick="sortTable(4, 'up')"
+            <span class="sort-icon up" onclick="sortTable1(6, 'up')"
               >&#9650;</span
             >
-            <span class="sort-icon down active" onclick="sortTable(4, 'down')"
+            <span class="sort-icon down active" onclick="sortTable1(6, 'down')"
               >&#9660;</span
             >
           </th>
           <th>
             Father's Name
-            <span class="sort-icon up" onclick="sortTable(5, 'up')"
+            <span class="sort-icon up" onclick="sortTable1(7, 'up')"
               >&#9650;</span
             >
-            <span class="sort-icon down active" onclick="sortTable(5, 'down')"
+            <span class="sort-icon down active" onclick="sortTable1(7, 'down')"
               >&#9660;</span
             >
           </th>
           <th>
             Mother's Name
-            <span class="sort-icon up" onclick="sortTable(6, 'up')"
+            <span class="sort-icon up" onclick="sortTable1(7, 'up')"
               >&#9650;</span
             >
-            <span class="sort-icon down active" onclick="sortTable(6, 'down')"
+            <span class="sort-icon down active" onclick="sortTable1(7, 'down')"
               >&#9660;</span
             >
           </th>
@@ -121,8 +121,16 @@
           <td>{{ row[5] }}</td>
           <td>{{ row[6] }}</td>
           <td>{{ row[7] }}</td>
-          <td><a href="javascript:void(0);" onclick="submitForm1('{{row[0]}}')">View</a></td>
-          <td><a href="javascript:void(0);" onclick="submitForm('{{row[0]}}')">Edit</a></td>
+          <td>
+            <a href="javascript:void(0);" onclick="submitForm1('{{row[0]}}')"
+              >View</a
+            >
+          </td>
+          <td>
+            <a href="javascript:void(0);" onclick="submitForm('{{row[0]}}')"
+              >Edit</a
+            >
+          </td>
         </tr>
         {% endfor %}
       </table>
@@ -135,6 +143,16 @@
         value="Download"
       />
       <input type="submit" name="action" value="Select" />
+      <input type="button" id="interviewButton" value="Interview" />
+
+      <div id="InterviewModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeMessageModal()">&times;</span>
+          <input type="date" id="date" class="form-control" name="date" />
+          <input type="time" id="time" class="form-control" name="time" /> 
+          <input id="InterviewSend" type="submit" name="action" value="Interview" />
+        </div>
+      </div>
 
       <div id="messageModal" class="modal">
         <div class="modal-content">
@@ -148,47 +166,56 @@
         </div>
       </div>
     </form>
-    <form id="editForm" action="/edit" method="post" style="display: none;">
-      <input type="hidden" name="form_id" id="formIdInput" value="">
+    <form id="editForm" action="/edit" method="post" style="display: none">
+      <input type="hidden" name="form_id" id="formIdInput" value="" />
     </form>
-    <form id="viewForm" action="/view" method="post" style="display: none;">
-      <input type="hidden" name="form_id" id="formIdInput1" value="">
+    <form id="viewForm" action="/view" method="post" style="display: none">
+      <input type="hidden" name="form_id" id="formIdInput1" value="" />
     </form>
   </body>
 
   <script>
     function downloadTableAsCSV(tableId) {
-      // Get the table by its ID
-      const table = document.getElementById(tableId);
+      var table = document.getElementById(tableId);
+      var rows = table.querySelectorAll("tr");
 
-      // Create an empty CSV string
-      let csv = "";
+      // Creating a CSV string with headers
+      var csvContent = "";
 
-      // Loop through the table rows
-      const rows = table.querySelectorAll("tr");
-      rows.forEach((row) => {
-        const rowData = [];
-        row.querySelectorAll("th, td").forEach((cell) => {
-          rowData.push(cell.textContent);
-        });
-        csv += rowData.join(",") + "\n";
-      });
+      // Extract headers
+      var headers = Array.from(rows[0].querySelectorAll("th"))
+        .map(function (header) {
+          return '"' + header.textContent.trim() + '"';
+        })
+        .filter(Boolean);
+      // Remove the checkbox column
+      csvContent += headers.join(",") + "\n";
 
-      // Create a Blob containing the CSV data
-      const blob = new Blob([csv], { type: "text/csv" });
+      // Extract data
+      for (var i = 1; i < rows.length; i++) {
+        var cells = rows[i].querySelectorAll("td");
+        var row = [];
 
-      // Create a download link
-      const a = document.createElement("a");
-      a.href = window.URL.createObjectURL(blob);
-      a.download = "table.csv";
-      a.style.display = "none";
+        for (var j = 0; j < cells.length; j++) {
+          // Exclude the checkboxes and action columns
+          if (j !== 0 && j !== cells.length - 1 && j !== cells.length - 2) {
+            row.push('"' + cells[j].textContent.trim() + '"');
+          }
+        }
 
-      // Append the download link to the body and trigger the download
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+        // delete rows[i].cells[-1]; // Remove the checkbox column
+        csvContent += row.join(",") + "\n";
+      }
+
+      // Create a blob with the CSV data
+      var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+
+      // Create a download link and trigger the download
+      var link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "table_data.csv";
+      link.click();
     }
-
     function selectAllCheckboxes() {
       var checkboxes = document.getElementsByName("selected_checkboxes");
       var selectAllCheckbox = document.getElementById("selectAll");
@@ -201,9 +228,13 @@
     document.getElementById("messageButton").onclick = function () {
       document.getElementById("messageModal").style.display = "block";
     };
+    document.getElementById("interviewButton").onclick = function () {
+      document.getElementById("InterviewModal").style.display = "block";
+    };
 
     function closeMessageModal() {
       document.getElementById("messageModal").style.display = "none";
+      document.getElementById("InterviewModal").style.display = "none";
     }
 
     document.getElementById("sendButton").onclick = function () {
@@ -224,12 +255,33 @@
       closeMessageModal();
     };
 
+    document.getElementById("InterviewSend").onclick = function () {
+      var message = document.getElementById("date").value;
+      var message1 = document.getElementById("time").value;
+
+      // Validate the message
+      if (!message) {
+        document.getElementById("messageError").textContent =
+          "Message cannot be empty.";
+        return false; // Prevent form submission
+      }
+
+      // Clear any previous error message
+      document.getElementById("messageError").textContent = "";
+
+      // You can process or send the message here
+      alert("Date : " + message + " Time : " + message1);
+      closeMessageModal();
+    };
+
+
     var sortingOrder = {
       columnIndex: -1, // Initial value to indicate no sorting
       ascending: true, // Default sorting order is ascending
     };
 
     function sortTable(columnIndex, direction) {
+
       var table, rows, switching, i, x, y, shouldSwitch;
       table = document.querySelector("table");
       switching = true;
@@ -266,9 +318,13 @@
           var xValue = x.textContent.toLowerCase();
           var yValue = y.textContent.toLowerCase();
 
+          // Extract numeric parts from form IDs
+          var xNumeric = parseInt(xValue.match(/\d+/)[0], 10);
+          var yNumeric = parseInt(yValue.match(/\d+/)[0], 10);
+
           if (
-            (xValue > yValue && sortingOrder.ascending) ||
-            (xValue < yValue && !sortingOrder.ascending)
+            (xNumeric > yNumeric && sortingOrder.ascending) ||
+            (xNumeric < yNumeric && !sortingOrder.ascending)
           ) {
             shouldSwitch = true;
             break;
@@ -281,6 +337,69 @@
         }
       }
     }
+
+    function sortTable1(columnIndex, direction) {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.querySelector("table");
+  switching = true;
+
+  // Reset the sorting icons in all columns
+  table.rows[0].querySelectorAll(".sort-icon").forEach(function (el) {
+    el.classList.remove("active");
+  });
+
+  // Determine the sorting direction
+  if (direction === "up") {
+    sortingOrder.ascending = true;
+  } else if (direction === "down") {
+    sortingOrder.ascending = false;
+  }
+
+  // Set the sorting icons for the clicked column
+  var sortIconUp =
+    table.rows[0].querySelectorAll(".sort-icon.up")[columnIndex];
+  var sortIconDown =
+    table.rows[0].querySelectorAll(".sort-icon.down")[columnIndex];
+  sortIconUp.classList.toggle("active", sortingOrder.ascending);
+  sortIconDown.classList.toggle("active", !sortingOrder.ascending);
+
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    shouldSwitch = false;
+
+    for (i = 1; i < rows.length - 1; i++) {
+      x = rows[i].getElementsByTagName("td")[columnIndex];
+      y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+      var xValue = x.textContent.trim();
+      var yValue = y.textContent.trim();
+
+      // Try to parse as numbers
+      var xNumeric = parseFloat(xValue);
+      var yNumeric = parseFloat(yValue);
+
+      if (!isNaN(xNumeric) && !isNaN(yNumeric)) {
+        // If both are numbers, compare as numbers
+        if ((xNumeric > yNumeric && sortingOrder.ascending) || (xNumeric < yNumeric && !sortingOrder.ascending)) {
+          shouldSwitch = true;
+          break;
+        }
+      } else {
+        // If not both numbers, compare as strings
+        if ((xValue > yValue && sortingOrder.ascending) || (xValue < yValue && !sortingOrder.ascending)) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
 
     function submitForm(formId) {
       // Set the form_id value in the hidden input

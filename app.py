@@ -238,6 +238,7 @@ def delete():
     selected = request.form.getlist('selected_checkboxes')
     action = request.form.get("action")
     message = request.form.get("message")
+
     # print(message, action, selected)
 
     if action == "PopUp":
@@ -248,6 +249,20 @@ def delete():
         popdb.close()
         return render_template('popup_details.html', data=popcur.fetchall())
     
+    elif action == "Interview":
+        InterviewDate = request.form.get('date')
+        InterviewTime = request.form.get('time')
+        InterviewDateTime = InterviewDate + " " + InterviewTime
+        print(InterviewDateTime)
+        interviewdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
+        interviewcur = interviewdb.cursor()
+        for i in selected:
+            interviewcur.execute("UPDATE ADMISSION_FORM SET INTERVIEW_DATE = %s WHERE FORM_ID = %s", (InterviewDateTime, i))
+        interviewdb.commit()
+        interviewcur.execute("SELECT FORM_ID,INTERVIEW_DATE,CURRENT_DATE1,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM where SELECTED_VALUE = 0")
+        data=interviewcur.fetchall()
+        interviewdb.close()
+        return render_template('admin.html',data=data)
     elif action == "Remove":
         selectdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
         selectcur = selectdb.cursor()
@@ -282,7 +297,7 @@ def delete():
         messagedb.close()
         admindb = con.connect(host="localhost", user="root", password="root", database="ADMISSION_FORM")
         admincur = admindb.cursor()
-        admincur.execute("SELECT FORM_ID,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM")
+        admincur.execute("SELECT FORM_ID,INTERVIEW_DATE,CURRENT_DATE1,FIRST_NAME,LAST_NAME,GENDER,FATHER_NAME,MOTHER_NAME FROM ADMISSION_FORM where SELECTED_VALUE = 0")
         return render_template('admin.html', data=admincur.fetchall())
     
     else:

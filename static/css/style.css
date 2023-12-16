@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+input{
+  text-transform: uppercase;
+}
+#father-email, #mother-email, #guardian-email{
+  text-transform: lowercase;
+}
 
 
 fieldset{
