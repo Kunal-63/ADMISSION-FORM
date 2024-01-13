@@ -245,9 +245,9 @@ def delete():
         popdb = con.connect(host='localhost', user='root', password='root', database='ADMISSION_FORM')
         popcur = popdb.cursor()
         popcur.execute("SELECT * FROM POPUP_LOGIN_DETAILS")
-        popdb.commit()
+        data=popcur.fetchall()
         popdb.close()
-        return render_template('popup_details.html', data=popcur.fetchall())
+        return render_template('popup_details.html', data=data)
     
     elif action == "Interview":
         InterviewDate = request.form.get('date')

@@ -1,23 +1,47 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const permanentAddressInput = document.getElementById("permanent-address-input");
-  const temporaryAddressInput = document.getElementById("correspondance-address-input");
-  const sameAddressCheckbox = document.getElementById("same-as-permanent-address-check");
+  const permanentAddressInput = document.getElementById(
+    "permanent-address-input"
+  );
+  const temporaryAddressInput = document.getElementById(
+    "correspondance-address-input"
+  );
+  const sameAddressCheckbox = document.getElementById(
+    "same-as-permanent-address-check"
+  );
 
   const permanentstateInput = document.getElementById("permanent-state-select");
-  const temporarystateInput = document.getElementById("correspondance-state-select");
+  const temporarystateInput = document.getElementById(
+    "correspondance-state-select"
+  );
 
-  const permanenttalukaInput = document.getElementById("permanent-taluka-input");
-  const temporarytalukaInput = document.getElementById("correspondance-taluka-input");
+  const permanenttalukaInput = document.getElementById(
+    "permanent-taluka-input"
+  );
+  const temporarytalukaInput = document.getElementById(
+    "correspondance-taluka-input"
+  );
 
-  const permanentdistrictInput = document.getElementById("permanent-district-input");
-  const temporarydistrictInput = document.getElementById("correspondance-district-input");
+  const permanentdistrictInput = document.getElementById(
+    "permanent-district-input"
+  );
+  const temporarydistrictInput = document.getElementById(
+    "correspondance-district-input"
+  );
 
-  const permanentpincodeInput = document.getElementById("permanent-pincode-input");
-  const temporarypincodeInput = document.getElementById("correspondance-pincode-input");
+  const permanentpincodeInput = document.getElementById(
+    "permanent-pincode-input"
+  );
+  const temporarypincodeInput = document.getElementById(
+    "correspondance-pincode-input"
+  );
 
-  const permanentcountryInput = document.getElementById("permanent-country-input");
-  const temporarycountryInput = document.getElementById("correspondance-country-input");
-  
+  const permanentcountryInput = document.getElementById(
+    "permanent-country-input"
+  );
+  const temporarycountryInput = document.getElementById(
+    "correspondance-country-input"
+  );
+
   sameAddressCheckbox.addEventListener("change", function () {
     if (sameAddressCheckbox.checked) {
       // Copy the value of the permanent address to the temporary address
@@ -41,8 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
       temporarycountryInput.disabled = false;
       temporarytalukaInput.disabled = false;
     }
-  });
+
   
+  });
 
   const birthdateInput = document.getElementById("dob-input");
   const dobInWordsInput = document.getElementById("dob-inwords-input");
@@ -92,32 +117,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-function UndoDisables(){
+function UndoDisables() {
   // const permanentAddressInput = document.getElementById("permanent-address-input");
-  const temporaryAddressInput = document.getElementById("correspondance-address-input");
+  const temporaryAddressInput = document.getElementById(
+    "correspondance-address-input"
+  );
   // const sameAddressCheckbox = document.getElementById("same-as-permanent-address-check");
 
   // const permanentstateInput = document.getElementById("permanent-state-select");
-  const temporarystateInput = document.getElementById("correspondance-state-select");
+  const temporarystateInput = document.getElementById(
+    "correspondance-state-select"
+  );
 
   // const permanenttalukaInput = document.getElementById("permanent-taluka-input");
-  const temporarytalukaInput = document.getElementById("correspondance-taluka-input");
+  const temporarytalukaInput = document.getElementById(
+    "correspondance-taluka-input"
+  );
 
   // const permanentdistrictInput = document.getElementById("permanent-district-input");
-  const temporarydistrictInput = document.getElementById("correspondance-district-input");
+  const temporarydistrictInput = document.getElementById(
+    "correspondance-district-input"
+  );
 
   // const permanentpincodeInput = document.getElementById("permanent-pincode-input");
-  const temporarypincodeInput = document.getElementById("correspondance-pincode-input");
+  const temporarypincodeInput = document.getElementById(
+    "correspondance-pincode-input"
+  );
 
   // const permanentcountryInput = document.getElementById("permanent-country-input");
-  const temporarycountryInput = document.getElementById("correspondance-country-input");
+  const temporarycountryInput = document.getElementById(
+    "correspondance-country-input"
+  );
 
   const dobInWordsInput = document.getElementById("dob-inwords-input");
 
   const appliedFor = document.getElementById("applied-for-input");
 
-  
   temporaryAddressInput.disabled = false;
   temporarydistrictInput.disabled = false;
   temporarystateInput.disabled = false;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="https://checkout.razorpay.com/v1/razorpay.js"></script>
   </head>
 
   <body>
@@ -213,7 +214,7 @@
               Applied For <span style="color: red">* </span>
             </label>
             <input
-            class="input"
+              class="input"
               type="text"
               id="applied-for-input"
               name="applied-for"
@@ -273,7 +274,11 @@
           </div>
 
           <div class="container-div" id="dob-inwords-div">
-            <label class="label" id="dob-inwords-label" htmlFor="dob-inwords-input">
+            <label
+              class="label"
+              id="dob-inwords-label"
+              htmlFor="dob-inwords-input"
+            >
               Date of Birth in Words <span style="color: red">* </span>
             </label>
             <input
@@ -363,10 +368,6 @@
             <label htmlFor="obc">OBC</label>
           </div>
 
-          
-
-          
-
           <!-- <div class="container-div" id="years-div">
             <label class="label" id="years-label" htmlFor="years">
               Years
@@ -424,10 +425,6 @@
               required
             />
           </div>
-
-          
-
-          
 
           <!-- <div class="container-div" id="elective-subjects-div">
             <label
@@ -530,9 +527,8 @@
               name="permanent-district"
               type="text"
               required
-            >
-              
-          </div>  
+            />
+          </div>
 
           <div class="container-div" id="permanent-state-div">
             <label class="label" id="permanent-state-label" htmlFor="">
@@ -574,20 +570,16 @@
               <option value="Delhi">Delhi</option>
               <option value="Puducherry">Puducherry</option>
               <option value="Chandigarh">Chandigarh</option>
-              <option value="Andaman and Nicobar Islands"
-                >Andaman and Nicobar Islands</option
-              >
-              <option value="Dadra and Nagar Haveli and Daman and Diu"
-                >Daman and Diu</option
-              >
+              <option value="Andaman and Nicobar Islands">
+                Andaman and Nicobar Islands
+              </option>
+              <option value="Dadra and Nagar Haveli and Daman and Diu">
+                Daman and Diu
+              </option>
               <option value="Ladakh">Ladakh</option>
               <option value="Lakshadweep">Lakshadweep</option>
-
-
             </select>
           </div>
-
-
 
           <div class="container-div" id="permanent-pincode-div">
             <label
@@ -607,8 +599,6 @@
             />
           </div>
 
-          
-
           <div class="container-div" id="permanent-country-div">
             <label
               class="label"
@@ -626,9 +616,8 @@
               required
             />
           </div>
-          
-        <div class="container-div"></div>
 
+          <div class="container-div"></div>
 
           <div class="container-div" id="same-as permanent-address-div">
             <label
@@ -676,8 +665,6 @@
             />
           </div>
 
-         
-
           <div class="container-div" id="correspondance-district-div">
             <label class="label" id="correspondance-district-label" htmlFor="">
               District <span style="color: red">* </span>
@@ -688,7 +675,7 @@
               name="correspondance-district"
               type="text"
               required
-            >
+            />
           </div>
 
           <div class="container-div" id="correspondance-state-div">
@@ -701,44 +688,44 @@
               name="correspondance-state"
               required
             >
-            <option value="Gujarat">Gujarat</option>
-            <option value="Maharashtra">Maharashtra</option>
-            <option value="Rajasthan">Rajasthan</option>
-            <option value="Madhya Pradesh">Madhya Pradesh</option>
-            <option value="Karnataka">Karnataka</option>
-            <option value="Kerala">Kerala</option>
-            <option value="Tamil Nadu">Tamil Nadu</option>
-            <option value="Andhra Pradesh">Andhra Pradesh</option>
-            <option value="Telangana">Telangana</option>
-            <option value="Uttar Pradesh">Uttar Pradesh</option>
-            <option value="Bihar">Bihar</option>
-            <option value="Jharkhand">Jharkhand</option>
-            <option value="Odisha">Odisha</option>
-            <option value="West Bengal">West Bengal</option>
-            <option value="Assam">Assam</option>
-            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-            <option value="Sikkim">Sikkim</option>
-            <option value="Meghalaya">Meghalaya</option>
-            <option value="Nagaland">Nagaland</option>
-            <option value="Manipur">Manipur</option>
-            <option value="Mizoram">Mizoram</option>
-            <option value="Tripura">Tripura</option>
-            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-            <option value="Himachal Pradesh">Himachal Pradesh</option>
-            <option value="Uttarakhand">Uttarakhand</option>
-            <option value="Chhattisgarh">Chhattisgarh</option>
-            <option value="Goa">Goa</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Puducherry">Puducherry</option>
-            <option value="Chandigarh">Chandigarh</option>
-            <option value="Andaman and Nicobar Islands"
-              >Andaman and Nicobar Islands</option
-            >
-            <option value="Dadra and Nagar Haveli and Daman and Diu"
-              >Daman and Diu</option
-            >
-            <option value="Ladakh">Ladakh</option>
-            <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Odisha">Odisha</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="Assam">Assam</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Puducherry">Puducherry</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Andaman and Nicobar Islands">
+                Andaman and Nicobar Islands
+              </option>
+              <option value="Dadra and Nagar Haveli and Daman and Diu">
+                Daman and Diu
+              </option>
+              <option value="Ladakh">Ladakh</option>
+              <option value="Lakshadweep">Lakshadweep</option>
             </select>
           </div>
 
@@ -754,8 +741,6 @@
               required
             />
           </div>
-
-          
 
           <div class="container-div" id="correspondance-country-div">
             <label
@@ -1076,7 +1061,6 @@
             </label>
             <input
               class="input"
-    
               type="text"
               id="father-email"
               placeholder="Email"
@@ -1091,7 +1075,6 @@
             </label>
             <input
               class="input"
-   
               type="text"
               id="mother-email"
               placeholder="Email"
@@ -1333,7 +1316,6 @@
               required
             />
           </div>
-         
         </div>
       </fieldset>
 
@@ -1364,11 +1346,51 @@
           </div>
 
           <div class="container-div">
-            <button class="submit-button" type="submit">Submit</button>
+            <button
+              class="submit-button"
+              onclick="initiatePayment()"
+              type="button"
+            >
+              Submit
+            </button>
           </div>
         </div>
       </fieldset>
     </form>
   </body>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    function initiatePayment() {
+      var options = {
+        "key": "rzp_test_lyOBYt8zORJUiJ", // Enter the Key ID generated from the Dashboard
+        "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "Acme Corp", //your business name
+        "description": "Test Transaction",
+        // "image": "./static/images/school_logo.png",
+        "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function (response) {
+          // Handle successful payment
+          alert("Payment successful: " + response.razorpay_payment_id);
+          // Submit the form only if payment is successful
+          document.getElementById("myForm").submit();
+        },
+        "prefill": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "contact": "9999999999",
+        },
+        "notes": {
+          "address": "Razorpay Corporate Office",
+        },
+        "theme": {
+          "color": "#F37254",
+        },
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+      // e.preventDefault();
+    }
+  </script>
   <script src="../static/scripts/script.js"></script>
 </html>
