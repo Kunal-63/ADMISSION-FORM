@@ -3,7 +3,6 @@
 
 This Admission Form was precisely prepared to speed up the admission process at Airport School Ahmedabad, assisting the management committee in their efforts to simplify admissions. This digital platform allows the administrative department to efficiently organize interviews and send individualized communications online. Furthermore, parents can easily log in to check the status of their submissions.
 
-![Logo](https://github.com/Kunal-63/NamoWaveAI/blob/main/assets/logo.png)
 
 
 ## Screenshots
