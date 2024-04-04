@@ -65,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
       temporarycountryInput.disabled = false;
       temporarytalukaInput.disabled = false;
     }
-
-  
   });
 
   const birthdateInput = document.getElementById("dob-input");
@@ -161,5 +159,11 @@ function UndoDisables() {
   temporarytalukaInput.disabled = false;
   dobInWordsInput.disabled = false;
   appliedFor.disabled = false;
+  var fileInput = document.getElementById("adhaar-image");
+  var files = fileInput.files;
+  if (files.length === 0) {
+    fileInput.setAttribute("name", "adhaar-image");
+    fileInput.value = "-";
+  }
   return true;
 }
